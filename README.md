@@ -1,2 +1,2 @@
-# GROUP-B-41
+# GROUP B-41
 Mobile Application
