@@ -1,7 +1,8 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Data/destinations.dart';
+import 'package:flutter_application_1/Models/destination.dart';
 import 'package:flutter_application_1/screens/destination_screen.dart';
-import 'package:flutter_application_1/widgets/destination_carousel.dart';
 
 class TopDestination extends StatefulWidget {
   const TopDestination({super.key});
@@ -72,7 +73,7 @@ class _TopDestinationState extends State<TopDestination> {
                                       MainAxisAlignment.spaceBetween,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Container(
+                                    SizedBox(
                                       width: 150,
                                       child: Text(
                                         topDestination.city,

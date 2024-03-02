@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/content_model.dart';
+import 'package:flutter_application_1/Data/unbordingContents.dart';
 import 'package:flutter_application_1/login.dart';
 
 class Onbording extends StatefulWidget {
+  const Onbording({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _OnbordingState createState() => _OnbordingState();
 }
 
@@ -86,19 +89,12 @@ class _OnbordingState extends State<Onbording> {
             margin: const EdgeInsets.all(40),
             width: double.infinity,
             child: TextButton(
-              child: Text(
-                currentIndex == contents.length - 1 ? "Continue" : "Next",
-                style: const TextStyle(
-                    fontFamily: "Outfit-Regular",
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18),
-              ),
               onPressed: () {
                 if (currentIndex == contents.length - 1) {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (_) => LoginPage(),
+                      builder: (_) => const LoginPage(),
                     ),
                   );
                 }
@@ -108,11 +104,17 @@ class _OnbordingState extends State<Onbording> {
                 );
               },
               style: TextButton.styleFrom(
-                shape: RoundedRectangleBorder(
+                foregroundColor: Colors.white, shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(50),
                 ),
                 backgroundColor: const Color.fromARGB(195, 14, 192, 106),
-                primary: Colors.white,
+              ),
+              child: Text(
+                currentIndex == contents.length - 1 ? "Continue" : "Next",
+                style: const TextStyle(
+                    fontFamily: "Outfit-Regular",
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18),
               ),
             ),
           ),

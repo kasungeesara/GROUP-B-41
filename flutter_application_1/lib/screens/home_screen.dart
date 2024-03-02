@@ -3,7 +3,10 @@ import 'package:flutter_application_1/widgets/destination_carousel.dart';
 import 'package:flutter_application_1/widgets/hotels_carousel.dart';
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _HomeScreenState createState() => _HomeScreenState();
 }
 
@@ -11,7 +14,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
   int _currentTab = 0;
 
-  List<IconData> _icons = [
+  final List<IconData> _icons = [
     Icons.directions_car,
     Icons.directions_walk,
     Icons.fastfood,
@@ -79,11 +82,11 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(
               height: 20.0,
             ),
-            DestinationCarousel(),
+            const DestinationCarousel(),
             const SizedBox(
               height: 20.0,
             ),
-            HotelCarousel(),
+            const HotelCarousel(),
           ],
         ),
       ),

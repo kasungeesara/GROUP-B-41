@@ -1,5 +1,7 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Data/hotels.dart';
+import 'package:flutter_application_1/Models/hotel.dart';
 // ignore: unused_import
 import 'package:flutter_application_1/widgets/destination_carousel.dart';
 import 'package:flutter_application_1/widgets/hotels_carousel.dart';
@@ -64,7 +66,7 @@ class _HotelScreenState extends State<HotelScreen> {
                                     MainAxisAlignment.spaceBetween,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Container(
+                                  SizedBox(
                                     width: 150,
                                     child: Text(
                                       topHotel.name,
