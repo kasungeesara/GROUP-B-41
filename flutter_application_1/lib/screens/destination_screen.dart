@@ -12,6 +12,7 @@ class DestinationScreen extends StatefulWidget {
     required this.destination,
   });
 
+
   @override
   // ignore: library_private_types_in_public_api
   _DestinationScreenState createState() => _DestinationScreenState();
@@ -58,7 +59,8 @@ class _DestinationScreenState extends State<DestinationScreen> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 40),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 40),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[

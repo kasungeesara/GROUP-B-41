@@ -1,5 +1,5 @@
-
 class Activity {
+  final String baseCity;
   final String name;
   final String type;
   final double price;
@@ -9,6 +9,7 @@ class Activity {
   final List<String> startTimes;
 
   Activity({
+    required this.baseCity,
     required this.name,
     required this.type,
     required this.price,

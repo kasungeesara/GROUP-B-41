@@ -30,44 +30,44 @@ final List<Destination> destinations = [
     imagePath: "assets/sigiriya2.jpg",
   ),
   Destination(
-      city: 'Nuwara Eliya',
-      province: 'Central Province',
-      activities: 7,
-      description:
-          'Scenic city known for its tea plantations and cool climate.',
-      imagePath: "assets/ne.jpg"),
+    city: 'Nuwara Eliya',
+    province: 'Central Province',
+    activities: 7,
+    description:
+        'Scenic city known for its tea plantations and cool climate.',
+    imagePath: "assets/ne.jpg"),
   Destination(
-      city: 'Anuradhapura',
-      province: 'North Central Province',
-      activities: 10,
-      description:
-          'Anuradhapura, a Ceylonese political and religious capital that flourished for 1,300 years, was abandoned after an invasion in 993.',
-      imagePath: "assets/02.jpg"),
+    city: 'Anuradhapura',
+    province: 'North Central Province',
+    activities: 10,
+    description:
+        'Anuradhapura, a Ceylonese political and religious capital that flourished for 1,300 years, was abandoned after an invasion in 993.',
+    imagePath: "assets/02.jpg"),
   Destination(
-      city: 'Polonnaruwa',
-      province: 'North Central Province',
-      activities: 9,
-      description:
-          'The second oldest of all Sri Lankas kingdoms, Polonnaruwa was first established as a military post by the Sinhalese kingdom.',
-      imagePath: "assets/pol.jpg"),
+    city: 'Polonnaruwa',
+    province: 'North Central Province',
+    activities: 9,
+    description:
+        'The second oldest of all Sri Lankas kingdoms, Polonnaruwa was first established as a military post by the Sinhalese kingdom.',
+    imagePath: "assets/pol.jpg"),
   Destination(
-      city: 'Matara',
-      province: 'Southern Province',
-      activities: 5,
-      description:
-          'Matara is a major city in Sri Lanka, on the southern coast of Southern Province.',
-      imagePath: "assets/mat.jpg"),
+    city: 'Matara',
+    province: 'Southern Province',
+    activities: 5,
+    description:
+        'Matara is a major city in Sri Lanka, on the southern coast of Southern Province.',
+    imagePath: "assets/mat.jpg"),
   Destination(
-      city: 'Jaffna',
-      province: 'North Province',
-      activities: 10,
-      description: 'Jaffna is a city on the northern tip of Sri Lanka.',
-      imagePath: "assets/jaffna.jpg"),
+    city: 'Jaffna',
+    province: 'North Province',
+    activities: 10,
+    description: 'Jaffna is a city on the northern tip of Sri Lanka.',
+    imagePath: "assets/jaffna.jpg"),
   Destination(
-      city: 'Trincomalee',
-      province: 'Estern Province',
-      activities: 7,
-      description:
-          'Trincomalee is a port city on the northeast coast of Sri Lanka.',
-      imagePath: "assets/tri.jpg"),
+    city: 'Trincomalee',
+    province: 'Estern Province',
+    activities: 7,
+    description:
+        'Trincomalee is a port city on the northeast coast of Sri Lanka.',
+    imagePath: "assets/tri.jpg"),
 ];

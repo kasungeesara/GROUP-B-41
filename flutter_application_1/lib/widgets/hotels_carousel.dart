@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Data/hotels.dart';
 import 'package:flutter_application_1/Models/hotel.dart';
 // ignore: unused_import
-import 'package:flutter_application_1/home_screen.dart';
+import 'package:flutter_application_1/screens/home_screen.dart';
 import 'package:flutter_application_1/screens/hotel_screen.dart';
 
 
