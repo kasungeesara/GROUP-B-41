@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/widgets/activity.dart';
+import 'package:flutter_application_1/Models/activity.dart';
 
 class ActivityScreen extends StatefulWidget {
   final Activity activity;
 
-  const ActivityScreen({required this.activity});
+  const ActivityScreen({
+    super.key,
+    required this.activity,
+  });
 
   @override
+  // ignore: library_private_types_in_public_api
   _ActivityScreenState createState() => _ActivityScreenState();
 }
 
