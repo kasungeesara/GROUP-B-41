@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Data/destinations.dart';
+import 'package:flutter_application_1/Models/activity.dart';
 import 'package:flutter_application_1/Models/destination.dart';
 import 'package:flutter_application_1/screens/destination_screen.dart';
 import 'package:flutter_application_1/screens/topDestination.dart';
@@ -7,8 +8,10 @@ import 'package:flutter_application_1/screens/topDestination.dart';
 class DestinationCarousel extends StatelessWidget {
   const DestinationCarousel({super.key});
 
+  
   @override
   Widget build(BuildContext context) {
+
     return Column(
       children: <Widget>[
         Padding(
@@ -54,6 +57,7 @@ class DestinationCarousel extends StatelessWidget {
             itemCount: 5,
             itemBuilder: (BuildContext context, int index) {
               Destination destination = destinations[index];
+
               return GestureDetector(
                 onTap: () => Navigator.push(
                   context,

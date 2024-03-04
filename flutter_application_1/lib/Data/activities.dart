@@ -111,4 +111,15 @@ final List<Activity> activities = [
     description:
         "The Hanthana mountain range in Kandy is popular among those who like to go hiking, camping, bird watching and be close to nature in any way.In total, there are seven individual peaks, the highest being Ura kanda. The peaks offer spectacular views of Kandy city, the Knuckles range, thedolosbage range of Aranayake, and the hills of the Sabaragamuwa region, too, can be spotted from here",
   ),
+  Activity(
+    baseCity: "Galle",
+    name: 'Hiking Hanthana',
+    type: 'Adventure',
+    price: 12.0,
+    rating: 5,
+    startTimes: ['10 AM', '05 PM'],
+    imagePath: "assets/k3.jpg",
+    description:
+        "The Hanthana mountain range in Kandy is popular among those who like to go hiking, camping, bird watching and be close to nature in any way.In total, there are seven individual peaks, the highest being Ura kanda. The peaks offer spectacular views of Kandy city, the Knuckles range, thedolosbage range of Aranayake, and the hills of the Sabaragamuwa region, too, can be spotted from here",
+  ),
 ];
