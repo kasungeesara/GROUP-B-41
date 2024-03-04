@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Data/destinations.dart';
 import 'package:flutter_application_1/Models/destination.dart';
 import 'package:flutter_application_1/screens/activity_screen.dart';
 import 'package:flutter_application_1/Data/activities.dart';
@@ -11,7 +12,6 @@ class DestinationScreen extends StatefulWidget {
     super.key,
     required this.destination,
   });
-
 
   @override
   // ignore: library_private_types_in_public_api
@@ -28,8 +28,15 @@ class _DestinationScreenState extends State<DestinationScreen> {
     return Text(stars);
   }
 
+  List<Activity> availableActivities = [
+  ];
+
   @override
   Widget build(BuildContext context) {
+    final filteredActivities = activities
+        .where((act) => act.baseCity.contains(widget.destination.city))
+        .toList();
+
     return Scaffold(
       body: Column(
         children: <Widget>[
@@ -146,9 +153,10 @@ class _DestinationScreenState extends State<DestinationScreen> {
           Expanded(
             child: ListView.builder(
               padding: const EdgeInsets.only(top: 10.0, bottom: 15.0),
-              itemCount: 10,
+              itemCount: filteredActivities.length,
               itemBuilder: (BuildContext context, int index) {
-                Activity activity = activities[index];
+                Activity activity = filteredActivities[index];
+
                 return GestureDetector(
                   onTap: () => Navigator.push(
                     context,
