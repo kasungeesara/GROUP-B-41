@@ -1,21 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/Models/activity.dart';
+import 'package:travel_app/widgets/best_cafe.dart';
 
-class ActivityScreen extends StatefulWidget {
-  
-
-  const ActivityScreen({
+class CafeDetails extends StatelessWidget {
+  const CafeDetails({
     super.key,
-    required this.activity,
+    required this.bestcafe,
   });
-  
-  final Activity activity;
-  @override
-  // ignore: library_private_types_in_public_api
-  _ActivityScreenState createState() => _ActivityScreenState();
-}
+  final BestCafe bestcafe;
 
-class _ActivityScreenState extends State<ActivityScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,11 +28,11 @@ class _ActivityScreenState extends State<ActivityScreen> {
                   ],
                 ),
                 child: Hero(
-                  tag: widget.activity.imagePath,
+                  tag: bestcafe.imagePath,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(20),
                     child: Image(
-                      image: AssetImage(widget.activity.imagePath),
+                      image: AssetImage(bestcafe.imagePath),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -86,7 +78,7 @@ class _ActivityScreenState extends State<ActivityScreen> {
                     Padding(
                       padding: const EdgeInsets.all(1.0),
                       child: Text(
-                        widget.activity.name,
+                        bestcafe.name,
                         style: const TextStyle(
                           letterSpacing: 1.2,
                           fontSize: 25,
@@ -101,13 +93,13 @@ class _ActivityScreenState extends State<ActivityScreen> {
                       child: Row(
                         children: <Widget>[
                           const Icon(
-                            Icons.merge_type_outlined,
-                            size: 25.0,
+                            Icons.star,
+                            size: 20.0,
                             color: Colors.white70,
                           ),
                           const SizedBox(width: 5.0),
                           Text(
-                            widget.activity.type,
+                            bestcafe.city,
                             style: const TextStyle(
                               fontSize: 20,
                               fontFamily: "Outfit-Regular",
@@ -134,7 +126,18 @@ class _ActivityScreenState extends State<ActivityScreen> {
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Text(
-              widget.activity.description,
+              bestcafe.range,
+              style: const TextStyle(
+                fontSize: 16,
+                fontFamily: "Outfit-Regular",
+                color: Color.fromARGB(255, 0, 0, 0),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Text(
+              bestcafe.description,
               style: const TextStyle(
                 fontSize: 16,
                 fontFamily: "Outfit-Regular",
