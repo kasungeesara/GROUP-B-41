@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/widgets/activity.dart';
+import 'package:flutter_application_1/widgets/hotels_carousel.dart';
 
-class ActivityScreen extends StatefulWidget {
-  final Activity activity;
+class HotelDetails extends StatefulWidget {
+  final Hotel hotel;
 
-  const ActivityScreen({required this.activity});
+  const HotelDetails({required this.hotel});
 
   @override
-  _ActivityScreenState createState() => _ActivityScreenState();
+  _HotelDetailsState createState() => _HotelDetailsState();
 }
 
-class _ActivityScreenState extends State<ActivityScreen> {
+class _HotelDetailsState extends State<HotelDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,11 +31,11 @@ class _ActivityScreenState extends State<ActivityScreen> {
                   ],
                 ),
                 child: Hero(
-                  tag: widget.activity.imagePath,
+                  tag: widget.hotel.imagePath,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(20),
                     child: Image(
-                      image: AssetImage(widget.activity.imagePath),
+                      image: AssetImage(widget.hotel.imagePath),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -81,7 +81,7 @@ class _ActivityScreenState extends State<ActivityScreen> {
                     Padding(
                       padding: const EdgeInsets.all(1.0),
                       child: Text(
-                        widget.activity.name,
+                        widget.hotel.name,
                         style: const TextStyle(
                           letterSpacing: 1.2,
                           fontSize: 25,
@@ -92,17 +92,17 @@ class _ActivityScreenState extends State<ActivityScreen> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(1.0),
+                      padding: EdgeInsets.all(1.0),
                       child: Row(
                         children: <Widget>[
                           const Icon(
-                            Icons.merge_type_outlined,
-                            size: 25.0,
+                            Icons.star,
+                            size: 20.0,
                             color: Colors.white70,
                           ),
                           const SizedBox(width: 5.0),
                           Text(
-                            widget.activity.type,
+                            widget.hotel.type,
                             style: const TextStyle(
                               fontSize: 20,
                               fontFamily: "Outfit-Regular",
@@ -129,7 +129,18 @@ class _ActivityScreenState extends State<ActivityScreen> {
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Text(
-              widget.activity.description,
+              widget.hotel.address,
+              style: const TextStyle(
+                fontSize: 16,
+                fontFamily: "Outfit-Regular",
+                color: Color.fromARGB(255, 0, 0, 0),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Text(
+              widget.hotel.tel,
               style: const TextStyle(
                 fontSize: 16,
                 fontFamily: "Outfit-Regular",

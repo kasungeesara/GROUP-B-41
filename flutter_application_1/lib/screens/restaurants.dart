@@ -1,25 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/cafe.dart';
+import 'package:flutter_application_1/screens/home_screen.dart';
 import 'package:flutter_application_1/screens/pub.dart';
-import 'package:flutter_application_1/screens/restaurants.dart';
-import 'package:flutter_application_1/widgets/bars.dart';
-import 'package:flutter_application_1/widgets/best_cafe.dart';
-import 'package:flutter_application_1/widgets/coffee.dart';
-import 'package:flutter_application_1/widgets/destination_carousel.dart';
 import 'package:flutter_application_1/widgets/family_style.dart';
 import 'package:flutter_application_1/widgets/fine_dining_carousel.dart';
-import 'package:flutter_application_1/widgets/hotels_carousel.dart';
-import 'package:flutter_application_1/widgets/pubs2.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class Restaurants extends StatefulWidget {
+  const Restaurants({super.key});
 
   @override
-  // ignore: library_private_types_in_public_api
-  _HomeScreenState createState() => _HomeScreenState();
+  State<Restaurants> createState() => _RestaurantsState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _RestaurantsState extends State<Restaurants> {
   int _selectedIndex = 0;
   int _currentTab = 0;
 
@@ -40,37 +33,37 @@ class _HomeScreenState extends State<HomeScreen> {
           setState(() {
             _selectedIndex = 0;
           });
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(builder: (context) => const HomeScreen()),
-          // );
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const HomeScreen()),
+          );
         }
         if (index == 1) {
           setState(() {
             _selectedIndex = 1;
           });
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(builder: (context) => const Restaurants()),
-          // );
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const Restaurants()),
+          );
         }
         if (index == 2) {
           setState(() {
             _selectedIndex = 2;
           });
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(builder: (context) => const cafe()),
-          // );
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const cafe()),
+          );
         }
         if (index == 3) {
           setState(() {
             _selectedIndex = 3;
           });
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(builder: (context) => const Pub()),
-          // );
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const Pub()),
+          );
         }
       },
       child: Container(
@@ -127,26 +120,11 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(
               height: 20.0,
             ),
-            if(_selectedIndex == 0)
-            const DestinationCarousel(),
-            if(_selectedIndex == 1)
-            const FineDineCarousel(),
-            if(_selectedIndex == 2)
-            const BestCafeCarousel(),
-            if(_selectedIndex == 3)
-            const PubCarousel(),
+            FineDineCarousel(),
             const SizedBox(
               height: 20.0,
             ),
-            if(_selectedIndex == 0)
-            const HotelCarousel(),
-            if(_selectedIndex == 1)
-            const FamilyStyleCarousel(),
-            if(_selectedIndex == 2)
-            const CoffeeCarousel(),
-            if(_selectedIndex == 3)
-            const BarCarousel(),
-
+            FamilyStyleCarousel(),
           ],
         ),
       ),

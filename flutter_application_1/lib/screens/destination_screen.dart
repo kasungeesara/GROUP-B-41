@@ -1,20 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Data/destinations.dart';
-import 'package:flutter_application_1/Models/destination.dart';
 import 'package:flutter_application_1/screens/activity_screen.dart';
-import 'package:flutter_application_1/Data/activities.dart';
-import 'package:flutter_application_1/Models/activity.dart';
+import 'package:flutter_application_1/widgets/activity.dart';
+import 'package:flutter_application_1/widgets/destination_carousel.dart';
 
 class DestinationScreen extends StatefulWidget {
   final Destination destination;
 
-  const DestinationScreen({
-    super.key,
-    required this.destination,
-  });
+  const DestinationScreen({required this.destination});
 
   @override
-  // ignore: library_private_types_in_public_api
   _DestinationScreenState createState() => _DestinationScreenState();
 }
 
@@ -28,15 +22,8 @@ class _DestinationScreenState extends State<DestinationScreen> {
     return Text(stars);
   }
 
-  List<Activity> availableActivities = [
-  ];
-
   @override
   Widget build(BuildContext context) {
-    final filteredActivities = activities
-        .where((act) => act.baseCity.contains(widget.destination.city))
-        .toList();
-
     return Scaffold(
       body: Column(
         children: <Widget>[
@@ -81,13 +68,13 @@ class _DestinationScreenState extends State<DestinationScreen> {
                       children: <Widget>[
                         IconButton(
                           onPressed: () => Navigator.pop(context),
-                          icon: const Icon(Icons.search_rounded),
+                          icon: Icon(Icons.search_rounded),
                           iconSize: 30,
                           color: Colors.white,
                         ),
                         IconButton(
                           onPressed: () => Navigator.pop(context),
-                          icon: const Icon(Icons.sort_rounded),
+                          icon: Icon(Icons.sort_rounded),
                           iconSize: 30,
                           color: Colors.white,
                         ),
@@ -152,11 +139,10 @@ class _DestinationScreenState extends State<DestinationScreen> {
           ),
           Expanded(
             child: ListView.builder(
-              padding: const EdgeInsets.only(top: 10.0, bottom: 15.0),
-              itemCount: filteredActivities.length,
+              padding: EdgeInsets.only(top: 10.0, bottom: 15.0),
+              itemCount: 10,
               itemBuilder: (BuildContext context, int index) {
-                Activity activity = filteredActivities[index];
-
+                Activity activity = activities[index];
                 return GestureDetector(
                   onTap: () => Navigator.push(
                     context,
@@ -169,7 +155,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
                   child: Stack(
                     children: [
                       Container(
-                        margin: const EdgeInsets.fromLTRB(40, 5, 20, 5),
+                        margin: EdgeInsets.fromLTRB(40, 5, 20, 5),
                         height: 170,
                         width: double.infinity,
                         decoration: BoxDecoration(
@@ -195,7 +181,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
                                     MainAxisAlignment.spaceBetween,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  SizedBox(
+                                  Container(
                                     width: 120.0,
                                     child: Text(
                                       activity.name,
@@ -240,12 +226,12 @@ class _DestinationScreenState extends State<DestinationScreen> {
                                 ),
                               ),
                               _buildRatingStars(activity.rating),
-                              const SizedBox(height: 5),
+                              SizedBox(height: 5),
                               Row(
                                 children: [
-                                  if (activity.startTimes.isNotEmpty) ...[
+                                  if (activity.startTimes.length > 0) ...[
                                     Container(
-                                      padding: const EdgeInsets.all(1.0),
+                                      padding: EdgeInsets.all(1.0),
                                       width: 60,
                                       decoration: BoxDecoration(
                                         color: const Color.fromARGB(
@@ -263,11 +249,11 @@ class _DestinationScreenState extends State<DestinationScreen> {
                                         ),
                                       ),
                                     ),
-                                    const SizedBox(width: 5.0),
+                                    SizedBox(width: 5.0),
                                   ],
                                   if (activity.startTimes.length > 1) ...[
                                     Container(
-                                      padding: const EdgeInsets.all(1.0),
+                                      padding: EdgeInsets.all(1.0),
                                       width: 60,
                                       decoration: BoxDecoration(
                                         color: const Color.fromARGB(

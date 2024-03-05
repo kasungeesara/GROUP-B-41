@@ -1,95 +1,69 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/destination_screen.dart';
-import 'package:flutter_application_1/screens/topDestination.dart';
+import 'package:flutter_application_1/screens/pub_all.dart';
 
-class Destination {
-  final String city;
-  final int? activities;
+class Pub {
+  final String name;
+  final String range;
   final String description;
-  final String province;
+  final String city;
   final String imagePath;
+  final String price;
 
-  Destination({
-    required this.city,
-    this.activities,
+  Pub({
+    required this.name,
+    required this.range,
     this.description = '',
-    required this.province,
+    required this.city,
     required this.imagePath,
+    required this.price,
   });
 }
 
-final List<Destination> destinations = [
-  Destination(
-    city: 'Kandy',
-    province: 'Central Province',
-    activities: 10,
-    description: 'Beautiful city with rich culture and history.',
-    imagePath: "assets/kandy.jpg",
-  ),
-  Destination(
-    city: 'Galle',
-    province: 'Southern Province',
-    activities: 6,
-    description: 'Historical city with a stunning fort.',
-    imagePath: "assets/galle2.jpg",
-  ),
-  Destination(
+final List<Pub> pubs = [
+  Pub(
+    name: 'Dutch Pub Colombo',
     city: 'Colombo',
-    province: 'Western Province',
-    activities: 10,
-    description: 'Capital city with vibrant nightlife and shopping.',
-    imagePath: "assets/cmb.jpg",
+    range: "Price Range",
+    description: 'Pub',
+    imagePath: "assets/pu1.jpg",
+    price: "\$5-\$100",
   ),
-  Destination(
-    city: 'Sigiriya',
-    province: 'Central Province',
-    activities: 4,
-    description: 'Home to the ancient rock fortress of Sigiriya.',
-    imagePath: "assets/sigiriya2.jpg",
+  Pub(
+    name: 'British Pub ',
+    city: 'Colombo',
+    range: "Price Range",
+    description: 'Pub',
+    imagePath: "assets/pu2.jpg",
+    price: "\$5-\$150",
   ),
-  Destination(
-      city: 'Nuwara Eliya',
-      province: 'Central Province',
-      activities: 7,
-      description:
-          'Scenic city known for its tea plantations and cool climate.',
-      imagePath: "assets/ne.jpg"),
-  Destination(
-      city: 'Anuradhapura',
-      province: 'North Central Province',
-      activities: 10,
-      description: 'Anuradhapura, a Ceylonese political and religious capital.',
-      imagePath: "assets/02.jpg"),
-  Destination(
-      city: 'Polonnaruwa',
-      province: 'North Central Province',
-      activities: 8,
-      description:
-          'Polonnaruwa was first military post in the Sinhalese kingdom.',
-      imagePath: "assets/pol.jpg"),
-  Destination(
-      city: 'Matara',
-      province: 'Southern Province',
-      activities: 5,
-      description: 'Matara is city on the southern coast of Southern Province.',
-      imagePath: "assets/mat.jpg"),
-  Destination(
-      city: 'Jaffna',
-      province: 'North Province',
-      activities: 10,
-      description: 'Jaffna is a city on the northern tip of Sri Lanka.',
-      imagePath: "assets/jaffna.jpg"),
-  Destination(
-      city: 'Trincomalee',
-      province: 'Estern Province',
-      activities: 7,
-      description:
-          'Trincomalee is a port city on the northeast coast of Sri Lanka.',
-      imagePath: "assets/tri.jpg"),
+  Pub(
+    name: 'Cheers Pub',
+    city: 'Colombo',
+    range: "Price Range",
+    description: 'Pub',
+    imagePath: "assets/pu3.jpg",
+    price: "\$4-\$120",
+  ),
+  Pub(
+    name: 'Playtrix Pub',
+    city: 'Colombo',
+    range: "Price Range",
+    description: 'Pub',
+    imagePath: "assets/pu4.jpg",
+    price: "\$3-\$160",
+  ),
+  Pub(
+    name: 'The REPUBLK',
+    city: 'Colombo',
+    range: "Price Range",
+    description: 'Pub',
+    imagePath: "assets/pu5.jpg",
+    price: "\$6-\$170",
+  ),
 ];
 
-class DestinationCarousel extends StatelessWidget {
-  const DestinationCarousel({super.key});
+class PubCarousel extends StatelessWidget {
+  const PubCarousel({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -101,7 +75,7 @@ class DestinationCarousel extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               const Text(
-                "Top Destinations",
+                "Pubs",
                 style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
@@ -113,7 +87,7 @@ class DestinationCarousel extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (ctx) => const TopDestination(),
+                      builder: (ctx) => const PubAll(),
                     ),
                   );
                 },
@@ -137,16 +111,8 @@ class DestinationCarousel extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemCount: 5,
             itemBuilder: (BuildContext context, int index) {
-              Destination destination = destinations[index];
+              Pub pub2 = pubs[index];
               return GestureDetector(
-                onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (_) => DestinationScreen(
-                      destination: destination,
-                    ),
-                  ),
-                ),
                 child: Container(
                   margin: const EdgeInsets.all(10),
                   width: 210,
@@ -176,7 +142,7 @@ class DestinationCarousel extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Text(
-                                  "Activities: ${destination.activities}",
+                                  pub2.range,
                                   style: const TextStyle(
                                     fontFamily: "Outfit-Regular",
                                     fontWeight: FontWeight.bold,
@@ -186,7 +152,7 @@ class DestinationCarousel extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  destination.description,
+                                  pub2.price,
                                   softWrap: true,
                                   overflow: TextOverflow.ellipsis,
                                   style: const TextStyle(
@@ -217,13 +183,13 @@ class DestinationCarousel extends StatelessWidget {
                         child: Stack(
                           children: <Widget>[
                             Hero(
-                              tag: destination.imagePath,
+                              tag: pub2.imagePath,
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(20.0),
                                 child: Image(
                                   height: 180.0,
                                   width: 180.0,
-                                  image: AssetImage(destination.imagePath),
+                                  image: AssetImage(pub2.imagePath),
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -237,10 +203,10 @@ class DestinationCarousel extends StatelessWidget {
                                   Padding(
                                     padding: const EdgeInsets.all(1.0),
                                     child: Text(
-                                      destination.city,
+                                      pub2.name,
                                       style: const TextStyle(
                                         letterSpacing: 1.2,
-                                        fontSize: 24,
+                                        fontSize: 17,
                                         fontWeight: FontWeight.bold,
                                         fontFamily: "Outfit-Regular",
                                         color:
@@ -260,7 +226,7 @@ class DestinationCarousel extends StatelessWidget {
                                         ),
                                         const SizedBox(width: 5.0),
                                         Text(
-                                          destination.province,
+                                          pub2.city,
                                           style: const TextStyle(
                                             fontSize: 16,
                                             fontFamily: "Outfit-Regular",
