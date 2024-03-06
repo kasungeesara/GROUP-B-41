@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/cafe.dart';
-import 'package:flutter_application_1/screens/pub.dart';
-import 'package:flutter_application_1/screens/restaurants.dart';
+import 'package:flutter_application_1/screens/profile.dart';
 import 'package:flutter_application_1/widgets/bars.dart';
 import 'package:flutter_application_1/widgets/best_cafe.dart';
 import 'package:flutter_application_1/widgets/coffee.dart';
@@ -22,6 +20,14 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
   int _currentTab = 0;
+
+
+void _navigateToProfileScreen(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const ProfileScreen()),
+    );
+  }
 
   final List<IconData> _icons = [
     Icons.directions_car,
@@ -170,6 +176,9 @@ class _HomeScreenState extends State<HomeScreen> {
           onTap: (int value) {
             setState(() {
               _currentTab = value;
+              if (value == 2) { 
+                _navigateToProfileScreen(context); 
+              }
             });
           },
           items: const [

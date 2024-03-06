@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/pub_all.dart';
+import 'package:flutter_application_1/screens/pub_details.dart';
 
-class Pub {
+class Pubs {
   final String name;
   final String range;
   final String description;
@@ -9,7 +10,7 @@ class Pub {
   final String imagePath;
   final String price;
 
-  Pub({
+  Pubs({
     required this.name,
     required this.range,
     this.description = '',
@@ -19,8 +20,8 @@ class Pub {
   });
 }
 
-final List<Pub> pubs = [
-  Pub(
+final List<Pubs> pubs = [
+  Pubs(
     name: 'Dutch Pub Colombo',
     city: 'Colombo',
     range: "Price Range",
@@ -28,7 +29,7 @@ final List<Pub> pubs = [
     imagePath: "assets/pu1.jpg",
     price: "\$5-\$100",
   ),
-  Pub(
+  Pubs(
     name: 'British Pub ',
     city: 'Colombo',
     range: "Price Range",
@@ -36,7 +37,7 @@ final List<Pub> pubs = [
     imagePath: "assets/pu2.jpg",
     price: "\$5-\$150",
   ),
-  Pub(
+  Pubs(
     name: 'Cheers Pub',
     city: 'Colombo',
     range: "Price Range",
@@ -44,7 +45,7 @@ final List<Pub> pubs = [
     imagePath: "assets/pu3.jpg",
     price: "\$4-\$120",
   ),
-  Pub(
+  Pubs(
     name: 'Playtrix Pub',
     city: 'Colombo',
     range: "Price Range",
@@ -52,7 +53,7 @@ final List<Pub> pubs = [
     imagePath: "assets/pu4.jpg",
     price: "\$3-\$160",
   ),
-  Pub(
+  Pubs(
     name: 'The REPUBLK',
     city: 'Colombo',
     range: "Price Range",
@@ -111,8 +112,18 @@ class PubCarousel extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemCount: 5,
             itemBuilder: (BuildContext context, int index) {
-              Pub pub2 = pubs[index];
+              Pubs pub2 = pubs[index];
               return GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => PubDetails(
+                        pubs: pubs[index],
+                      ),
+                    ),
+                  );
+                },
                 child: Container(
                   margin: const EdgeInsets.all(10),
                   width: 210,

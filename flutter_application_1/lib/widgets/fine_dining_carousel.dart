@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/fine_dine_all.dart';
+import 'package:flutter_application_1/screens/fine_dine_details.dart';
 
 class FineDine {
   final String name;
@@ -113,6 +114,14 @@ class FineDineCarousel extends StatelessWidget {
             itemBuilder: (BuildContext context, int index) {
               FineDine fineDineItem = fineDines[index];
               return GestureDetector(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => FineDineDetails(
+                      fineDine: fineDines[index],
+                    ),
+                  ),
+                ),
                 child: Container(
                   margin: const EdgeInsets.all(10),
                   width: 210,

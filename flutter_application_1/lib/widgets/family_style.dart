@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/family_dine_details.dart';
 import 'package:flutter_application_1/screens/family_style_all.dart';
 
 class FamilyStyle {
@@ -113,6 +114,14 @@ class FamilyStyleCarousel extends StatelessWidget {
             itemBuilder: (BuildContext context, int index) {
               FamilyStyle familyStyleItem = familyStyles[index];
               return GestureDetector(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => FamilyDineDetails(
+                     familyStyles: familyStyles[index],
+                    ),
+                  ),
+                ),
                 child: Container(
                   margin: const EdgeInsets.all(10),
                   width: 210,

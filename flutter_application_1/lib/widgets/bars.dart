@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/bar_all.dart';
+import 'package:flutter_application_1/screens/bars_details.dart';
 
 class Bar {
   final String name;
@@ -113,6 +114,16 @@ class BarCarousel extends StatelessWidget {
             itemBuilder: (BuildContext context, int index) {
               Bar bar2 = bars[index];
               return GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => BarDetails(
+                        bars: bars[index],
+                      ),
+                    ),
+                  );
+                },
                 child: Container(
                   margin: const EdgeInsets.all(10),
                   width: 210,
