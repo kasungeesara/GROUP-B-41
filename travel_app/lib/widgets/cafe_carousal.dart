@@ -1,16 +1,73 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/Data/destinations.dart';
-import 'package:travel_app/Models/destination.dart';
-import 'package:travel_app/screens/destination/destination_list.dart';
-import 'package:travel_app/screens/destination/destination_all.dart';
+import 'package:travel_app/screens/cafe/bestcafe_all.dart';
+import 'package:travel_app/screens/cafe/cafe_details.dart';
 
-class DestinationCarousel extends StatelessWidget {
-  const DestinationCarousel({super.key});
+class BestCafe {
+  final String name;
+  final String range;
+  final String description;
+  final String city;
+  final String imagePath;
+  final String price;
 
-  
+  BestCafe({
+    required this.name,
+    required this.range,
+    this.description = '',
+    required this.city,
+    required this.imagePath,
+    required this.price,
+  });
+}
+
+final List<BestCafe> bestCafes = [
+  BestCafe(
+    name: 'Cafe Kumbuk',
+    city: 'Colombo',
+    range: "Price Range",
+    description: 'Cafe, Healthy',
+    imagePath: "assets/cafe11.png",
+    price: "\$2-\$3",
+  ),
+  BestCafe(
+    name: "The t-Lounge",
+    city: 'Colombo',
+    range: "Price Range",
+    description: 'Cafe, Sri Lankan',
+    imagePath: "assets/cafe2.jpg",
+    price: "\$2-\$3",
+  ),
+  BestCafe(
+    name: 'Seed Cafe',
+    city: 'Colombo',
+    range: "Price Range",
+    description: 'Cafe',
+    imagePath: "assets/cafe3.jpg",
+    price: "\$2-\$3",
+  ),
+  BestCafe(
+    name: 'Secret Alley',
+    city: 'Kandy',
+    range: "Price Range",
+    description: 'Cafe',
+    imagePath: "assets/cafe4.jpg",
+    price: "\$2-\$3",
+  ),
+  BestCafe(
+    name: 'Cafe Nuwara',
+    city: 'Kandy',
+    range: "Price Range",
+    description: 'Cafe',
+    imagePath: "assets/cafe5.jpg",
+    price: "\$2-\$3",
+  ),
+];
+
+class BestCafeCarousel extends StatelessWidget {
+  const BestCafeCarousel({super.key});
+
   @override
   Widget build(BuildContext context) {
-
     return Column(
       children: <Widget>[
         Padding(
@@ -19,7 +76,7 @@ class DestinationCarousel extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               const Text(
-                "Top Destinations",
+                "Best Cafés",
                 style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
@@ -31,7 +88,7 @@ class DestinationCarousel extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (ctx) => const TopDestination(),
+                      builder: (ctx) => const CafeAll(),
                     ),
                   );
                 },
@@ -53,16 +110,15 @@ class DestinationCarousel extends StatelessWidget {
           height: 300,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            itemCount: 5,
+            itemCount: bestCafes.length,
             itemBuilder: (BuildContext context, int index) {
-              Destination destination = destinations[index];
-
+              BestCafe bestcafe = bestCafes[index];
               return GestureDetector(
                 onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (_) => DestinationScreen(
-                      destination: destination,
+                    builder: (_) => CafeDetails(
+                      bestcafe: bestCafes[index],
                     ),
                   ),
                 ),
@@ -95,22 +151,22 @@ class DestinationCarousel extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Text(
-                                  "Activities: ${destination.activities}",
+                                  bestcafe.range,
                                   style: const TextStyle(
                                     fontFamily: "Outfit-Regular",
                                     fontWeight: FontWeight.bold,
                                     letterSpacing: 1.2,
-                                    fontSize: 20,
+                                    fontSize: 17,
                                     color: Colors.black,
                                   ),
                                 ),
                                 Text(
-                                  destination.description,
+                                  bestcafe.price,
                                   softWrap: true,
                                   overflow: TextOverflow.ellipsis,
                                   style: const TextStyle(
                                     letterSpacing: 1.2,
-                                    fontSize: 12,
+                                    fontSize: 15,
                                     fontWeight: FontWeight.bold,
                                     fontFamily: "Outfit-Regular",
                                     color: Color.fromARGB(255, 145, 145, 145),
@@ -136,13 +192,13 @@ class DestinationCarousel extends StatelessWidget {
                         child: Stack(
                           children: <Widget>[
                             Hero(
-                              tag: destination.imagePath,
+                              tag: bestcafe.imagePath,
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(20.0),
                                 child: Image(
                                   height: 180.0,
                                   width: 180.0,
-                                  image: AssetImage(destination.imagePath),
+                                  image: AssetImage(bestcafe.imagePath),
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -156,10 +212,10 @@ class DestinationCarousel extends StatelessWidget {
                                   Padding(
                                     padding: const EdgeInsets.all(1.0),
                                     child: Text(
-                                      destination.city,
+                                      bestcafe.name,
                                       style: const TextStyle(
                                         letterSpacing: 1.2,
-                                        fontSize: 24,
+                                        fontSize: 22,
                                         fontWeight: FontWeight.bold,
                                         fontFamily: "Outfit-Regular",
                                         color:
@@ -179,7 +235,7 @@ class DestinationCarousel extends StatelessWidget {
                                         ),
                                         const SizedBox(width: 5.0),
                                         Text(
-                                          destination.province,
+                                          bestcafe.city,
                                           style: const TextStyle(
                                             fontSize: 16,
                                             fontFamily: "Outfit-Regular",

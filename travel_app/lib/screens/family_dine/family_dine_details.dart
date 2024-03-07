@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/widgets/family_style.dart';
+import 'package:travel_app/Models/family_dine.dart';
 
 class FamilyDineDetails extends StatelessWidget {
   const FamilyDineDetails({
     super.key,
     required this.familyStyles,
   });
-  final FamilyStyle familyStyles;
+  final FamilyDine familyStyles;
 
   @override
   Widget build(BuildContext context) {

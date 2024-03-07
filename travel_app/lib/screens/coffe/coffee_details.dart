@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/widgets/family_style.dart';
+import 'package:travel_app/Models/coffe.dart';
 
-class FamilyDineDetails extends StatelessWidget {
-  const FamilyDineDetails({
-    super.key,
-    required this.familyStyles,
-  });
-  final FamilyStyle familyStyles;
+
+class CoffeeDetails extends StatelessWidget {
+  const CoffeeDetails({required this.coffee});
+  final Coffee coffee;
 
   @override
   Widget build(BuildContext context) {
@@ -28,11 +26,11 @@ class FamilyDineDetails extends StatelessWidget {
                   ],
                 ),
                 child: Hero(
-                  tag: familyStyles.imagePath,
+                  tag: coffee.imagePath,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(20),
                     child: Image(
-                      image: AssetImage(familyStyles.imagePath),
+                      image: AssetImage(coffee.imagePath),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -78,7 +76,7 @@ class FamilyDineDetails extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(1.0),
                       child: Text(
-                        familyStyles.name,
+                        coffee.name,
                         style: const TextStyle(
                           letterSpacing: 1.2,
                           fontSize: 25,
@@ -99,7 +97,7 @@ class FamilyDineDetails extends StatelessWidget {
                           ),
                           const SizedBox(width: 5.0),
                           Text(
-                            familyStyles.city,
+                            coffee.city,
                             style: const TextStyle(
                               fontSize: 20,
                               fontFamily: "Outfit-Regular",
@@ -126,7 +124,7 @@ class FamilyDineDetails extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Text(
-              familyStyles.range,
+              coffee.range,
               style: const TextStyle(
                 fontSize: 16,
                 fontFamily: "Outfit-Regular",
@@ -137,7 +135,7 @@ class FamilyDineDetails extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Text(
-              familyStyles.description,
+              coffee.description,
               style: const TextStyle(
                 fontSize: 16,
                 fontFamily: "Outfit-Regular",

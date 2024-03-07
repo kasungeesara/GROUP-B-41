@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/widgets/best_cafe.dart';
+import 'package:travel_app/widgets/cafe_carousal.dart';
 
 class CafeDetails extends StatelessWidget {
-  const CafeDetails({
-    super.key,
-    required this.bestcafe,
-  });
+  const CafeDetails({Key? key, required this.bestcafe});
   final BestCafe bestcafe;
 
   @override

@@ -1,70 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/screens/bestcafe_all.dart';
-import 'package:travel_app/screens/cafe_details.dart';
+import 'package:travel_app/Data/bars.dart';
+import 'package:travel_app/Models/bar.dart';
+import 'package:travel_app/screens/bar/bar_all.dart';
+import 'package:travel_app/screens/bar/bars_details.dart';
 
-class BestCafe {
-  final String name;
-  final String range;
-  final String description;
-  final String city;
-  final String imagePath;
-  final String price;
 
-  BestCafe({
-    required this.name,
-    required this.range,
-    this.description = '',
-    required this.city,
-    required this.imagePath,
-    required this.price,
-  });
-}
-
-final List<BestCafe> bestCafes = [
-  BestCafe(
-    name: 'Cafe Kumbuk',
-    city: 'Colombo',
-    range: "Price Range",
-    description: 'Cafe, Healthy',
-    imagePath: "assets/cafe11.png",
-    price: "\$2-\$3",
-  ),
-  BestCafe(
-    name: "The t-Lounge",
-    city: 'Colombo',
-    range: "Price Range",
-    description: 'Cafe, Sri Lankan',
-    imagePath: "assets/cafe2.jpg",
-    price: "\$2-\$3",
-  ),
-  BestCafe(
-    name: 'Seed Cafe',
-    city: 'Colombo',
-    range: "Price Range",
-    description: 'Cafe',
-    imagePath: "assets/cafe3.jpg",
-    price: "\$2-\$3",
-  ),
-  BestCafe(
-    name: 'Secret Alley',
-    city: 'Kandy',
-    range: "Price Range",
-    description: 'Cafe',
-    imagePath: "assets/cafe4.jpg",
-    price: "\$2-\$3",
-  ),
-  BestCafe(
-    name: 'Cafe Nuwara',
-    city: 'Kandy',
-    range: "Price Range",
-    description: 'Cafe',
-    imagePath: "assets/cafe5.jpg",
-    price: "\$2-\$3",
-  ),
-];
-
-class BestCafeCarousel extends StatelessWidget {
-  const BestCafeCarousel({super.key});
+class BarCarousel extends StatelessWidget {
+  const BarCarousel({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +18,7 @@ class BestCafeCarousel extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               const Text(
-                "Best Cafés",
+                "Bars",
                 style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
@@ -88,7 +30,7 @@ class BestCafeCarousel extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (ctx) => const CafeAll(),
+                      builder: (ctx) => const BarFull(),
                     ),
                   );
                 },
@@ -110,18 +52,20 @@ class BestCafeCarousel extends StatelessWidget {
           height: 300,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            itemCount: bestCafes.length,
+            itemCount: 5,
             itemBuilder: (BuildContext context, int index) {
-              BestCafe bestcafe = bestCafes[index];
+              Bar bar2 = bars[index];
               return GestureDetector(
-                onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (_) => CafeDetails(
-                      bestcafe: bestCafes[index],
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => BarDetails(
+                        bars: bars[index],
+                      ),
                     ),
-                  ),
-                ),
+                  );
+                },
                 child: Container(
                   margin: const EdgeInsets.all(10),
                   width: 210,
@@ -151,22 +95,22 @@ class BestCafeCarousel extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Text(
-                                  bestcafe.range,
+                                  bar2.range,
                                   style: const TextStyle(
                                     fontFamily: "Outfit-Regular",
                                     fontWeight: FontWeight.bold,
                                     letterSpacing: 1.2,
-                                    fontSize: 17,
+                                    fontSize: 20,
                                     color: Colors.black,
                                   ),
                                 ),
                                 Text(
-                                  bestcafe.price,
+                                  bar2.price,
                                   softWrap: true,
                                   overflow: TextOverflow.ellipsis,
                                   style: const TextStyle(
                                     letterSpacing: 1.2,
-                                    fontSize: 15,
+                                    fontSize: 12,
                                     fontWeight: FontWeight.bold,
                                     fontFamily: "Outfit-Regular",
                                     color: Color.fromARGB(255, 145, 145, 145),
@@ -192,13 +136,13 @@ class BestCafeCarousel extends StatelessWidget {
                         child: Stack(
                           children: <Widget>[
                             Hero(
-                              tag: bestcafe.imagePath,
+                              tag: bar2.imagePath,
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(20.0),
                                 child: Image(
                                   height: 180.0,
                                   width: 180.0,
-                                  image: AssetImage(bestcafe.imagePath),
+                                  image: AssetImage(bar2.imagePath),
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -212,10 +156,10 @@ class BestCafeCarousel extends StatelessWidget {
                                   Padding(
                                     padding: const EdgeInsets.all(1.0),
                                     child: Text(
-                                      bestcafe.name,
+                                      bar2.name,
                                       style: const TextStyle(
                                         letterSpacing: 1.2,
-                                        fontSize: 22,
+                                        fontSize: 18,
                                         fontWeight: FontWeight.bold,
                                         fontFamily: "Outfit-Regular",
                                         color:
@@ -235,7 +179,7 @@ class BestCafeCarousel extends StatelessWidget {
                                         ),
                                         const SizedBox(width: 5.0),
                                         Text(
-                                          bestcafe.city,
+                                          bar2.city,
                                           style: const TextStyle(
                                             fontSize: 16,
                                             fontFamily: "Outfit-Regular",

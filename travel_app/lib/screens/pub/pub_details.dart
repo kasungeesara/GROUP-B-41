@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/widgets/family_style.dart';
+import 'package:travel_app/Models/pub.dart';
 
-class FamilyDineDetails extends StatelessWidget {
-  const FamilyDineDetails({
-    super.key,
-    required this.familyStyles,
-  });
-  final FamilyStyle familyStyles;
+class PubDetails extends StatelessWidget {
+  const PubDetails({super.key, required this.pubs});
+  final Pubs pubs;
 
   @override
   Widget build(BuildContext context) {
@@ -28,11 +25,11 @@ class FamilyDineDetails extends StatelessWidget {
                   ],
                 ),
                 child: Hero(
-                  tag: familyStyles.imagePath,
+                  tag: pubs.name,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(20),
                     child: Image(
-                      image: AssetImage(familyStyles.imagePath),
+                      image: AssetImage(pubs.imagePath),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -78,7 +75,7 @@ class FamilyDineDetails extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(1.0),
                       child: Text(
-                        familyStyles.name,
+                        pubs.name,
                         style: const TextStyle(
                           letterSpacing: 1.2,
                           fontSize: 25,
@@ -99,7 +96,7 @@ class FamilyDineDetails extends StatelessWidget {
                           ),
                           const SizedBox(width: 5.0),
                           Text(
-                            familyStyles.city,
+                            pubs.city,
                             style: const TextStyle(
                               fontSize: 20,
                               fontFamily: "Outfit-Regular",
@@ -126,7 +123,7 @@ class FamilyDineDetails extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Text(
-              familyStyles.range,
+              pubs.range,
               style: const TextStyle(
                 fontSize: 16,
                 fontFamily: "Outfit-Regular",
@@ -137,7 +134,7 @@ class FamilyDineDetails extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Text(
-              familyStyles.description,
+              pubs.description,
               style: const TextStyle(
                 fontSize: 16,
                 fontFamily: "Outfit-Regular",

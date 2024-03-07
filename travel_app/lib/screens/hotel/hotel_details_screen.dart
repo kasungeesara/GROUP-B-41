@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/widgets/family_style.dart';
+import 'package:travel_app/Models/hotel.dart';
 
-class FamilyDineDetails extends StatelessWidget {
-  const FamilyDineDetails({
+class HotelDetails extends StatefulWidget {
+  
+  const HotelDetails({
     super.key,
-    required this.familyStyles,
+    required this.hotel,
   });
-  final FamilyStyle familyStyles;
 
+  final Hotel hotel;
+
+  @override
+  _HotelDetailsState createState() => _HotelDetailsState();
+}
+
+class _HotelDetailsState extends State<HotelDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,11 +35,11 @@ class FamilyDineDetails extends StatelessWidget {
                   ],
                 ),
                 child: Hero(
-                  tag: familyStyles.imagePath,
+                  tag: widget.hotel.imagePath,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(20),
                     child: Image(
-                      image: AssetImage(familyStyles.imagePath),
+                      image: AssetImage(widget.hotel.imagePath),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -78,7 +85,7 @@ class FamilyDineDetails extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(1.0),
                       child: Text(
-                        familyStyles.name,
+                        widget.hotel.name,
                         style: const TextStyle(
                           letterSpacing: 1.2,
                           fontSize: 25,
@@ -89,7 +96,7 @@ class FamilyDineDetails extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(1.0),
+                      padding: EdgeInsets.all(1.0),
                       child: Row(
                         children: <Widget>[
                           const Icon(
@@ -99,7 +106,7 @@ class FamilyDineDetails extends StatelessWidget {
                           ),
                           const SizedBox(width: 5.0),
                           Text(
-                            familyStyles.city,
+                            widget.hotel.type,
                             style: const TextStyle(
                               fontSize: 20,
                               fontFamily: "Outfit-Regular",
@@ -126,7 +133,7 @@ class FamilyDineDetails extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Text(
-              familyStyles.range,
+              widget.hotel.address,
               style: const TextStyle(
                 fontSize: 16,
                 fontFamily: "Outfit-Regular",
@@ -137,7 +144,7 @@ class FamilyDineDetails extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Text(
-              familyStyles.description,
+              widget.hotel.tel,
               style: const TextStyle(
                 fontSize: 16,
                 fontFamily: "Outfit-Regular",

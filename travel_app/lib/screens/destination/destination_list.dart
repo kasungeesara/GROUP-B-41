@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/Models/destination.dart';
-import 'package:travel_app/screens/activity_screen.dart';
+import 'package:travel_app/screens/destination/destination_activity.dart';
 import 'package:travel_app/Data/activities.dart';
 import 'package:travel_app/Models/activity.dart';
 

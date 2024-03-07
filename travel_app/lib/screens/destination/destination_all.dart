@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/Data/destinations.dart';
 import 'package:travel_app/Models/destination.dart';
-import 'package:travel_app/screens/destination_screen.dart';
+import 'package:travel_app/screens/destination/destination_list.dart';
 
 class TopDestination extends StatefulWidget {
   const TopDestination({super.key});

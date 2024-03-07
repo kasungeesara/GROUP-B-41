@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/onbording.dart';
+import 'package:travel_app/screens/onbording.dart';
 
 void main() => runApp(MyApp());
 

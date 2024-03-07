@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/widgets/family_style.dart';
+import 'package:travel_app/Models/fine_dine.dart';
 
-class FamilyDineDetails extends StatelessWidget {
-  const FamilyDineDetails({
+class FineDineDetails extends StatelessWidget {
+  const FineDineDetails({
     super.key,
-    required this.familyStyles,
+    required this.fineDine,
   });
-  final FamilyStyle familyStyles;
+  
+  final FineDine fineDine;
 
   @override
   Widget build(BuildContext context) {
@@ -28,11 +29,11 @@ class FamilyDineDetails extends StatelessWidget {
                   ],
                 ),
                 child: Hero(
-                  tag: familyStyles.imagePath,
+                  tag: fineDine.imagePath,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(20),
                     child: Image(
-                      image: AssetImage(familyStyles.imagePath),
+                      image: AssetImage(fineDine.imagePath),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -78,7 +79,7 @@ class FamilyDineDetails extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(1.0),
                       child: Text(
-                        familyStyles.name,
+                        fineDine.name,
                         style: const TextStyle(
                           letterSpacing: 1.2,
                           fontSize: 25,
@@ -99,7 +100,7 @@ class FamilyDineDetails extends StatelessWidget {
                           ),
                           const SizedBox(width: 5.0),
                           Text(
-                            familyStyles.city,
+                            fineDine.city,
                             style: const TextStyle(
                               fontSize: 20,
                               fontFamily: "Outfit-Regular",
@@ -126,7 +127,7 @@ class FamilyDineDetails extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Text(
-              familyStyles.range,
+              fineDine.range,
               style: const TextStyle(
                 fontSize: 16,
                 fontFamily: "Outfit-Regular",
@@ -137,7 +138,7 @@ class FamilyDineDetails extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Text(
-              familyStyles.description,
+              fineDine.description,
               style: const TextStyle(
                 fontSize: 16,
                 fontFamily: "Outfit-Regular",

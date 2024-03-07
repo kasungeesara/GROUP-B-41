@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/widgets/bar_carousal.dart';
+import 'package:travel_app/widgets/cafe_carousal.dart';
+import 'package:travel_app/widgets/coffe_carousal.dart';
 import 'package:travel_app/widgets/destination_carousel.dart';
+import 'package:travel_app/widgets/family_dining_carosal.dart';
+import 'package:travel_app/widgets/fine_dining_carousel.dart';
 import 'package:travel_app/widgets/hotels_carousel.dart';
+import 'package:travel_app/widgets/pub_carousal.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -16,9 +22,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final List<IconData> _icons = [
     Icons.directions_car,
-    Icons.directions_walk,
+    Icons.restaurant,
     Icons.fastfood,
-    Icons.coffee,
+    Icons.liquor,
   ];
 
   Widget _buildIcon(int index) {
@@ -82,11 +88,17 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(
               height: 20.0,
             ),
-            const DestinationCarousel(),
+            if (_selectedIndex == 0) const DestinationCarousel(),
+            if (_selectedIndex == 1) const FineDineCarousel(),
+            if (_selectedIndex == 2) const BestCafeCarousel(),
+            if (_selectedIndex == 3) const PubCarousel(),
             const SizedBox(
               height: 20.0,
             ),
-            const HotelCarousel(),
+            if (_selectedIndex == 0) const HotelCarousel(),
+            if (_selectedIndex == 1) const FamilyStyleCarousel(),
+            if (_selectedIndex == 2) const CoffeeCarousel(),
+            if (_selectedIndex == 3) const BarCarousel(),
           ],
         ),
       ),

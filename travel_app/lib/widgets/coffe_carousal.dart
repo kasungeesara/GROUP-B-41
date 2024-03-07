@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/Data/destinations.dart';
-import 'package:travel_app/Models/destination.dart';
-import 'package:travel_app/screens/destination/destination_list.dart';
-import 'package:travel_app/screens/destination/destination_all.dart';
+import 'package:travel_app/Data/coffies.dart';
+import 'package:travel_app/Models/coffe.dart';
+import 'package:travel_app/screens/coffe/coffe_all.dart';
+import 'package:travel_app/screens/coffe/coffee_details.dart';
 
-class DestinationCarousel extends StatelessWidget {
-  const DestinationCarousel({super.key});
+class CoffeeCarousel extends StatelessWidget {
+  const CoffeeCarousel({super.key});
 
-  
   @override
   Widget build(BuildContext context) {
-
     return Column(
       children: <Widget>[
         Padding(
@@ -19,7 +17,7 @@ class DestinationCarousel extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               const Text(
-                "Top Destinations",
+                "Coffee Shops",
                 style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
@@ -31,7 +29,7 @@ class DestinationCarousel extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (ctx) => const TopDestination(),
+                      builder: (ctx) => const CoffeeAll(),
                     ),
                   );
                 },
@@ -55,17 +53,18 @@ class DestinationCarousel extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemCount: 5,
             itemBuilder: (BuildContext context, int index) {
-              Destination destination = destinations[index];
-
+              Coffee topCoffee = coffeetea[index];
               return GestureDetector(
-                onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (_) => DestinationScreen(
-                      destination: destination,
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => CoffeeDetails(
+                        coffee: coffeetea[index],
+                      ),
                     ),
-                  ),
-                ),
+                  );
+                },
                 child: Container(
                   margin: const EdgeInsets.all(10),
                   width: 210,
@@ -95,7 +94,7 @@ class DestinationCarousel extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Text(
-                                  "Activities: ${destination.activities}",
+                                  topCoffee.range,
                                   style: const TextStyle(
                                     fontFamily: "Outfit-Regular",
                                     fontWeight: FontWeight.bold,
@@ -105,7 +104,7 @@ class DestinationCarousel extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  destination.description,
+                                  topCoffee.price,
                                   softWrap: true,
                                   overflow: TextOverflow.ellipsis,
                                   style: const TextStyle(
@@ -136,13 +135,13 @@ class DestinationCarousel extends StatelessWidget {
                         child: Stack(
                           children: <Widget>[
                             Hero(
-                              tag: destination.imagePath,
+                              tag: topCoffee.imagePath,
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(20.0),
                                 child: Image(
                                   height: 180.0,
                                   width: 180.0,
-                                  image: AssetImage(destination.imagePath),
+                                  image: AssetImage(topCoffee.imagePath),
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -156,10 +155,10 @@ class DestinationCarousel extends StatelessWidget {
                                   Padding(
                                     padding: const EdgeInsets.all(1.0),
                                     child: Text(
-                                      destination.city,
+                                      topCoffee.name,
                                       style: const TextStyle(
                                         letterSpacing: 1.2,
-                                        fontSize: 24,
+                                        fontSize: 18,
                                         fontWeight: FontWeight.bold,
                                         fontFamily: "Outfit-Regular",
                                         color:
@@ -179,7 +178,7 @@ class DestinationCarousel extends StatelessWidget {
                                         ),
                                         const SizedBox(width: 5.0),
                                         Text(
-                                          destination.province,
+                                          topCoffee.city,
                                           style: const TextStyle(
                                             fontSize: 16,
                                             fontFamily: "Outfit-Regular",
