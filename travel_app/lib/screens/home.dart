@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/screens/profile.dart';
+import 'package:travel_app/widgets/bar_carousal.dart';
 import 'package:travel_app/widgets/cafe_carousal.dart';
 import 'package:travel_app/widgets/coffe_carousal.dart';
 import 'package:travel_app/widgets/destination_carousel.dart';
@@ -122,12 +123,16 @@ class _HomeScreenState extends State<HomeScreen> {
             if (_selectedIndex == 2) const FineDineCarousel(),
             if (_selectedIndex == 3) const BestCafeCarousel(),
             const SizedBox(
-              height: 20.0,
+              height: 10.0,
             ),
             if (_selectedIndex == 0) const DestinationCarousel(),
             if (_selectedIndex == 1) const HotelCarousel(),
             if (_selectedIndex == 2) const PubCarousel(),
             if (_selectedIndex == 3) const CoffeeCarousel(),
+            const SizedBox(
+              height: 10.0,
+            ),
+            if (_selectedIndex == 2) const BarCarousel(),
           ],
         ),
       ),
