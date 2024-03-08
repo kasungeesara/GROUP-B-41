@@ -1,36 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/Data/city_based_hotels.dart';
 import 'package:travel_app/Models/city_based_hotels.dart';
+import 'package:travel_app/Models/hotel_city.dart';
+import 'package:travel_app/screens/city_hotel/ciyt_hotel_details.dart';
 
-class CityHotelScreen extends StatefulWidget {
-  final CityBasedHotel citybasedhotels;
+class HotelPlaceListScreen extends StatefulWidget {
+  const HotelPlaceListScreen({super.key, required this.hotel});
 
-  const CityHotelScreen({
-    super.key,
-    required this.citybasedhotels,
-  });
+  final CityHotel hotel;
 
   @override
-  // ignore: library_private_types_in_public_api
-  _CityHotelScreenState createState() => _CityHotelScreenState();
+  State<HotelPlaceListScreen> createState() => _HotelPlaceListScreenState();
 }
 
-class _CityHotelScreenState extends State<CityHotelScreen> {
-  Text _buildRatingStars(int rating) {
-    String stars = '';
-    for (int i = 0; i < rating; i++) {
-      stars += '★ ';
-    }
-    stars.trim();
-    return Text(stars);
-  }
-
-  List<CityBasedHotel> availableCityBasedHotels = [];
+class _HotelPlaceListScreenState extends State<HotelPlaceListScreen> {
+  List<CityBasedHotel> availableHotels = [];
 
   @override
   Widget build(BuildContext context) {
-    final filteredCityBasedHotels = citybasedhotels
-        .where((act) => act.baseCity.contains(widget.citybasedhotels.city))
+    final filteredActivities = citybasedhotels
+        .where((act) => act.baseCity.contains(widget.hotel.city))
         .toList();
 
     return Scaffold(
@@ -51,11 +40,11 @@ class _CityHotelScreenState extends State<CityHotelScreen> {
                   ],
                 ),
                 child: Hero(
-                  tag: widget.citybasedhotels.imagePath,
+                  tag: widget.hotel.imagePath,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(20),
                     child: Image(
-                      image: AssetImage(widget.citybasedhotels.imagePath),
+                      image: AssetImage(widget.hotel.imagePath),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -101,7 +90,7 @@ class _CityHotelScreenState extends State<CityHotelScreen> {
                     Padding(
                       padding: const EdgeInsets.all(1.0),
                       child: Text(
-                        widget.citybasedhotels.city,
+                        widget.hotel.city,
                         style: const TextStyle(
                           letterSpacing: 1.2,
                           fontSize: 40,
@@ -122,7 +111,7 @@ class _CityHotelScreenState extends State<CityHotelScreen> {
                           ),
                           const SizedBox(width: 5.0),
                           Text(
-                            widget.citybasedhotels.city,
+                            widget.hotel.province,
                             style: const TextStyle(
                               fontSize: 20,
                               fontFamily: "Outfit-Regular",
@@ -149,19 +138,18 @@ class _CityHotelScreenState extends State<CityHotelScreen> {
           Expanded(
             child: ListView.builder(
               padding: const EdgeInsets.only(top: 10.0, bottom: 15.0),
-              itemCount: filteredCityBasedHotels.length,
+              itemCount: filteredActivities.length,
               itemBuilder: (BuildContext context, int index) {
-                CityBasedHotel cityhotels = filteredCityBasedHotels[index];
+                CityBasedHotel hotel = filteredActivities[index];
 
                 return GestureDetector(
-                  onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => CityHotelScreen(
-                        citybasedhotels: cityhotels,
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (ctx) => CityHotelDetails(hotel: hotel),
                       ),
-                    ),
-                  ),
+                    );
+                  },
                   child: Stack(
                     children: [
                       Container(
@@ -194,7 +182,7 @@ class _CityHotelScreenState extends State<CityHotelScreen> {
                                   SizedBox(
                                     width: 120.0,
                                     child: Text(
-                                      cityhotels.name,
+                                      hotel.name,
                                       style: const TextStyle(
                                         fontSize: 17,
                                         fontWeight: FontWeight.bold,
@@ -208,7 +196,7 @@ class _CityHotelScreenState extends State<CityHotelScreen> {
                                   Column(
                                     children: [
                                       Text(
-                                        '\$${cityhotels.price}',
+                                        '\$${hotel.price}',
                                         style: const TextStyle(
                                           fontSize: 22,
                                           fontWeight: FontWeight.bold,
@@ -227,16 +215,9 @@ class _CityHotelScreenState extends State<CityHotelScreen> {
                                   ),
                                 ],
                               ),
-                              Text(
-                                cityhotels.city,
-                                style: const TextStyle(
-                                  fontSize: 15,
-                                  fontFamily: "Outfit-Regular",
-                                  color: Colors.black,
-                                ),
-                              ),
-                              _buildRatingStars(cityhotels.rating),
+
                               const SizedBox(height: 5),
+                              
                             ],
                           ),
                         ),
@@ -249,7 +230,7 @@ class _CityHotelScreenState extends State<CityHotelScreen> {
                           borderRadius: BorderRadius.circular(20.0),
                           child: Image(
                             width: 110.0,
-                            image: AssetImage(cityhotels.imagePath),
+                            image: AssetImage(hotel.imagePath),
                             fit: BoxFit.cover,
                           ),
                         ),

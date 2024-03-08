@@ -8,34 +8,27 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  int _currentTab = 0;
   String _userName = 'Lewis 44';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: const Icon(Icons.arrow_back_rounded),
-          iconSize: 30,
-        ),
-        centerTitle: true,
-        title: const Text(
-          "Profile",
-          style: TextStyle(
-            letterSpacing: 1.2,
-            fontSize: 23,
-            fontWeight: FontWeight.bold,
-            fontFamily: "Outfit-Regular",
-            color: Colors.black87,
-          ),
-        ),
-        backgroundColor: Colors.white,
-        elevation: 0,
-      ),
+      // appBar: AppBar(
+        
+      //   centerTitle: true,
+      //   title: const Text(
+      //     "Profile",
+      //     style: TextStyle(
+      //       letterSpacing: 1.2,
+      //       fontSize: 23,
+      //       fontWeight: FontWeight.bold,
+      //       fontFamily: "Outfit-Regular",
+      //       color: Colors.black87,
+      //     ),
+      //   ),
+      //   backgroundColor: Colors.white,
+      //   elevation: 0,
+      // ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -103,53 +96,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
             _buildProfileInfo(title: 'Email', value: 'Roscoe<3@gmail.com'),
             const SizedBox(height: 10),
             _buildProfileInfo(title: 'Phone', value: '0774444408'),
-          ],
-        ),
-      ),
-      bottomNavigationBar: Container(
-        decoration: const BoxDecoration(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(20.0),
-            topRight: Radius.circular(20.0),
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black12,
-              blurRadius: 10.0,
-              offset: Offset(0, -1),
-            ),
-          ],
-        ),
-        child: BottomNavigationBar(
-          currentIndex: _currentTab,
-          selectedItemColor: const Color.fromARGB(195, 14, 192, 106),
-          onTap: (int value) {
-            setState(() {
-              _currentTab = value;
-            });
-          },
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.search,
-                size: 30,
-              ),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.map_outlined,
-                size: 30,
-              ),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.person,
-                size: 30,
-              ),
-              label: '',
-            ),
           ],
         ),
       ),

@@ -3,14 +3,11 @@ import 'package:travel_app/Data/city_hotel.dart';
 import 'package:travel_app/Models/hotel_city.dart';
 import 'package:travel_app/screens/city_hotel/city_hotel_all.dart';
 
-
 class HotelCityCarousel extends StatelessWidget {
   const HotelCityCarousel({super.key});
 
-  
   @override
   Widget build(BuildContext context) {
-
     return Column(
       children: <Widget>[
         Padding(
@@ -19,9 +16,9 @@ class HotelCityCarousel extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               const Text(
-                "Hotels and Places to stay",
+                "Hotels and Places to \nstay",
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 25,
                   fontWeight: FontWeight.bold,
                   fontFamily: "Outfit-Regular",
                   letterSpacing: 1.5,
@@ -58,7 +55,7 @@ class HotelCityCarousel extends StatelessWidget {
               CityHotel cityhotel = cityhotels[index];
 
               return GestureDetector(
-                 onTap: () {},
+                onTap: () {},
                 child: Container(
                   margin: const EdgeInsets.all(10),
                   width: 240,
@@ -99,8 +96,6 @@ class HotelCityCarousel extends StatelessWidget {
                                 ),
                                 Text(
                                   cityhotel.description,
-                                  
-                                  
                                   style: const TextStyle(
                                     letterSpacing: 1.2,
                                     fontSize: 12,
@@ -172,7 +167,7 @@ class HotelCityCarousel extends StatelessWidget {
                                         ),
                                         const SizedBox(width: 5.0),
                                         Text(
-                                         cityhotel.province,
+                                          cityhotel.province,
                                           style: const TextStyle(
                                             fontSize: 16,
                                             fontFamily: "Outfit-Regular",
