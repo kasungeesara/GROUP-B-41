@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:travel_app/screens/profile.dart';
 import 'package:travel_app/widgets/bar_carousal.dart';
 import 'package:travel_app/widgets/cafe_carousal.dart';
 import 'package:travel_app/widgets/coffe_carousal.dart';
 import 'package:travel_app/widgets/destination_carousel.dart';
 import 'package:travel_app/widgets/fine_dining_carousel.dart';
+import 'package:travel_app/widgets/hotel_based_on_city_carousal.dart';
 import 'package:travel_app/widgets/hotels_carousel.dart';
 import 'package:travel_app/widgets/pub_carousal.dart';
+import 'package:travel_app/widgets/you_might_like_carousal.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -121,13 +122,13 @@ class _HomeScreenState extends State<HomeScreen> {
             if (_selectedIndex == 2) const FineDineCarousel(),
             if (_selectedIndex == 3) const BestCafeCarousel(),
 
-            //const SizedBox(height: 10.0,),
+            const SizedBox(height: 8.0,),
 
-            if (_selectedIndex == 1) const HotelCarousel(),
+            if (_selectedIndex == 1) const HotelCityCarousel(),
             if (_selectedIndex == 2) const PubCarousel(),
             if (_selectedIndex == 3) const CoffeeCarousel(),
 
-            //const SizedBox(height: 10.0,),
+            const SizedBox(height: 8.0,),
 
             if (_selectedIndex == 2) const BarCarousel(),
             if (_selectedIndex == 0)
@@ -152,7 +153,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         right: 90,
                         left: 90,
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {} 
+                          ,
                           child: const Text(
                             "Keep exploring",
                             style: TextStyle(
@@ -186,7 +188,7 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(
               height: 25,
             ),
-            if (_selectedIndex == 0) const DestinationCarousel(),
+            if (_selectedIndex == 0) const YouMightCarousel(),
             if (_selectedIndex == 0)
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -208,7 +210,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         bottom: 10,
                         left: 12,
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {} ,
                           child: const Text(
                             "Read more",
                             style: TextStyle(
@@ -225,7 +227,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         top: 350,
                         left: 10,
                         child: Text(
-                          "10 best places to \n surf in\n Sri lanka",
+                          "10 best places to \nsurf in\nSri lanka",
                           style: TextStyle(
                             fontSize: 35,
                             fontWeight: FontWeight.bold,
@@ -242,7 +244,6 @@ class _HomeScreenState extends State<HomeScreen> {
                           "The south and east coasts of Sri Lanka \nare home to the best surf spots",
                           style: TextStyle(
                             fontSize: 14,
-                            fontWeight: FontWeight.bold,
                             fontFamily: "Outfit-Regular",
                             color: Color.fromARGB(255, 249, 249, 249),
                             letterSpacing: 0.5,
