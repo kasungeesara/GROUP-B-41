@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:travel_app/Data/fine_dines.dart';
 import 'package:travel_app/Models/fine_dine.dart';
 import 'package:travel_app/screens/fine_dine/fine_dine_all.dart';
+import 'package:travel_app/screens/fine_dine/fine_dine_details.dart';
 
 class FineDineCarousel extends StatelessWidget {
   const FineDineCarousel({super.key});
@@ -54,6 +55,14 @@ class FineDineCarousel extends StatelessWidget {
             itemBuilder: (BuildContext context, int index) {
               FineDine fineDineItem = fineDines[index];
               return GestureDetector(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => FineDineDetails(
+                      fineDine: fineDines[index],
+                    ),
+                  ),
+                ),
                 child: Container(
                   margin: const EdgeInsets.all(10),
                   width: 210,

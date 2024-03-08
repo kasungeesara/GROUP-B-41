@@ -63,99 +63,96 @@ class _CoffeeAllState extends State<CoffeeAll> {
                         child: Padding(
                           padding: const EdgeInsets.fromLTRB(
                               100.0, 20.0, 20.0, 20.0),
-                          child: SingleChildScrollView(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
+                          child: Column(
+                           
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    width: 200,
+                                    child: Text(
+                                      coffee.name,
+                                      style: const TextStyle(
+                                        fontSize: 22,
+                                        fontWeight: FontWeight.bold,
+                                        fontFamily: "Outfit-Regular",
+                                        color: Colors.black,
+                                      ),
+                                      overflow: TextOverflow.ellipsis,
+                                      maxLines: 2,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Container(
+                                padding: const EdgeInsets.all(1.0),
+                                width: 80,
+                                decoration: BoxDecoration(
+                                  color:
+                                      const Color.fromARGB(195, 14, 192, 106),
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                alignment: Alignment.center,
+                                child: Row(
                                   children: [
-                                    Container(
-                                      width: 150,
-                                      child: Text(
-                                        coffee.name,
+                                    const SizedBox(
+                                      width: 3,
+                                    ),
+                                    const Icon(
+                                      Icons.compass_calibration_rounded,
+                                      size: 8.0,
+                                      color:
+                                          Color.fromARGB(255, 255, 255, 255),
+                                    ),
+                                    const SizedBox(
+                                      width: 5,
+                                    ),
+                                    Text(
+                                     coffee.city,
+                                      style: const TextStyle(
+                                        fontSize: 12.4,
+                                        fontFamily: "Outfit-Regular",
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Column(
+                                    children: [
+                                      const SizedBox(
+                                        height: 30,
+                                      ),
+                                      Text(
+                                       coffee.range,
                                         style: const TextStyle(
-                                          fontSize: 22,
+                                          fontSize: 16,
                                           fontWeight: FontWeight.bold,
                                           fontFamily: "Outfit-Regular",
                                           color: Colors.black,
                                         ),
-                                        overflow: TextOverflow.ellipsis,
-                                        maxLines: 2,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                Container(
-                                  padding: const EdgeInsets.all(1.0),
-                                  width: 80,
-                                  decoration: BoxDecoration(
-                                    color:
-                                        const Color.fromARGB(195, 14, 192, 106),
-                                    borderRadius: BorderRadius.circular(10.0),
-                                  ),
-                                  alignment: Alignment.center,
-                                  child: Row(
-                                    children: [
-                                      const SizedBox(
-                                        width: 3,
-                                      ),
-                                      const Icon(
-                                        Icons.compass_calibration_rounded,
-                                        size: 8.0,
-                                        color:
-                                            Color.fromARGB(255, 255, 255, 255),
-                                      ),
-                                      const SizedBox(
-                                        width: 5,
                                       ),
                                       Text(
-                                       coffee.city,
+                                       coffee.price,
                                         style: const TextStyle(
-                                          fontSize: 12.4,
+                                          fontSize: 16,
                                           fontFamily: "Outfit-Regular",
-                                          color: Colors.white,
+                                          color: Colors.grey,
                                         ),
                                       ),
                                     ],
                                   ),
-                                ),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    Column(
-                                      children: [
-                                        const SizedBox(
-                                          height: 6,
-                                        ),
-                                        Text(
-                                         coffee.range,
-                                          style: const TextStyle(
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.bold,
-                                            fontFamily: "Outfit-Regular",
-                                            color: Colors.black,
-                                          ),
-                                        ),
-                                        Text(
-                                         coffee.price,
-                                          style: const TextStyle(
-                                            fontSize: 16,
-                                            fontFamily: "Outfit-Regular",
-                                            color: Colors.grey,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                               
-                              ],
-                            ),
-                            
+                                ],
+                              ),
+                             
+                            ],
                           ),
                         ),
                       ),

@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/Data/bars.dart';
-import 'package:travel_app/Models/bar.dart';
-import 'package:travel_app/screens/bar/bars_details.dart';
+import 'package:flutter_application_1/screens/coffee_details.dart';
+import 'package:flutter_application_1/widgets/coffee.dart';
 
-class BarFull extends StatefulWidget {
-  const BarFull({super.key});
+class CoffeeAll extends StatefulWidget {
+  const CoffeeAll({super.key});
 
   @override
-  State<BarFull> createState() => _BarFullState();
+  State<CoffeeAll> createState() => _CoffeeAllState();
 }
 
-class _BarFullState extends State<BarFull> {
+class _CoffeeAllState extends State<CoffeeAll> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Bars",
+          "Coffee Shops",
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
@@ -30,15 +29,15 @@ class _BarFullState extends State<BarFull> {
           Expanded(
             child: ListView.builder(
               padding: const EdgeInsets.only(top: 10.0, bottom: 15.0),
-              itemCount: bars.length,
+              itemCount: coffeetea.length,
               itemBuilder: (BuildContext context, int index) {
-                Bar bar = bars[index];
+                Coffee coffee = coffeetea[index];
                 return GestureDetector(
                   onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (_) => BarDetails(
-                        bars: bar,
+                      builder: (_) => CoffeeDetails(
+                        coffee: coffee,
                       ),
                     ),
                   ),
@@ -73,7 +72,7 @@ class _BarFullState extends State<BarFull> {
                                   Container(
                                     width: 200,
                                     child: Text(
-                                      bar.name,
+                                      coffee.name,
                                       style: const TextStyle(
                                         fontSize: 22,
                                         fontWeight: FontWeight.bold,
@@ -109,7 +108,7 @@ class _BarFullState extends State<BarFull> {
                                       width: 5,
                                     ),
                                     Text(
-                                      bar.city,
+                                      coffee.city,
                                       style: const TextStyle(
                                         fontSize: 12.4,
                                         fontFamily: "Outfit-Regular",
@@ -119,19 +118,16 @@ class _BarFullState extends State<BarFull> {
                                   ],
                                 ),
                               ),
-                              const SizedBox(
-                                height: 27,
-                              ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
                                   Column(
                                     children: [
                                       const SizedBox(
-                                        height: 6,
+                                        height: 30,
                                       ),
                                       Text(
-                                        bar.range,
+                                        coffee.range,
                                         style: const TextStyle(
                                           fontSize: 16,
                                           fontWeight: FontWeight.bold,
@@ -140,7 +136,7 @@ class _BarFullState extends State<BarFull> {
                                         ),
                                       ),
                                       Text(
-                                        bar.price,
+                                        coffee.price,
                                         style: const TextStyle(
                                           fontSize: 16,
                                           fontFamily: "Outfit-Regular",
@@ -163,7 +159,7 @@ class _BarFullState extends State<BarFull> {
                           borderRadius: BorderRadius.circular(20.0),
                           child: Image(
                             width: 110.0,
-                            image: AssetImage(bar.imagePath),
+                            image: AssetImage(coffee.imagePath),
                             fit: BoxFit.cover,
                           ),
                         ),

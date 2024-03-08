@@ -76,7 +76,7 @@ class BestCafeCarousel extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               const Text(
-                "Best Cafés",
+                "Cafés",
                 style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.bold,

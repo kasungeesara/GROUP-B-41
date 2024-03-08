@@ -120,11 +120,11 @@ class _RestaurantsState extends State<Restaurants> {
             const SizedBox(
               height: 20.0,
             ),
-            FineDineCarousel(),
+            const FineDineCarousel(),
             const SizedBox(
               height: 20.0,
             ),
-            FamilyStyleCarousel(),
+            const FamilyStyleCarousel(),
           ],
         ),
       ),

@@ -11,21 +11,21 @@ final List<Destination> destinations = [
   Destination(
     city: 'Galle',
     province: 'Southern Province',
-    activities: 8,
+    activities: 6,
     description: 'Historical city with a stunning fort.',
     imagePath: "assets/galle2.jpg",
   ),
   Destination(
     city: 'Colombo',
     province: 'Western Province',
-    activities: 12,
+    activities: 10,
     description: 'Capital city with vibrant nightlife and shopping.',
     imagePath: "assets/cmb.jpg",
   ),
   Destination(
     city: 'Sigiriya',
     province: 'Central Province',
-    activities: 6,
+    activities: 3,
     description: 'Home to the ancient rock fortress of Sigiriya.',
     imagePath: "assets/sigiriya2.jpg",
   ),
@@ -41,21 +41,21 @@ final List<Destination> destinations = [
     province: 'North Central Province',
     activities: 10,
     description:
-        'Anuradhapura, a Ceylonese political and religious capital that flourished for 1,300 years, was abandoned after an invasion in 993.',
+        'Anuradhapura, a Ceylonese political and religious capital.',
     imagePath: "assets/02.jpg"),
   Destination(
     city: 'Polonnaruwa',
     province: 'North Central Province',
     activities: 9,
     description:
-        'The second oldest of all Sri Lankas kingdoms, Polonnaruwa was first established as a military post by the Sinhalese kingdom.',
+        'Polonnaruwa was first military post in the Sinhalese kingdom.',
     imagePath: "assets/pol.jpg"),
   Destination(
     city: 'Matara',
     province: 'Southern Province',
     activities: 5,
     description:
-        'Matara is a major city in Sri Lanka, on the southern coast of Southern Province.',
+        'Matara is city on the southern coast of Southern Province.',
     imagePath: "assets/mat.jpg"),
   Destination(
     city: 'Jaffna',

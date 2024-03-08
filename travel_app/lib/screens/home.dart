@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/widgets/bar_carousal.dart';
+import 'package:travel_app/screens/profile.dart';
 import 'package:travel_app/widgets/cafe_carousal.dart';
 import 'package:travel_app/widgets/coffe_carousal.dart';
 import 'package:travel_app/widgets/destination_carousel.dart';
-import 'package:travel_app/widgets/family_dining_carosal.dart';
 import 'package:travel_app/widgets/fine_dining_carousel.dart';
 import 'package:travel_app/widgets/hotels_carousel.dart';
 import 'package:travel_app/widgets/pub_carousal.dart';
@@ -20,11 +19,18 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
   int _currentTab = 0;
 
+  void _navigateToProfileScreen(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const ProfileScreen()),
+    );
+  }
+
   final List<IconData> _icons = [
     Icons.directions_car,
+    Icons.hotel,
     Icons.restaurant,
     Icons.fastfood,
-    Icons.liquor,
   ];
 
   Widget _buildIcon(int index) {
@@ -33,6 +39,42 @@ class _HomeScreenState extends State<HomeScreen> {
         setState(() {
           _selectedIndex = index;
         });
+        if (index == 0) {
+          setState(() {
+            _selectedIndex = 0;
+          });
+          // Navigator.push(
+          //   context,
+          //   MaterialPageRoute(builder: (context) => const HomeScreen()),
+          // );
+        }
+        if (index == 1) {
+          setState(() {
+            _selectedIndex = 1;
+          });
+          // Navigator.push(
+          //   context,
+          //   MaterialPageRoute(builder: (context) => const Restaurants()),
+          // );
+        }
+        if (index == 2) {
+          setState(() {
+            _selectedIndex = 2;
+          });
+          // Navigator.push(
+          //   context,
+          //   MaterialPageRoute(builder: (context) => const cafe()),
+          // );
+        }
+        if (index == 3) {
+          setState(() {
+            _selectedIndex = 3;
+          });
+          // Navigator.push(
+          //   context,
+          //   MaterialPageRoute(builder: (context) => const Pub()),
+          // );
+        }
       },
       child: Container(
         height: 60.0,
@@ -89,16 +131,16 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 20.0,
             ),
             if (_selectedIndex == 0) const DestinationCarousel(),
-            if (_selectedIndex == 1) const FineDineCarousel(),
-            if (_selectedIndex == 2) const BestCafeCarousel(),
-            if (_selectedIndex == 3) const PubCarousel(),
+            if (_selectedIndex == 1) const HotelCarousel(),
+            if (_selectedIndex == 2) const FineDineCarousel(),
+            if (_selectedIndex == 3) const BestCafeCarousel(),
             const SizedBox(
               height: 20.0,
             ),
-            if (_selectedIndex == 0) const HotelCarousel(),
-            if (_selectedIndex == 1) const FamilyStyleCarousel(),
-            if (_selectedIndex == 2) const CoffeeCarousel(),
-            if (_selectedIndex == 3) const BarCarousel(),
+            if (_selectedIndex == 0) const DestinationCarousel(),
+            if (_selectedIndex == 1) const HotelCarousel(),
+            if (_selectedIndex == 2) const PubCarousel(),
+            if (_selectedIndex == 3) const CoffeeCarousel(),
           ],
         ),
       ),
@@ -122,6 +164,9 @@ class _HomeScreenState extends State<HomeScreen> {
           onTap: (int value) {
             setState(() {
               _currentTab = value;
+              if (value == 2) {
+                _navigateToProfileScreen(context);
+              }
             });
           },
           items: const [
@@ -134,7 +179,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             BottomNavigationBarItem(
               icon: Icon(
-                Icons.backpack,
+                Icons.map_outlined,
                 size: 30,
               ),
               label: '',

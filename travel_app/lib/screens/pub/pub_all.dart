@@ -131,7 +131,7 @@ class _PubAllState extends State<PubAll> {
                                   Column(
                                     children: [
                                       const SizedBox(
-                                        height: 6,
+                                        height: 10,
                                       ),
                                       Text(
                                         pub.range,
