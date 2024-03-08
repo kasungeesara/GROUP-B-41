@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:travel_app/Models/activity.dart';
 
 class ActivityScreen extends StatefulWidget {
-  
-
   const ActivityScreen({
     super.key,
     required this.activity,
   });
-  
+
   final Activity activity;
   @override
   // ignore: library_private_types_in_public_api
