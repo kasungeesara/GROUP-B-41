@@ -43,37 +43,24 @@ class _HomeScreenState extends State<HomeScreen> {
           setState(() {
             _selectedIndex = 0;
           });
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(builder: (context) => const HomeScreen()),
-          // );
         }
         if (index == 1) {
           setState(() {
             _selectedIndex = 1;
           });
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(builder: (context) => const Restaurants()),
-          // );
+
         }
         if (index == 2) {
           setState(() {
             _selectedIndex = 2;
           });
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(builder: (context) => const cafe()),
-          // );
+
         }
         if (index == 3) {
           setState(() {
             _selectedIndex = 3;
           });
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(builder: (context) => const Pub()),
-          // );
+
         }
       },
       child: Container(
