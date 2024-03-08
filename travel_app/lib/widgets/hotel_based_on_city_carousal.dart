@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/Data/fine_dines.dart';
-import 'package:travel_app/Models/fine_dine.dart';
-import 'package:travel_app/screens/fine_dine/fine_dine_all.dart';
-import 'package:travel_app/screens/fine_dine/fine_dine_details.dart';
+import 'package:travel_app/Data/city_hotel.dart';
+import 'package:travel_app/Models/hotel_city.dart';
+import 'package:travel_app/screens/city_hotel/city_hotel_all.dart';
 
-class FineDineCarousel extends StatelessWidget {
-  const FineDineCarousel({super.key});
 
+class HotelCityCarousel extends StatelessWidget {
+  const HotelCityCarousel({super.key});
+
+  
   @override
   Widget build(BuildContext context) {
+
     return Column(
       children: <Widget>[
         Padding(
@@ -17,9 +19,9 @@ class FineDineCarousel extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               const Text(
-                "Restaurants",
+                "Hotels and Places to stay",
                 style: TextStyle(
-                  fontSize: 25,
+                  fontSize: 20,
                   fontWeight: FontWeight.bold,
                   fontFamily: "Outfit-Regular",
                   letterSpacing: 1.5,
@@ -29,7 +31,7 @@ class FineDineCarousel extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (ctx) => const FineDineAll(),
+                      builder: (ctx) => const CityHotelAllScreen(),
                     ),
                   );
                 },
@@ -53,27 +55,21 @@ class FineDineCarousel extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemCount: 5,
             itemBuilder: (BuildContext context, int index) {
-              FineDine fineDineItem = fineDines[index];
+              CityHotel cityhotel = cityhotels[index];
+
               return GestureDetector(
-                onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (_) => FineDineDetails(
-                      fineDine: fineDines[index],
-                    ),
-                  ),
-                ),
+                 onTap: () {},
                 child: Container(
                   margin: const EdgeInsets.all(10),
-                  width: 210,
+                  width: 240,
                   child: Stack(
                     alignment: Alignment.topCenter,
                     children: <Widget>[
                       Positioned(
-                        bottom: 35.0,
+                        bottom: 15.0,
                         child: Container(
                           height: 120,
-                          width: 200,
+                          width: 240,
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(10),
@@ -89,10 +85,10 @@ class FineDineCarousel extends StatelessWidget {
                             padding: const EdgeInsets.all(10),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.end,
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
                                 Text(
-                                  fineDineItem.range,
+                                  "Hotels: ${cityhotel.cityhotels}",
                                   style: const TextStyle(
                                     fontFamily: "Outfit-Regular",
                                     fontWeight: FontWeight.bold,
@@ -102,9 +98,9 @@ class FineDineCarousel extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  fineDineItem.price,
-                                  softWrap: true,
-                                  overflow: TextOverflow.ellipsis,
+                                  cityhotel.description,
+                                  
+                                  
                                   style: const TextStyle(
                                     letterSpacing: 1.2,
                                     fontSize: 12,
@@ -133,13 +129,13 @@ class FineDineCarousel extends StatelessWidget {
                         child: Stack(
                           children: <Widget>[
                             Hero(
-                              tag: fineDineItem.imagePath,
+                              tag: cityhotel.imagePath,
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(20.0),
                                 child: Image(
                                   height: 180.0,
-                                  width: 180.0,
-                                  image: AssetImage(fineDineItem.imagePath),
+                                  width: 220.0,
+                                  image: AssetImage(cityhotel.imagePath),
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -153,10 +149,10 @@ class FineDineCarousel extends StatelessWidget {
                                   Padding(
                                     padding: const EdgeInsets.all(1.0),
                                     child: Text(
-                                      fineDineItem.name,
+                                      cityhotel.city,
                                       style: const TextStyle(
                                         letterSpacing: 1.2,
-                                        fontSize: 18,
+                                        fontSize: 24,
                                         fontWeight: FontWeight.bold,
                                         fontFamily: "Outfit-Regular",
                                         color:
@@ -176,7 +172,7 @@ class FineDineCarousel extends StatelessWidget {
                                         ),
                                         const SizedBox(width: 5.0),
                                         Text(
-                                          fineDineItem.city,
+                                         cityhotel.province,
                                           style: const TextStyle(
                                             fontSize: 16,
                                             fontFamily: "Outfit-Regular",

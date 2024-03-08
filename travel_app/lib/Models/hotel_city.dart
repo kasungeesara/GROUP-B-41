@@ -1,17 +1,15 @@
-class Destination {
+class CityHotel {
   final String city;
-  final int? activities;
+  final int? cityhotels;
   final String description;
   final String province;
   final String imagePath;
-  final int? hotels;
 
-  Destination({
+  CityHotel({
     required this.city,
-    this.activities,
+    this.cityhotels,
     this.description = '',
     required this.province,
-    this.hotels,
     required this.imagePath,
   });
 }

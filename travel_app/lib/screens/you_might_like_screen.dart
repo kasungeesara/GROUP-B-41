@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/Models/family_dine.dart';
+import 'package:travel_app/Models/youmight.dart';
 
-class FamilyDineDetails extends StatelessWidget {
-  const FamilyDineDetails({
-    super.key,
-    required this.familyStyles,
-  });
-  final FamilyDine familyStyles;
+ class YouMightDetails extends StatelessWidget {
+  final YouMight youMight;
+
+  YouMightDetails({
+    Key? key,
+    required this.youMight,
+  }) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -28,11 +30,11 @@ class FamilyDineDetails extends StatelessWidget {
                   ],
                 ),
                 child: Hero(
-                  tag: familyStyles.imagePath,
+                  tag: youMight.imagePath,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(20),
                     child: Image(
-                      image: AssetImage(familyStyles.imagePath),
+                      image: AssetImage(youMight.imagePath),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -78,7 +80,7 @@ class FamilyDineDetails extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(1.0),
                       child: Text(
-                        familyStyles.name,
+                        youMight.name,
                         style: const TextStyle(
                           letterSpacing: 1.2,
                           fontSize: 25,
@@ -98,14 +100,7 @@ class FamilyDineDetails extends StatelessWidget {
                             color: Colors.white70,
                           ),
                           const SizedBox(width: 5.0),
-                          Text(
-                            familyStyles.city,
-                            style: const TextStyle(
-                              fontSize: 20,
-                              fontFamily: "Outfit-Regular",
-                              color: Colors.white70,
-                            ),
-                          ),
+                          
                         ],
                       ),
                     ),
@@ -126,18 +121,7 @@ class FamilyDineDetails extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Text(
-              familyStyles.range,
-              style: const TextStyle(
-                fontSize: 16,
-                fontFamily: "Outfit-Regular",
-                color: Color.fromARGB(255, 0, 0, 0),
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Text(
-              familyStyles.description,
+              youMight.description,
               style: const TextStyle(
                 fontSize: 16,
                 fontFamily: "Outfit-Regular",
@@ -150,3 +134,4 @@ class FamilyDineDetails extends StatelessWidget {
     );
   }
 }
+

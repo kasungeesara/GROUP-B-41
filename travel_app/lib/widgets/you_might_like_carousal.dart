@@ -1,47 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/Data/family_dines.dart';
-import 'package:travel_app/Models/family_dine.dart';
-import 'package:travel_app/screens/family_dine/family_dine_details.dart';
-import 'package:travel_app/screens/family_dine/family_style_all.dart';
+import 'package:travel_app/Data/you-might_like.dart';
+import 'package:travel_app/Models/youmight.dart';
+import 'package:travel_app/screens/you_might_like_screen.dart';
 
-class FamilyStyleCarousel extends StatelessWidget {
-  const FamilyStyleCarousel({super.key});
+class YouMightCarousel extends StatelessWidget {
+  const YouMightCarousel({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              const Text(
-                "Family Dine",
+              Text(
+                "You might like these ",
                 style: TextStyle(
-                  fontSize: 25,
+                  fontSize: 23,
                   fontWeight: FontWeight.bold,
                   fontFamily: "Outfit-Regular",
-                  letterSpacing: 1.5,
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (ctx) => const FamilyStyleAll(),
-                    ),
-                  );
-                },
-                child: const Text(
-                  "See All",
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "Outfit-Regular",
-                    letterSpacing: 1.0,
-                    color: Color.fromARGB(195, 14, 192, 106),
-                  ),
+                  letterSpacing: 1.2,
                 ),
               ),
             ],
@@ -53,13 +33,14 @@ class FamilyStyleCarousel extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemCount: 5,
             itemBuilder: (BuildContext context, int index) {
-              FamilyDine familyStyleItem = familyDines[index];
+              YouMight youmightlike = youmight[index];
+
               return GestureDetector(
                 onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (_) => FamilyDineDetails(
-                     familyStyles: familyDines[index],
+                    builder: (_) => YouMightDetails(
+                      youMight: youmightlike,
                     ),
                   ),
                 ),
@@ -92,19 +73,7 @@ class FamilyStyleCarousel extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Text(
-                                  familyStyleItem.range,
-                                  style: const TextStyle(
-                                    fontFamily: "Outfit-Regular",
-                                    fontWeight: FontWeight.bold,
-                                    letterSpacing: 1.2,
-                                    fontSize: 20,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                                Text(
-                                  familyStyleItem.price,
-                                  softWrap: true,
-                                  overflow: TextOverflow.ellipsis,
+                                  youmightlike.description,
                                   style: const TextStyle(
                                     letterSpacing: 1.2,
                                     fontSize: 12,
@@ -133,13 +102,13 @@ class FamilyStyleCarousel extends StatelessWidget {
                         child: Stack(
                           children: <Widget>[
                             Hero(
-                              tag: familyStyleItem.imagePath,
+                              tag: youmightlike.imagePath,
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(20.0),
                                 child: Image(
                                   height: 180.0,
                                   width: 180.0,
-                                  image: AssetImage(familyStyleItem.imagePath),
+                                  image: AssetImage(youmightlike.imagePath),
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -153,10 +122,10 @@ class FamilyStyleCarousel extends StatelessWidget {
                                   Padding(
                                     padding: const EdgeInsets.all(1.0),
                                     child: Text(
-                                      familyStyleItem.name,
+                                      youmightlike.name,
                                       style: const TextStyle(
                                         letterSpacing: 1.2,
-                                        fontSize: 17,
+                                        fontSize: 24,
                                         fontWeight: FontWeight.bold,
                                         fontFamily: "Outfit-Regular",
                                         color:
@@ -176,7 +145,7 @@ class FamilyStyleCarousel extends StatelessWidget {
                                         ),
                                         const SizedBox(width: 5.0),
                                         Text(
-                                          familyStyleItem.city,
+                                          youmightlike.province,
                                           style: const TextStyle(
                                             fontSize: 16,
                                             fontFamily: "Outfit-Regular",
