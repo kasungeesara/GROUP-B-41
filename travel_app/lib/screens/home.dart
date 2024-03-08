@@ -125,7 +125,7 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(
               height: 10.0,
             ),
-            if (_selectedIndex == 0) const DestinationCarousel(),
+           
             if (_selectedIndex == 1) const HotelCarousel(),
             if (_selectedIndex == 2) const PubCarousel(),
             if (_selectedIndex == 3) const CoffeeCarousel(),
