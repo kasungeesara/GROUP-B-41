@@ -5,13 +5,11 @@ import 'package:travel_app/Data/activities.dart';
 import 'package:travel_app/Models/activity.dart';
 
 class DestinationScreen extends StatefulWidget {
-  final Destination destination;
-
   const DestinationScreen({
     super.key,
     required this.destination,
   });
-
+  final Destination destination;
   @override
   // ignore: library_private_types_in_public_api
   _DestinationScreenState createState() => _DestinationScreenState();
