@@ -35,6 +35,6 @@ final List<CityBasedHotel> citybasedhotels = [
     tel: 0112 - 375 - 375,
     imagePath: "assets/chc1.jpg",
     description:
-        "Marino Beach Colombo has an outdoor swimming pool, fitness centre, a garden and terrace in Colombo. Among the facilities of this property are a restaurant, room service and a 24-hour front desk, along with free WiFi throughout the property. The accommodation features an ATM, a concierge service and currency exchange for guests.",
+        "Marino Beach Colombo has an outdoor swimming pool, fitness centre, a garden and terrace in Colombo.Among the facilities of this property are a restaurant, room service and a 24-hour front desk, along with free WiFi throughout the property. The accommodation features an ATM, a concierge service and currency exchange for guests.",
   ),
 ];
