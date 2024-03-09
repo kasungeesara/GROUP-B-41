@@ -107,7 +107,7 @@ class _CityHotelDetailsState extends State<CityHotelDetails> {
                           ),
                           const SizedBox(width: 5.0),
                           Text(
-                            widget.hotel.tel.toString(),
+                            widget.hotel.rating.toString(),
                             style: const TextStyle(
                               fontSize: 20,
                               fontFamily: "Outfit-Regular",

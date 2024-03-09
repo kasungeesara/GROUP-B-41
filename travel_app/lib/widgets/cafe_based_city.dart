@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/Data/bars.dart';
-import 'package:travel_app/Models/bar.dart';
-import 'package:travel_app/screens/bar/bar_all.dart';
-import 'package:travel_app/screens/bar/bars_details.dart';
+import 'package:travel_app/Data/city_hotel.dart';
+import 'package:travel_app/Models/hotel_city.dart';
+import 'package:travel_app/screens/city_hotel/city_hotel_all.dart';
+import 'package:travel_app/screens/hotel_place_list.dart';
 
-
-class BarCarousel extends StatelessWidget {
-  const BarCarousel({super.key});
+class CafeCityCarousel extends StatelessWidget {
+  const CafeCityCarousel({super.key});
+  
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class BarCarousel extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               const Text(
-                "Bars",
+                "Coffee & Cuisine",
                 style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
@@ -30,7 +30,7 @@ class BarCarousel extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (ctx) => const BarFull(),
+                      builder: (ctx) => const CityHotelAllScreen(),
                     ),
                   );
                 },
@@ -54,29 +54,28 @@ class BarCarousel extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemCount: 5,
             itemBuilder: (BuildContext context, int index) {
-              Bar bar2 = bars[index];
+              CityHotel cityhotel = cityhotels[index];
+
               return GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => BarDetails(
-                        bars: bars[index],
+                 onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (ctx) =>
+                            HotelPlaceListScreen(hotel: cityhotel),
                       ),
-                    ),
-                  );
-                },
+                    );
+                  },
                 child: Container(
                   margin: const EdgeInsets.all(10),
-                  width: 210,
+                  width: 240,
                   child: Stack(
                     alignment: Alignment.topCenter,
                     children: <Widget>[
                       Positioned(
-                        bottom: 35.0,
+                        bottom: 15.0,
                         child: Container(
                           height: 120,
-                          width: 200,
+                          width: 240,
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(10),
@@ -92,10 +91,10 @@ class BarCarousel extends StatelessWidget {
                             padding: const EdgeInsets.all(10),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.end,
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
                                 Text(
-                                  bar2.range,
+                                  "Hotels: ${cityhotel.cityhotels}",
                                   style: const TextStyle(
                                     fontFamily: "Outfit-Regular",
                                     fontWeight: FontWeight.bold,
@@ -105,9 +104,7 @@ class BarCarousel extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  bar2.price,
-                                  softWrap: true,
-                                  overflow: TextOverflow.ellipsis,
+                                  cityhotel.description,
                                   style: const TextStyle(
                                     letterSpacing: 1.2,
                                     fontSize: 12,
@@ -136,13 +133,13 @@ class BarCarousel extends StatelessWidget {
                         child: Stack(
                           children: <Widget>[
                             Hero(
-                              tag: bar2.imagePath,
+                              tag: cityhotel.imagePath,
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(20.0),
                                 child: Image(
                                   height: 180.0,
-                                  width: 180.0,
-                                  image: AssetImage(bar2.imagePath),
+                                  width: 220.0,
+                                  image: AssetImage(cityhotel.imagePath),
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -156,10 +153,10 @@ class BarCarousel extends StatelessWidget {
                                   Padding(
                                     padding: const EdgeInsets.all(1.0),
                                     child: Text(
-                                      bar2.name,
+                                      cityhotel.city,
                                       style: const TextStyle(
                                         letterSpacing: 1.2,
-                                        fontSize: 18,
+                                        fontSize: 24,
                                         fontWeight: FontWeight.bold,
                                         fontFamily: "Outfit-Regular",
                                         color:
@@ -179,7 +176,7 @@ class BarCarousel extends StatelessWidget {
                                         ),
                                         const SizedBox(width: 5.0),
                                         Text(
-                                          bar2.city,
+                                          cityhotel.province,
                                           style: const TextStyle(
                                             fontSize: 16,
                                             fontFamily: "Outfit-Regular",

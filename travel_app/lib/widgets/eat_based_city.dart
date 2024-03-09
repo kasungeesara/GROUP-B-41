@@ -4,8 +4,8 @@ import 'package:travel_app/Models/hotel_city.dart';
 import 'package:travel_app/screens/city_hotel/city_hotel_all.dart';
 import 'package:travel_app/screens/hotel_place_list.dart';
 
-class HotelCityCarousel extends StatelessWidget {
-  const HotelCityCarousel({super.key});
+class EatCityCarousel extends StatelessWidget {
+  const EatCityCarousel({super.key});
   
 
   @override
@@ -18,7 +18,7 @@ class HotelCityCarousel extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               const Text(
-                "Hotels and Places to \nstay",
+                "Dine & Draft",
                 style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.bold,

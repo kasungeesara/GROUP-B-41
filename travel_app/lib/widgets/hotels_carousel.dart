@@ -100,7 +100,7 @@ class HotelCarousel extends StatelessWidget {
                                     fontWeight: FontWeight.bold,
                                     letterSpacing: 1.2,
                                     fontSize: 16,
-                                    color: Colors.black,
+                                    color: Color.fromARGB(255, 25, 25, 25),
                                   ),
                                 ),
                                 const SizedBox(
@@ -125,6 +125,8 @@ class HotelCarousel extends StatelessWidget {
                                   style: const TextStyle(
                                     fontSize: 15.0,
                                     fontWeight: FontWeight.w600,
+                                    fontFamily: "Outfit-Regular",
+                                    color: Color.fromARGB(255, 85, 85, 85),
                                   ),
                                 ),
                               ],
