@@ -34,6 +34,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            const SizedBox(height: 50,),
             Stack(
               children: [
                 const CircleAvatar(

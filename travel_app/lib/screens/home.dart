@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/screens/map.dart';
 import 'package:travel_app/screens/profile.dart';
-import 'package:travel_app/widgets/bar_carousal.dart';
+import 'package:travel_app/widgets/cafe_based_city.dart';
 import 'package:travel_app/widgets/cafe_carousal.dart';
 import 'package:travel_app/widgets/coffe_carousal.dart';
 import 'package:travel_app/widgets/destination_carousel.dart';
+import 'package:travel_app/widgets/eat_based_city.dart';
 import 'package:travel_app/widgets/fine_dining_carousel.dart';
 import 'package:travel_app/widgets/hotel_based_on_city_carousal.dart';
 import 'package:travel_app/widgets/hotels_carousel.dart';
@@ -108,7 +109,8 @@ class _HomeScreenState extends State<HomeScreen> {
           const SizedBox(
             height: 8.0,
           ),
-          if (_selectedIndex == 2) const BarCarousel(),
+          if (_selectedIndex == 2) const EatCityCarousel(),
+          if (_selectedIndex == 3) const CafeCityCarousel(),
           if (_selectedIndex == 0)
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -221,6 +223,71 @@ class _HomeScreenState extends State<HomeScreen> {
                         "The south and east coasts of Sri Lanka \nare home to the best surf spots",
                         style: TextStyle(
                           fontSize: 14,
+                          fontFamily: "Outfit-Regular",
+                          color: Color.fromARGB(255, 249, 249, 249),
+                          letterSpacing: 0.5,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          if (_selectedIndex == 1)
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Container(
+                height: 600,
+                width: double.infinity,
+                child: Stack(
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        image: const DecorationImage(
+                          image: AssetImage("assets/cot.jpg"),
+                          fit: BoxFit.cover,
+                        ),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    Positioned(
+                      bottom: 10,
+                      left: 12,
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        child: const Text(
+                          "Read more",
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: "Outfit-Regular",
+                            color: Colors.black,
+                            letterSpacing: 0.5,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const Positioned(
+                      top: 320,
+                      left: 10,
+                      child: Text(
+                        "Eco-Friendly\nHotels in\nSri Lanka",
+                        style: TextStyle(
+                          fontSize: 35,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "Outfit-Regular",
+                          color: Color.fromARGB(255, 249, 249, 249),
+                          letterSpacing: 0.5,
+                        ),
+                      ),
+                    ),
+                    const Positioned(
+                      bottom: 65,
+                      left: 10,
+                      child: Text(
+                        "Eco-friendly hotels prioritize sustainable practices to\nminimize their environmental impact while offering guests\na unique and responsible travel experience",
+                        style: TextStyle(
+                          fontSize: 13,
                           fontFamily: "Outfit-Regular",
                           color: Color.fromARGB(255, 249, 249, 249),
                           letterSpacing: 0.5,

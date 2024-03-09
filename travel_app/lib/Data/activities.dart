@@ -318,6 +318,477 @@ final List<Activity> activities = [
     startTimes: ['08 AM', '08 PM'],
     imagePath: "assets/s4.jpg",
     description:
-        "Cobra hood cave also known as the “Parumaka Naguliya Lena”, is a natural geological formation projected as a cobra hood located within the boulder garden of Sigiriya Rock Fortress complex with plastered interior of the cave once embellished with floral and animal paintings.",
+        "Cobra hood cave also known as the 'Parumaka Naguliya Lena', is a natural geological formation projected as a cobra hood located within the boulder garden of Sigiriya Rock Fortress complex with plastered interior of the cave once embellished with floral and animal paintings.",
   ),
+  Activity(
+      baseCity: "Nuwara Eliya",
+      name: "Queen Victoria Park",
+      type: 'Park in Nuwara Eliya',
+      price: 3.0,
+      rating: 4,
+      startTimes: ['07 AM', '07 PM'],
+      imagePath: "assets/nu1.jpg",
+      description:
+          "Victoria Park is a public park located in Nuwara Eliya, next to the Nuwara Eliya Post Office in Sri Lanka. Originally the park was the research field of Hakgala Botanical Garden.The park was formally named in 1897 to commemorate the Diamond Jubilee of Queen Victoria. "),
+  Activity(
+      baseCity: "Nuwara Eliya",
+      name: "Horton Plains National Park",
+      type: 'National park in Nuwara Eliya',
+      price: 5.0,
+      rating: 5,
+      startTimes: ['06 AM', '04 PM'],
+      imagePath: "assets/nu8.webp",
+      description:
+          "Hortan Plain National park is a National Park in the central highlands of Sri Lanka that was designated in 1988.  It is located at an elevation of 2,100–2,300 m and encompasses montane grassland and cloud forest."),
+  Activity(
+      baseCity: "Nuwara Eliya",
+      name: "Lover's Leap Waterfall",
+      type: 'Tourist attraction in Nuwara Eliya',
+      price: 0.0,
+      rating: 3,
+      startTimes: ['_ AM', '_ PM'],
+      imagePath: "assets/nu9.png",
+      description:
+          "This beautiful 30m high Lovers Leap fall in Nuwara Eliya is incipient of the streams and brooks of Sri Lanka’s highest mountain, the Piduruthalagala (2524m). It flows over hard granite ledges and the water is collected in a tank and used for drinking."),
+  Activity(
+      baseCity: "Nuwara Eliya",
+      name: "Moon Plains",
+      type: 'Tourist attraction in Nuwara Eliya',
+      price: 3.0,
+      rating: 3,
+      startTimes: ['07 AM', '04 PM'],
+      imagePath: "assets/nu4.jpg",
+      description:
+          "Moon Plains, also known as Sandathenna, is a 400-metre long, 40 metre deep valley in Ranhawadigama, about 6km from Nuwara Eliya. What was once part of a catchment area, Moon Plains is now a notable Agricultural and Environmental Tourism Zone since March 2014."),
+  Activity(
+      baseCity: "Nuwara Eliya",
+      name: "Hakgala Botanical Garden",
+      type: 'Botanical garden in Nuwara Eliya',
+      price: 4.0,
+      rating: 5,
+      startTimes: ['07 AM', '05 PM'],
+      imagePath: "assets/nu10.jpg",
+      description:
+          "Hakgala Botanical Garden is one of the five botanical gardens in Sri Lanka. The other four are Peradeniya Botanical Garden, Henarathgoda Botanical Garden, Mirijjawila Botanical Garden and Seetawaka Botanical Garden. It is the second largest botanical garden in Sri Lanka."),
+  Activity(
+      baseCity: "Nuwara Eliya",
+      name: "Seetha Amman Kovil",
+      type: 'Hindu temple in Sita Eliya',
+      price: 0.0,
+      rating: 5,
+      startTimes: [' 07 AM', '05 PM'],
+      imagePath: "assets/nu6.jpg",
+      description:
+          "The Seetha Amman Temple is a Hindu temple located in Seetha Eliya village approximately 1 kilometre from Hakgala Botanical Garden and 5 kilometres from Nuwara Eliya."),
+  Activity(
+      baseCity: "Nuwara Eliya",
+      name: "Bomburu Ella Waterfall",
+      type: 'Tourist attraction in Nuwara Eliya',
+      price: 0.0,
+      rating: 3,
+      startTimes: ['_AM', '_PM'],
+      imagePath: "assets/nu7.jpg",
+      description:
+          "Bomburu Ella, also known as Perawella Falls, is a waterfall at Uva-Paranagama Divisional Secretariat of Sri Lanka. It is located near the border of Nuwara Eliya and Badulla districts, approximately 15 km from Welimada town."),
+  Activity(
+      baseCity: "Anuradhapura",
+      name: "Ruwanweli Maha Seya",
+      type: 'Temple in Anuradhapura',
+      price: 0.0,
+      rating: 5,
+      startTimes: ['6 AM', '11 PM'],
+      imagePath: "assets/an11.jpg",
+      description:
+          "The Ruwanweli Maha Seya, also known as the swarnamali maha seya, is a stupa in Anuradhapura, Sri Lanka. Two quarts or one Dona of the Buddha's relics are enshrined in the stupa, making it the largest collection of his relics anywhere."),
+  Activity(
+      baseCity: "Anuradhapura",
+      name: "Isurumuni Royal Temple",
+      type: 'Temple in Anuradhapura',
+      price: 0.0,
+      rating: 5,
+      startTimes: ['6 AM', '10 PM'],
+      imagePath: "assets/an2.jpg",
+      description:
+          "Isurumuniya is a Buddhist temple situated near to the Tissa Wewa in Anuradhapura, Sri Lanka. There are four carvings of special interest in this Vihara. They are the Isurumuniya Lovers, Elephant Pond and The Royal Family"),
+  Activity(
+      baseCity: "Anuradhapura",
+      name: "Abhayagiri viharaya",
+      type: 'Temple in Anuradhapura',
+      price: 0.0,
+      rating: 4,
+      startTimes: ['6 AM', '11 PM'],
+      imagePath: "assets/an3.jpg",
+      description:
+          "Abhayagiri Vihāra was a major monastery site of Theravada, Mahayana and Vajrayana Buddhism that was situated in Anuradhapura, Sri Lanka. It is one of the most extensive ruins in the world and one of the most sacred Buddhist pilgrimage cities in the nation."),
+  Activity(
+      baseCity: "Anuradhapura",
+      name: "Jetavanaramaya",
+      type: 'Monastery in Anuradhapura',
+      price: 0.0,
+      rating: 4,
+      startTimes: ['6 AM', '11 PM'],
+      imagePath: "assets/an4.jpg",
+      description:
+          "The Jetavanarama stupa or Jetavanaramaya is a stupa, or Buddhist reliquary monument, located in the ruins of Jetavana monastery in the UNESCO world heritage city of Anuradhapura, Sri Lanka."),
+  Activity(
+      baseCity: "Anuradhapura",
+      name: "Samadhi Buddha Statue ",
+      type: 'Monastery in Anuradhapura',
+      price: 0.0,
+      rating: 5,
+      startTimes: ['6 AM', '11 PM'],
+      imagePath: "assets/an5.jpg",
+      description:
+          "The Samadhi Buddha is a famous statue situated at Mahamevnāwa Park in Anuradhapura, Sri Lanka. The Buddha is depicted in the position of the Dhyana Mudra, the posture of meditation associated with his first Enlightenment. This statue is 7 feet 3 inches in height and carved from dolomite marble"),
+  Activity(
+      baseCity: "Anuradhapura",
+      name: "Ranmasu Uyana",
+      type: 'Historical landmark ',
+      price: 0.0,
+      rating: 4,
+      startTimes: ['7 AM', '7 PM'],
+      imagePath: "assets/an6.webp",
+      description:
+          "Ranmasu Uyana is a park in Sri Lanka containing the ancient Magul Uyana. It is situated close to Isurumuni Vihara and Tissa Wewa in the ancient sacred city of Anuradhapura, Sri Lanka. It sits on approximately 40 acres, and is a noted example of Sri Lankan garden architecture of the pre-Christian era."),
+  Activity(
+      baseCity: "Anuradhapura",
+      name: "Twin ponds",
+      type: 'Historical pond',
+      price: 0.0,
+      rating: 4,
+      startTimes: ['7 AM', '7 PM'],
+      imagePath: "assets/an7.JPG",
+      description:
+          "Kuttam Pokuna (කුට්ටම් පොකුණ) are well preserved old bathing tanks or ponds in Sri Lanka. This pair of ponds was built by the Sinhalese in the ancient Anuradhapura Kingdom"),
+  Activity(
+      baseCity: "Anuradhapura",
+      name: "Mihintale",
+      type: 'Mountain peak',
+      price: 0.0,
+      rating: 5,
+      startTimes: ['7 AM', '7 PM'],
+      imagePath: "assets/an8.jpg",
+      description:
+          "Mihintale is a mountain peak near Anuradhapura in Sri Lanka. It is believed by Sri Lankans to be the site of a meeting between the Buddhist monk Mahinda and King Devanampiyatissa which inaugurated the presence of Buddhism in Sri Lanka."),
+  Activity(
+      baseCity: "Anuradhapura",
+      name: "Anuradhapura Moonstone",
+      type: 'Historical landmark',
+      price: 0.0,
+      rating: 4,
+      startTimes: ['7 AM', '12 PM'],
+      imagePath: "assets/an9.jpg",
+      description:
+          "Sandakada Pahana, also known as Moonstone, is a unique feature of the architecture of ancient Sri Lanka. It is an elaborately carved semi-circular stone slab, usually placed at the bottom of staircases and entrances."),
+  Activity(
+      baseCity: "Anuradhapura",
+      name: "Mirisavetiya vihara",
+      type: 'Temple in Anuradhapura',
+      price: 0.0,
+      rating: 4,
+      startTimes: ['7 AM', '12 PM'],
+      imagePath: "assets/an10.jpg",
+      description:
+          "The Mirisaweti Stupa is a memorial building, a stupa, situated in the ancient city of Anuradhapura, Sri Lanka. King Dutugamunu built the Mirisaveti Stupa after defeating King Elara. After placing the Buddha's relics in the sceptre, he had gone to Tissa Wewa for a bath leaving the sceptre"),
+  Activity(
+      baseCity: "Polonnaruwa",
+      name: "Rankoth Vehera",
+      type: 'Historical landmark',
+      price: 0.0,
+      rating: 4,
+      startTimes: ['7 AM', '10 PM'],
+      imagePath: "assets/po1.jpg",
+      description:
+          "Rankoth Vehera is a stupa located in the ancient city of Polonnaruwa in Sri Lanka. The stupa was built by Nissanka Malla of Polonnaruwa, who ruled the country from 1187 to 1196.[1] The Rankoth Vehera has been built according to the tradition of the stupas of the Anuradhapura Maha Viharaya and bears a close resemblance to Ruwanwelisay"),
+  Activity(
+      baseCity: "Polonnaruwa",
+      name: "Watadageya",
+      type: 'Historical landmark',
+      price: 0.0,
+      rating: 4,
+      startTimes: ['6 AM', '8 PM'],
+      imagePath: "assets/po2.jpg",
+      description:
+          "The Polonnaruwa Watadageya is an ancient structure dating back to the Kingdom of Polonnaruwa of Sri Lanka. It is believed to have been built during the reign of Parakramabahu I to hold the Relic of the tooth of the Buddha or during the reign of Nissanka Malla of Polonnaruwa to hold the alms bowl used by the Buddha"),
+  Activity(
+      baseCity: "Polonnaruwa",
+      name: "Nissankalata Mandapa",
+      type: 'Historical landmark',
+      price: 0.0,
+      rating: 4,
+      startTimes: ['6 AM', '8 PM'],
+      imagePath: "assets/po3.jpg",
+      description:
+          "Nissanka Latha Mandapaya is a unique structure in the ancient city of Polonnaruwa in Sri Lanka. A màndapa is a pillared structure that is open on all sides and protects the person inside from the sun with a roof."),
+  Activity(
+      baseCity: "Polonnaruwa",
+      name: "Parakrama Samudra",
+      type: 'Reservoir in Sri Lanka',
+      price: 0.0,
+      rating: 4,
+      startTimes: ['_AM', '_PM'],
+      imagePath: "assets/po4.jpg",
+      description:
+          "Parakrama Samudra is a shallow reservoir, consisting of five separate wewa connected by narrow channels in Polonnaruwa, Sri Lanka. The northernmost reservoir is the oldest and referred to as Topa wewa built around 386 AD."),
+  Activity(
+      baseCity: "Polonnaruwa",
+      name: "The Palace of King Parakramabahu",
+      type: 'Historical Palace',
+      price: 0.0,
+      rating: 5,
+      startTimes: ['6 AM', '8 PM'],
+      imagePath: "assets/po5.webp",
+      description:
+          "Once towering at 7 stories, and believed to have around 1,000 chambers, the Palace of the great King Parakramabahu is a reminder of just how great the kingdom was. Built in the 12th century AD, this unique palace was also shared with his ministers, generals and servants"),
+  Activity(
+      baseCity: "Polonnaruwa",
+      name: "Kiri Vehera",
+      type: 'Historical landmark',
+      price: 0.0,
+      rating: 4,
+      startTimes: ['7 AM', '9 PM'],
+      imagePath: "assets/po6.jpg",
+      description:
+          "This has been built by a queen of king Parakramabahu (1153-1186) called “Subadra”. The original name of this has been “Rupavathi Stupa”. This too is a part of Ãlahana Privena and stands 80 feet in height today.This is also the second biggest stupa in Polonnaruwa today. Also it is the only stupa to survive the 900 years of forces of nature and still is in the original condition."),
+  Activity(
+      baseCity: "Polonnaruwa",
+      name: "Polonnaruwa Siva Devale No.1",
+      type: 'Historical landmark',
+      price: 0.0,
+      rating: 4,
+      startTimes: ['6 AM', '8 PM'],
+      imagePath: "assets/po7.jpg",
+      description: "While Siva Devale No. 2 was built in the Chola style in the name of the queen of King Rajaraja I, the original name or the builder of Siva Devale No. 1 is not known. However, the architecture of the temple indicates that it may have been built during the 13th century A.D. Therefore, the temple is believed to be a product of the Pandya style built after the occupation of Polonnaruwa by Magha of Kalinga."),
+  Activity(
+      baseCity: "Polonnaruwa",
+      name: "Polonnaruwa Siva Devale No.2",
+      type: 'Historical landmark',
+      price: 0.0,
+      rating: 4,
+      startTimes: ['6 AM', '8 PM'],
+      imagePath: "assets/po8.jpg",
+      description:
+          "This Siva Kovil (devalaya) is considered to be one of the oldest buildings of the Polonnaruwa Kingdom to survive the ravages of time.  This Siva kovil is believed to have been built by Cola invaders (10th century) who initially established their capital in Polonnaruwa."),
+  
+  Activity(
+      baseCity: "Matara ",
+      name: "The Shrine of Our Lady of Matara",
+      type: 'Catholic Church',
+      price: 0.0,
+      rating: 5,
+      startTimes: ['6 AM', '10 PM'],
+      imagePath: "assets/ma1.jpg",
+      description:
+          "Shrine of Our Lady of Matara is a Roman Catholic church devoted to the Virgin Mary, in the town of Matara, Sri Lanka. The shrine houses a statue of the Virgin Mary holding the infant Jesus. Though the statue's origins are unknown, church officials claim that it is 400 years old."),
+  Activity(
+      baseCity: "Matara ",
+      name: "Matara Paravi Duwa Beach",
+      type: 'Beach pavillion in Matara',
+      price: 0.0,
+      rating: 4,
+      startTimes: ['_AM', '_PM'],
+      imagePath: "assets/ma2.jpg",
+      description:
+          "It is a small island off Matara beach right in the town center. There is a nice Buddist temple there, still under construction. Very nice views from the temple."),
+  Activity(
+      baseCity: "Matara",
+      name: "Star Fort Matara",
+      type: 'Fortress in Matara',
+      price: 0.0,
+      rating: 5,
+      startTimes: ['9 AM', '5 PM'],
+      imagePath: "assets/ma3.jpeg",
+      description:
+          "The Star Fort is a fort in Matara, Sri Lanka, located on the eastern bank of the Nilwala River, approximately 350 metres from the gate to the Matara fort. It was constructed by the Dutch in 1765, and was originally called Redoute Van Eck"),
+  Activity(
+      baseCity: "Matara ",
+      name: "Old Dutch Market",
+      type: 'Archaeological site in Matara',
+      price: 0.0,
+      rating: 3,
+      startTimes: ['9 AM', '4 PM'],
+      imagePath: "assets/ma4.jpg",
+      description:
+          "The Old Nupe Market or the Old Dutch Market is a historic, European-built structure in Matara, Sri Lanka. It is located about 3.2 kilometres from Matara fort, at the junction of the Matara-Akuressa Highway and Matara Road"),
+  Activity(
+      baseCity: "Matara ",
+      name: "Matara Fort",
+      type: 'Archaeological site in Matara',
+      price: 0.0,
+      rating: 3,
+      startTimes: ['8 AM', '5 PM'],
+      imagePath: "assets/ma5.jpg",
+      description:
+          "The Matara Fort was built in 1560 by the Portuguese and was substantially re-built by the Dutch in 1640, following the capture of Galle. The fort, which consists of a large stone rampart, occupies the promontory, which separates the Niwala Ganga lagoon and the ocean"),
+  Activity(
+      baseCity: "Jaffna",
+      name: "Nallur Kandaswamy Devasthanam",
+      type: 'Hindu temple in Jaffna',
+      price: 0.0,
+      rating: 5,
+      startTimes: ['4 AM', '6 PM'],
+      imagePath: "assets/ja1.jpg",
+      description:
+          "The Nallur Kandaswamy Kovil is a Hindu temple, located in Nallur, Northern Province, Sri Lanka. The presiding deity is Murugan in the form of the divine spear vel in the sanctum, the primary shrine,and in other forms, namely, Shanmugar, Muthukumaraswami, Valli Kanthar with consorts Valli and Deivayanai, and Dandayuddhapani, sans consorts in secondary shrines in the temple."),
+  Activity(
+      baseCity: "Jaffna ",
+      name: "Dutch Fort - Jaffna",
+      type: 'Fortress in Jaffna',
+      price: 0.0,
+      rating: 4,
+      startTimes: ['7 AM', '6 PM'],
+      imagePath: "assets/ja2.jpg",
+      description:
+          "The fort is known as one of the greatest Dutch forts in Asia, owing to the extensive alterations they made to the original Portuguese design, including adding defensive triangles to mirror something similar to a snowflake (which is especially visible from an aerial vantage point)"),
+  Activity(
+      baseCity: "Jaffna ",
+      name: "Nagadeepa Temple",
+      type: 'Buddhist temple in Jaffna',
+      price: 0.0,
+      rating: 3,
+      startTimes: ['9 AM', '5 PM'],
+      imagePath: "assets/ja3.jpg",
+      description:
+          "Nagadeepa Purana Vihara is an ancient Buddhist temple situated in Jaffna district of Northern Province, Sri Lanka. It is among the country's sixteen holiest Buddhist shrines."),
+  Activity(
+      baseCity: "Jaffna ",
+      name: "Elephantpass",
+      type: 'Historical landmark in Jaffna',
+      price: 0.0,
+      rating: 3,
+      startTimes: ['7 AM', '10 PM'],
+      imagePath: "assets/ja4.jpg",
+      description:
+          "Elephant Pass, Northern Province, Sri Lanka is located in the gateway of Jaffna Peninsula. It lies about 340 km north from capital. It has an important military base and used to be the island's largest salt field. It was regularly the site of battles during the civil war."),
+  Activity(
+      baseCity: "Jaffna ",
+      name: "Jaffna Archeological Museum",
+      type: 'Museum in Jaffna',
+      price: 0.0,
+      rating: 4,
+      startTimes: ['9 AM', '4 PM'],
+      imagePath: "assets/ja5.jpg",
+      description:
+          "Jaffna Archaeological Museum is located in Nallur, Jaffna, Sri Lanka. The land was given to museum by Arumuga Navalar Foundation, and front portion has Navalar Cultural Hall. The museum houses a rare collection of antiquities"),
+  Activity(
+      baseCity: "Jaffna ",
+      name: "Jaffna Clock Tower",
+      type: 'Historical landmark in Jaffna',
+      price: 0.0,
+      rating: 4,
+      startTimes: ['9 AM', '4 PM'],
+      imagePath: "assets/ja6.jpg",
+      description:
+          "Jaffna Clock Tower is a clock tower in the city of Jaffna in northern Sri Lanka. It is one of the landmarks of the city. It was built to commemorate the visit of Albert Edward, Prince of Wales to Ceylon in 1875"),
+  Activity(
+      baseCity: "Jaffna ",
+      name: "Kadurugoda Viharaya - Kantharodai",
+      type: 'Temple in Jaffna',
+      price: 0.0,
+      rating: 3,
+      startTimes: ['9 AM', '4 PM'],
+      imagePath: "assets/ja7.jpg",
+      description:
+          "Ancient Kantharodai Historical Site with some remains of Stupas is situated in Kandarodai village in Chunnakam, Sri Lanka. The temple is considered one of the ancient Buddhist remains in existence today in Jaffna Peninsula"),
+  Activity(
+      baseCity: "Jaffna ",
+      name: "St. Mary's Cathedral Jaffna",
+      type: 'Catholic cathedral in Jaffna',
+      price: 0.0,
+      rating: 5,
+      startTimes: ['6 AM', '7 PM'],
+      imagePath: "assets/ja8.jpg",
+      description:
+          "St. Mary's Cathedral is the seat of the Roman Catholic Diocese of Jaffna located in Gurunagar, a suburb of Jaffna in northern Sri Lanka. The cathedral is also known locally as Periye Kovil."),
+  Activity(
+      baseCity: "Jaffna ",
+      name: "Kankesanthurai Beach",
+      type: 'Beach in Jaffna',
+      price: 0.0,
+      rating: 4,
+      startTimes: ['6 AM', '7 PM'],
+      imagePath: "assets/ja9.jpg",
+      description:
+          "The Kankesanthurai Beach or more popularly known as the KKS is one of the famous beaches of the northern province of the country of Sri Lanka. The beach is one of a kind because unlike other beaches it has had less interaction with visitors and thus pollution of any sorts does not exist here."),
+  Activity(
+      baseCity: "Jaffna ",
+      name: "Casuarina Beach",
+      type: 'Beach in Jaffna',
+      price: 0.0,
+      rating: 4,
+      startTimes: ['6 AM', '7 PM'],
+      imagePath: "assets/ja10.jpg",
+      description:
+          "Casuarina Beach is in Karainagar, Jaffna District, Sri Lanka, about 20 kilometres from Jaffna. The Casuarina Beach in Karainagar is also called and written as Casoorina, Cashoorina and few other variants. This is considered to be the best beach in the Jaffna Peninsula with white sand."),
+  Activity(
+    baseCity: "Trincomalee",
+    name: "Seruwawila Rajamaha Viharaya",
+    type: 'Buddhist temple',
+    price: 0.0,
+    rating: 3,
+    startTimes: ['6 AM', '11 PM'],
+    imagePath: "assets/tr1.jpg",
+    description:
+        "Seruwawila Mangala Raja Maha Vihara is an ancient Buddhist temple in Trincomalee district in Eastern Province, which is among the sixteen or seventeen holiest Buddhist shrines in Sri Lanka. It was built during the reign of King Kavan Tissa, Prince of Ruhuna, containing the Lalata Dathun Wahanse of Buddha.",
+  ),
+  Activity(
+      baseCity: "Trincomalee ",
+      name: "Nilaveli Beach",
+      type: 'Beach in Trincomale',
+      price: 0.0,
+      rating: 5,
+      startTimes: [' 5 AM', '7 PM'],
+      imagePath: "assets/tr2.webp",
+      description:
+          "Nilaveli's 4km stretch of sand is considered one of Sri Lanka's best beaches and with its paradise-island remoteness, swaying palms and golden tinge to the shore, it's easy to see why. As such, it's a surprise that it is so little frequented. A few modest resorts are tucked above the shore line and Pigeon Island, which offers great snorkelling opportunities, is a short boat ride away."),
+  Activity(
+      baseCity: "Trincomalee ",
+      name: "Trincomalee War Cemetery",
+      type: 'Military cemetery in Trincomalee',
+      price: 0.0,
+      rating: 5,
+      startTimes: ['6 AM', '7 PM'],
+      imagePath: "assets/tr3.jpg",
+      description:
+          "Trincomalee British War Cemetery is a British military cemetery in Trincomalee, Sri Lanka, for soldiers of the British Empire who were killed or died during World War II. The cemetery also has graves of Dutch, French, Italian and other allied forces"),
+  Activity(
+      baseCity: "Trincomalee ",
+      name: "Velgam Vehera Buddhist Temple",
+      type: 'Buddhist temple',
+      price: 0.0,
+      rating: 5,
+      startTimes: ['6 AM', '10 PM'],
+      imagePath: "assets/tr4.jpeg",
+      description:
+          "Velgam Vehera is a historical Buddhist temple situated in Kanniya, Trincomalee District, Sri Lanka. It also known to Hindus as Natanar Kovil. Historically Velgam Vehera was one of important Buddhist temples in the country, worshiped by both Sinhala and Tamil Buddhists"),
+  Activity(
+      baseCity: "Trincomalee ",
+      name: "Shri Badrakali Amman Hindu Temple",
+      type: 'Hindu temple',
+      price: 0.0,
+      rating: 4,
+      startTimes: ['6 AM', '12 PM'],
+      imagePath: "assets/tr5.jpg",
+      description:
+          "Pathirakali Amman Temple / Pathirakali Ambal Kovil / or the Kali Kovil, Trincomalee is a Hindu temple dedicated to the goddess Bhadrakali, a form of the goddess Kali Amman in Trincomalee, Eastern Province, Sri Lanka"),
+  Activity(
+      baseCity: "Trincomalee ",
+      name: "Thirukoneswaram Kovil",
+      type: 'Hindu temple',
+      price: 0.0,
+      rating: 4,
+      startTimes: ['4 AM', '10 PM'],
+      imagePath: "assets/tr6.jpg",
+      description:
+          "Koneswaram Temple of Trincomalee or Thirukonamalai Konesar Temple / The Temple of the Thousand Pillars and Dakshina-Then Kailasam is a classical-medieval Hindu temple complex in Trincomalee, a Hindu religious pilgrimage centre in Eastern Province, Sri Lanka."),
+  Activity(
+      baseCity: "Trincomalee ",
+      name: "Fort Frederick",
+      type: 'Fortress in Trincomalee',
+      price: 0.0,
+      rating: 3,
+      startTimes: ['7 AM', '10 PM'],
+      imagePath: "assets/tr7.jpg",
+      description:
+          "Fort Fredrick, also known as Trincomalee Fort or Fort of Triquillimale, is a fort built by the Portuguese at Trincomalee, Eastern Province, Sri Lanka, completed in 1624 CE, built on Swami Rock-Konamamalai from the debris of the world-famous ancient Hindu Koneswaram temple"),
 ];

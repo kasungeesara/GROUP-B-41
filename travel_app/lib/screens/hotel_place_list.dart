@@ -93,7 +93,7 @@ class _HotelPlaceListScreenState extends State<HotelPlaceListScreen> {
                         widget.hotel.city,
                         style: const TextStyle(
                           letterSpacing: 1.2,
-                          fontSize: 40,
+                          fontSize: 32,
                           fontWeight: FontWeight.bold,
                           fontFamily: "Outfit-Regular",
                           color: Color.fromARGB(255, 255, 255, 255),

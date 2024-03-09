@@ -18,7 +18,7 @@ class _CityHotelAllScreenState extends State<CityHotelAllScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Places & Hotels",
+          "Hotels and Places to stay",
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,

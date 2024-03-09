@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:travel_app/Data/city_hotel.dart';
 import 'package:travel_app/Models/hotel_city.dart';
 import 'package:travel_app/screens/city_hotel/city_hotel_all.dart';
+import 'package:travel_app/screens/hotel_place_list.dart';
 
 class HotelCityCarousel extends StatelessWidget {
   const HotelCityCarousel({super.key});
+  
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +57,14 @@ class HotelCityCarousel extends StatelessWidget {
               CityHotel cityhotel = cityhotels[index];
 
               return GestureDetector(
-                onTap: () {},
+                 onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (ctx) =>
+                            HotelPlaceListScreen(hotel: cityhotel),
+                      ),
+                    );
+                  },
                 child: Container(
                   margin: const EdgeInsets.all(10),
                   width: 240,
