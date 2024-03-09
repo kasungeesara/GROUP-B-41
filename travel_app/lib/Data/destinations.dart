@@ -52,7 +52,7 @@ final List<Destination> destinations = [
   Destination(
     city: 'Polonnaruwa',
     province: 'North Central Province',
-    activities: 9,
+    activities: 8,
     hotels: 10,
     description:
         'Polonnaruwa was first military post in the Sinhalese kingdom.',
