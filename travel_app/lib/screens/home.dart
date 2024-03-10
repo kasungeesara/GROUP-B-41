@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/screens/map.dart';
 import 'package:travel_app/screens/profile.dart';
-import 'package:travel_app/widgets/cafe_based_city.dart';
+import 'package:travel_app/widgets/coffee_cuisine_carousal.dart';
 import 'package:travel_app/widgets/cafe_carousal.dart';
 import 'package:travel_app/widgets/coffe_carousal.dart';
 import 'package:travel_app/widgets/destination_carousel.dart';
-import 'package:travel_app/widgets/eat_based_city.dart';
+import 'package:travel_app/widgets/dine_draft_carousal.dart';
 import 'package:travel_app/widgets/fine_dining_carousel.dart';
 import 'package:travel_app/widgets/hotel_based_on_city_carousal.dart';
 import 'package:travel_app/widgets/hotels_carousel.dart';
@@ -110,7 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
             height: 8.0,
           ),
           if (_selectedIndex == 2) const EatCityCarousel(),
-          if (_selectedIndex == 3) const CafeCityCarousel(),
+          if (_selectedIndex == 3) const CoffeeCuisineCarousel(),
           if (_selectedIndex == 0)
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),

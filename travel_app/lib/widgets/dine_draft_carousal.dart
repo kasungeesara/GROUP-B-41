@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/Data/city_hotel.dart';
-import 'package:travel_app/Models/hotel_city.dart';
-import 'package:travel_app/screens/city_hotel/city_hotel_all.dart';
-import 'package:travel_app/screens/hotel_place_list.dart';
+import 'package:travel_app/Data/dine_draft.dart';
+import 'package:travel_app/Models/dine_draft.dart';
+import 'package:travel_app/screens/dinedraft/dinedraft_all.dart';
+import 'package:travel_app/screens/dinedraft/dinedraft_list.dart';
+
 
 class EatCityCarousel extends StatelessWidget {
   const EatCityCarousel({super.key});
-  
 
   @override
   Widget build(BuildContext context) {
@@ -29,10 +29,10 @@ class EatCityCarousel extends StatelessWidget {
               GestureDetector(
                 onTap: () {
                   Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (ctx) => const CityHotelAllScreen(),
+                   MaterialPageRoute(
+                      builder: (ctx) => const DineDraftAll(),
                     ),
-                  );
+                 );
                 },
                 child: const Text(
                   "See All",
@@ -54,17 +54,17 @@ class EatCityCarousel extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemCount: 5,
             itemBuilder: (BuildContext context, int index) {
-              CityHotel cityhotel = cityhotels[index];
+              DineDraft dinedrafts = dinedraft[index];
 
               return GestureDetector(
                  onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (ctx) =>
-                            HotelPlaceListScreen(hotel: cityhotel),
-                      ),
-                    );
-                  },
+                 Navigator.of(context).push(
+                 MaterialPageRoute(
+                builder: (ctx) =>
+                   DineDraftList(city: dinedrafts),
+                  ),
+                 );
+                 },
                 child: Container(
                   margin: const EdgeInsets.all(10),
                   width: 240,
@@ -94,7 +94,7 @@ class EatCityCarousel extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
                                 Text(
-                                  "Hotels: ${cityhotel.cityhotels}",
+                                  "Places: ${dinedrafts.places}",
                                   style: const TextStyle(
                                     fontFamily: "Outfit-Regular",
                                     fontWeight: FontWeight.bold,
@@ -104,7 +104,7 @@ class EatCityCarousel extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  cityhotel.description,
+                                  dinedrafts.description,
                                   style: const TextStyle(
                                     letterSpacing: 1.2,
                                     fontSize: 12,
@@ -133,13 +133,13 @@ class EatCityCarousel extends StatelessWidget {
                         child: Stack(
                           children: <Widget>[
                             Hero(
-                              tag: cityhotel.imagePath,
+                              tag: dinedrafts.imagePath,
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(20.0),
                                 child: Image(
                                   height: 180.0,
                                   width: 220.0,
-                                  image: AssetImage(cityhotel.imagePath),
+                                  image: AssetImage(dinedrafts.imagePath),
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -153,7 +153,7 @@ class EatCityCarousel extends StatelessWidget {
                                   Padding(
                                     padding: const EdgeInsets.all(1.0),
                                     child: Text(
-                                      cityhotel.city,
+                                      dinedrafts.city,
                                       style: const TextStyle(
                                         letterSpacing: 1.2,
                                         fontSize: 24,
@@ -176,7 +176,7 @@ class EatCityCarousel extends StatelessWidget {
                                         ),
                                         const SizedBox(width: 5.0),
                                         Text(
-                                          cityhotel.province,
+                                          dinedrafts.province,
                                           style: const TextStyle(
                                             fontSize: 16,
                                             fontFamily: "Outfit-Regular",
