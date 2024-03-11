@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/Data/city_hotel.dart';
-import 'package:travel_app/Models/hotel_city.dart';
-import 'package:travel_app/screens/city_hotel/city_hotel_all.dart';
-import 'package:travel_app/screens/hotel_place_list.dart';
+import 'package:travel_app/Data/coffee_cuisine.dart';
+import 'package:travel_app/Models/coffee_cuisine.dart';
+import 'package:travel_app/screens/coffeecuisine/coffeecuisine_all.dart';
+import 'package:travel_app/screens/coffeecuisine/coffeecuisine_list.dart';
 
-class CafeCityCarousel extends StatelessWidget {
-  const CafeCityCarousel({super.key});
-  
+class CoffeeCuisineCarousel extends StatelessWidget {
+  const CoffeeCuisineCarousel({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +29,7 @@ class CafeCityCarousel extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (ctx) => const CityHotelAllScreen(),
+                      builder: (ctx) => const CoffeeCuisineAll(),
                     ),
                   );
                 },
@@ -54,17 +53,17 @@ class CafeCityCarousel extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemCount: 5,
             itemBuilder: (BuildContext context, int index) {
-              CityHotel cityhotel = cityhotels[index];
+              CoffeeCuisine coffeecuisines = coffeecuisine[index];
 
               return GestureDetector(
-                 onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (ctx) =>
-                            HotelPlaceListScreen(hotel: cityhotel),
-                      ),
-                    );
-                  },
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (ctx) =>
+                          CoffeeCuisinetList(city: coffeecuisines),
+                    ),
+                  );
+                },
                 child: Container(
                   margin: const EdgeInsets.all(10),
                   width: 240,
@@ -94,7 +93,7 @@ class CafeCityCarousel extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
                                 Text(
-                                  "Hotels: ${cityhotel.cityhotels}",
+                                  "Places: ${coffeecuisines.places}",
                                   style: const TextStyle(
                                     fontFamily: "Outfit-Regular",
                                     fontWeight: FontWeight.bold,
@@ -104,7 +103,7 @@ class CafeCityCarousel extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  cityhotel.description,
+                                  coffeecuisines.description,
                                   style: const TextStyle(
                                     letterSpacing: 1.2,
                                     fontSize: 12,
@@ -133,13 +132,13 @@ class CafeCityCarousel extends StatelessWidget {
                         child: Stack(
                           children: <Widget>[
                             Hero(
-                              tag: cityhotel.imagePath,
+                              tag: coffeecuisines.imagePath,
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(20.0),
                                 child: Image(
                                   height: 180.0,
                                   width: 220.0,
-                                  image: AssetImage(cityhotel.imagePath),
+                                  image: AssetImage(coffeecuisines.imagePath),
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -153,7 +152,7 @@ class CafeCityCarousel extends StatelessWidget {
                                   Padding(
                                     padding: const EdgeInsets.all(1.0),
                                     child: Text(
-                                      cityhotel.city,
+                                      coffeecuisines.city,
                                       style: const TextStyle(
                                         letterSpacing: 1.2,
                                         fontSize: 24,
@@ -176,7 +175,7 @@ class CafeCityCarousel extends StatelessWidget {
                                         ),
                                         const SizedBox(width: 5.0),
                                         Text(
-                                          cityhotel.province,
+                                          coffeecuisines.province,
                                           style: const TextStyle(
                                             fontSize: 16,
                                             fontFamily: "Outfit-Regular",

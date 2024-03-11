@@ -5,6 +5,7 @@ class Hotel {
   final String imagePath;
   final String type;
   final String tel;
+  final String about;
 
   Hotel({
     required this.name,
@@ -13,5 +14,7 @@ class Hotel {
     required this.imagePath,
     required this.type,
     required this.tel,
+    required this.about,
+
   });
 }

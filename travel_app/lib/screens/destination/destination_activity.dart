@@ -129,6 +129,24 @@ class _ActivityScreenState extends State<ActivityScreen> {
               ),
             ],
           ),
+          const Padding(
+            padding: EdgeInsets.only(left: 12, top: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  "About",
+                  style: TextStyle(
+                    letterSpacing: 1.2,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: "Outfit-Regular",
+                    color: Colors.black,
+                  ),
+                ),
+              ],
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Text(
@@ -138,6 +156,7 @@ class _ActivityScreenState extends State<ActivityScreen> {
                 fontFamily: "Outfit-Regular",
                 color: Color.fromARGB(255, 0, 0, 0),
               ),
+              textAlign: TextAlign.justify,
             ),
           ),
         ],
