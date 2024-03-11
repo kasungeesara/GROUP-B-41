@@ -8,6 +8,7 @@ final List<Hotel> hotels = [
     imagePath: "assets/h11.jpg",
     type: "5-star hotel",
     tel: "0117 745 730",
+    about: "UNESCO design award winner Wild Coast Tented is a spectacular luxury tented camp stunningly located where the jungle meets a pristine beach, overlooking the Indian Ocean. The unique design blends seamlessly into the surrounding landscape.",
   ),
   Hotel(
     name: 'Le Grand Galle',
@@ -16,6 +17,7 @@ final List<Hotel> hotels = [
     imagePath: "assets/h2.jpg",
     type: "5-star hotel",
     tel: "0912 228 555",
+    about: "",
   ),
   Hotel(
     name: 'Shangri-La Hambantota',
@@ -24,6 +26,7 @@ final List<Hotel> hotels = [
     imagePath: "assets/h3.jpg",
     type: "5-star hotel",
     tel: "0477 888 888",
+    about: "",
   ),
   Hotel(
     name: 'Jetwing Lake',
@@ -32,6 +35,7 @@ final List<Hotel> hotels = [
     imagePath: "assets/h4.jpg",
     type: "5-star hotel",
     tel: "0662 040 700",
+    about: "",
   ),
   Hotel(
     name: 'The Golden Ridge Hotel',
@@ -40,6 +44,7 @@ final List<Hotel> hotels = [
     imagePath: "assets/h5.jpg",
     type: "5-star hotel",
     tel: "0522 030 300",
+    about: "",
   ),
   Hotel(
     name: 'Jetwing Blue',
@@ -48,6 +53,7 @@ final List<Hotel> hotels = [
     imagePath: "assets/h6.jpg",
     type: "5-star hotel",
     tel: "0312 279 000",
+    about: "",
   ),
   Hotel(
     name: 'Jetwing Surf',
@@ -56,6 +62,7 @@ final List<Hotel> hotels = [
     imagePath: "assets/h7.jpg",
     type: "5-star hotel",
     tel: "0632 030 300",
+    about: "",
   ),
   Hotel(
     name: 'Taj Bentota Resort & Spa',
@@ -64,6 +71,7 @@ final List<Hotel> hotels = [
     imagePath: "assets/h8.jpg",
     type: "5-star hotel",
     tel: "0345 555 555",
+    about: "",
   ),
   Hotel(
     name: 'Heritance Ahungalla',
@@ -72,6 +80,7 @@ final List<Hotel> hotels = [
     imagePath: "assets/h9.jpg",
     type: "5-star hotel",
     tel: "0915 555 000",
+    about: "",
   ),
   Hotel(
     name: 'Wattura Resort and Spa',
@@ -80,5 +89,6 @@ final List<Hotel> hotels = [
     imagePath: "assets/h10.jpg",
     type: "5-star hotel",
     tel: "0317 857 857",
+    about: "",
   ),
 ];

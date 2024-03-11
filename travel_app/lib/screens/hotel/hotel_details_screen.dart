@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:travel_app/Models/hotel.dart';
 
 class HotelDetails extends StatefulWidget {
-  
+  // ignore: use_super_parameters
   const HotelDetails({
-    super.key,
+    Key? key,
     required this.hotel,
-  });
+  }) : super(key: key);
 
   final Hotel hotel;
 
   @override
+  // ignore: library_private_types_in_public_api
   _HotelDetailsState createState() => _HotelDetailsState();
 }
 
@@ -19,6 +20,7 @@ class _HotelDetailsState extends State<HotelDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Stack(
             children: <Widget>[
@@ -60,13 +62,13 @@ class _HotelDetailsState extends State<HotelDetails> {
                     Row(
                       children: <Widget>[
                         IconButton(
-                          onPressed: () => Navigator.pop(context),
+                          onPressed: () {},
                           icon: const Icon(Icons.search_rounded),
                           iconSize: 30,
                           color: Colors.white,
                         ),
                         IconButton(
-                          onPressed: () => Navigator.pop(context),
+                          onPressed: () {},
                           icon: const Icon(Icons.sort_rounded),
                           iconSize: 30,
                           color: Colors.white,
@@ -96,7 +98,7 @@ class _HotelDetailsState extends State<HotelDetails> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.all(1.0),
+                      padding: const EdgeInsets.all(1.0),
                       child: Row(
                         children: <Widget>[
                           const Icon(
@@ -130,25 +132,100 @@ class _HotelDetailsState extends State<HotelDetails> {
               ),
             ],
           ),
+          const SizedBox(
+            height: 8,
+          ),
           Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(8),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                const Icon(
+                  Icons.location_on_outlined,
+                  size: 18.0,
+                  color: Colors.black,
+                ),
+                const SizedBox(width: 5.0),
+                Text(
+                  widget.hotel.address,
+                  style: const TextStyle(
+                    fontSize: 15.5,
+                    fontFamily: "Outfit-Regular",
+                    color: Colors.black,
+                  ),
+                  textAlign: TextAlign.justify,
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 8),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                const Icon(
+                  Icons.call_end_outlined,
+                  size: 18.0,
+                  color: Colors.black,
+                ),
+                const SizedBox(width: 5.0),
+                Text(
+                  widget.hotel.tel,
+                  style: const TextStyle(
+                    fontSize: 15,
+                    fontFamily: "Outfit-Regular",
+                    color: Colors.black,
+                  ),
+                  textAlign: TextAlign.justify,
+                ),
+              ],
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.only(left: 8, top: 4),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Icon(
+                  Icons.search,
+                  size: 18.0,
+                  color: Colors.black,
+                ),
+                SizedBox(width: 5.0),
+                Text(
+                  "Visit Page",
+                  style: TextStyle(
+                    fontSize: 15,
+                    fontFamily: "Outfit-Regular",
+                    color: Colors.black,
+                  ),
+                  textAlign: TextAlign.justify,
+                ),
+              ],
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.only(left: 10,top: 20),
             child: Text(
-              widget.hotel.address,
-              style: const TextStyle(
-                fontSize: 16,
+              "About",
+              style: TextStyle(
+                letterSpacing: 1.2,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
                 fontFamily: "Outfit-Regular",
-                color: Color.fromARGB(255, 0, 0, 0),
+                color: Colors.black,
               ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.only(left: 10,top: 2),
             child: Text(
-              widget.hotel.tel,
+              widget.hotel.about,
               style: const TextStyle(
-                fontSize: 16,
+                letterSpacing: 1.2,
+                fontSize: 15.5,
                 fontFamily: "Outfit-Regular",
-                color: Color.fromARGB(255, 0, 0, 0),
+                color: Colors.black,
               ),
             ),
           ),
