@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/Data/dine_draft.dart';
-import 'package:travel_app/Data/fine_dines.dart';
 import 'package:travel_app/Models/dine_draft.dart';
 
 class DineDraftAll extends StatefulWidget {
@@ -70,7 +69,7 @@ class _DineDraftAllState extends State<DineDraftAll> {
                                     MainAxisAlignment.spaceBetween,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Container(
+                                  SizedBox(
                                     width: 200,
                                     child: Text(
                                       dinedrafteatall.city,

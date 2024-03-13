@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/Models/coffee_cuisine.dart';
 
 class CarousalCardReuseable2 extends StatelessWidget {
   const CarousalCardReuseable2({
@@ -48,7 +47,7 @@ class CarousalCardReuseable2 extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Text(
-                      "Places: ${placesCount}",
+                      "Places: $placesCount",
                       style: const TextStyle(
                         fontFamily: "Outfit-Regular",
                         fontWeight: FontWeight.bold,
