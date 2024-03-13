@@ -25,7 +25,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
     return Text(stars);
   }
 
-  List<Activity> availableActivities = [];
+  //List<Activity> availableActivities = [];
 
   @override
   Widget build(BuildContext context) {

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/Data/activities.dart';
 import 'package:travel_app/Data/city_based_coffeecuisine.dart';
-import 'package:travel_app/Models/activity.dart';
+import 'package:travel_app/Data/coffee_cuisine.dart';
 import 'package:travel_app/Models/city_coffeecuisine.dart';
 import 'package:travel_app/Models/coffee_cuisine.dart';
 
@@ -28,11 +27,10 @@ class _CoffeeCuisinetListState extends State<CoffeeCuisinetList> {
     return Text(stars);
   }
 
-  List<Activity> availableActivities = [];
 
   @override
   Widget build(BuildContext context) {
-    final filteredActivities = activities
+    final filteredActivities = citycoffeecuisines
         .where((act) => act.baseCity.contains(widget.city.city))
         .toList();
 
@@ -154,7 +152,7 @@ class _CoffeeCuisinetListState extends State<CoffeeCuisinetList> {
               padding: const EdgeInsets.only(top: 10.0, bottom: 15.0),
               itemCount: filteredActivities.length,
               itemBuilder: (BuildContext context, int index) {
-                CityCoffeeCuisine coffeecafe = citycoffeecuisines[index];
+                CityCoffeeCuisine coffeecafe = filteredActivities[index];
 
                 return GestureDetector(
                  // onTap: () => Navigator.push(

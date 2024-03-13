@@ -6,7 +6,10 @@ import 'package:travel_app/widgets/cafe_carousal.dart';
 import 'package:travel_app/widgets/coffe_carousal.dart';
 import 'package:travel_app/widgets/destination_carousel.dart';
 import 'package:travel_app/widgets/dine_draft_carousal.dart';
-import 'package:travel_app/widgets/fine_dining_carousel.dart';
+import 'package:travel_app/widgets/restaurantsCarousal.dart';
+import 'package:travel_app/widgets/homeBanner_3.dart';
+import 'package:travel_app/widgets/homeBanner_1.dart';
+import 'package:travel_app/widgets/homeBanner_2.dart';
 import 'package:travel_app/widgets/hotel_based_on_city_carousal.dart';
 import 'package:travel_app/widgets/hotels_carousel.dart';
 import 'package:travel_app/widgets/pub_carousal.dart';
@@ -23,7 +26,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
   int _currentTab = 0;
-  Widget? currentCOntent;
+  Widget? currentContent;
 
   final List<IconData> _icons = [
     Icons.directions_car,
@@ -31,10 +34,6 @@ class _HomeScreenState extends State<HomeScreen> {
     Icons.restaurant,
     Icons.fastfood,
   ];
-
-  void changeContentProfile(int bottomNavigationIndex) {
-    if (bottomNavigationIndex == 0) {}
-  }
 
   Widget _buildIcon(int index) {
     return GestureDetector(
@@ -66,18 +65,31 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     if (_currentTab == 0) {
-      currentCOntent = ListView(
+      currentContent = ListView(
         padding: const EdgeInsets.symmetric(vertical: 30.0),
         children: <Widget>[
           const Padding(
             padding: EdgeInsets.only(left: 20.0, right: 120.0),
-            child: Text(
-              "What would you like to find?",
-              style: TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-                fontFamily: "Outfit-Regular",
-              ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Text(
+                //   "Hello Tharusha!",
+                //   style: TextStyle(
+                //     fontSize: 30,
+                //     fontWeight: FontWeight.bold,
+                //     fontFamily: "Outfit-Regular",
+                //   ),
+                // ),
+                Text(
+                  "What would you like to find?",
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: "Outfit-Regular",
+                  ),
+                ),
+              ],
             ),
           ),
           const SizedBox(
@@ -98,7 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           if (_selectedIndex == 0) const DestinationCarousel(),
           if (_selectedIndex == 1) const HotelCarousel(),
-          if (_selectedIndex == 2) const FineDineCarousel(),
+          if (_selectedIndex == 2) const RestaurantCarousal(),
           if (_selectedIndex == 3) const BestCafeCarousel(),
           const SizedBox(
             height: 8.0,
@@ -109,205 +121,25 @@ class _HomeScreenState extends State<HomeScreen> {
           const SizedBox(
             height: 8.0,
           ),
+          if (_selectedIndex == 0) const HomeBanner1(),
           if (_selectedIndex == 2) const EatCityCarousel(),
           if (_selectedIndex == 3) const CoffeeCuisineCarousel(),
-          if (_selectedIndex == 0)
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Container(
-                height: 200,
-                width: double.infinity,
-                child: Stack(
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        image: const DecorationImage(
-                          image: AssetImage("assets/k20.jpg"),
-                          fit: BoxFit.cover,
-                        ),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                    Positioned(
-                      bottom: 10,
-                      right: 90,
-                      left: 90,
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        child: const Text(
-                          "Keep exploring",
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: "Outfit-Regular",
-                            color: Colors.black,
-                            letterSpacing: 0.5,
-                          ),
-                        ),
-                      ),
-                    ),
-                    const Positioned(
-                      top: 60,
-                      left: 73,
-                      child: Text(
-                        "Discover Heritage Sites\n          in Sri Lanka",
-                        style: TextStyle(
-                          fontSize: 23,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: "Outfit-Regular",
-                          color: Color.fromARGB(255, 249, 249, 249),
-                          letterSpacing: 0.5,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
           const SizedBox(
             height: 25,
           ),
           if (_selectedIndex == 0) const YouMightCarousel(),
-          if (_selectedIndex == 0)
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Container(
-                height: 600,
-                width: double.infinity,
-                child: Stack(
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        image: const DecorationImage(
-                          image: AssetImage("assets/surf5.jpg"),
-                          fit: BoxFit.cover,
-                        ),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                    Positioned(
-                      bottom: 10,
-                      left: 12,
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        child: const Text(
-                          "Read more",
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: "Outfit-Regular",
-                            color: Colors.black,
-                            letterSpacing: 0.5,
-                          ),
-                        ),
-                      ),
-                    ),
-                    const Positioned(
-                      top: 350,
-                      left: 10,
-                      child: Text(
-                        "10 best places to \nsurf in\nSri lanka",
-                        style: TextStyle(
-                          fontSize: 35,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: "Outfit-Regular",
-                          color: Color.fromARGB(255, 249, 249, 249),
-                          letterSpacing: 0.5,
-                        ),
-                      ),
-                    ),
-                    const Positioned(
-                      bottom: 60,
-                      left: 10,
-                      child: Text(
-                        "The south and east coasts of Sri Lanka \nare home to the best surf spots",
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontFamily: "Outfit-Regular",
-                          color: Color.fromARGB(255, 249, 249, 249),
-                          letterSpacing: 0.5,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          if (_selectedIndex == 1)
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Container(
-                height: 600,
-                width: double.infinity,
-                child: Stack(
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        image: const DecorationImage(
-                          image: AssetImage("assets/cot.jpg"),
-                          fit: BoxFit.cover,
-                        ),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                    Positioned(
-                      bottom: 10,
-                      left: 12,
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        child: const Text(
-                          "Read more",
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: "Outfit-Regular",
-                            color: Colors.black,
-                            letterSpacing: 0.5,
-                          ),
-                        ),
-                      ),
-                    ),
-                    const Positioned(
-                      top: 320,
-                      left: 10,
-                      child: Text(
-                        "Eco-Friendly\nHotels in\nSri Lanka",
-                        style: TextStyle(
-                          fontSize: 35,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: "Outfit-Regular",
-                          color: Color.fromARGB(255, 249, 249, 249),
-                          letterSpacing: 0.5,
-                        ),
-                      ),
-                    ),
-                    const Positioned(
-                      bottom: 65,
-                      left: 10,
-                      child: Text(
-                        "Eco-friendly hotels prioritize sustainable practices to\nminimize their environmental impact while offering guests\na unique and responsible travel experience",
-                        style: TextStyle(
-                          fontSize: 13,
-                          fontFamily: "Outfit-Regular",
-                          color: Color.fromARGB(255, 249, 249, 249),
-                          letterSpacing: 0.5,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
+          if (_selectedIndex == 0) const HomeBanner2(),
+          if (_selectedIndex == 1) const HomeBanner3(),
         ],
       );
     } else if (_currentTab == 1) {
-      currentCOntent = const MapScreen();
+      currentContent = const MapScreen();
     } else if (_currentTab == 2) {
-      currentCOntent = const ProfileScreen();
+      currentContent = const ProfileScreen();
     }
 
     return Scaffold(
-      body: SafeArea(child: currentCOntent!),
+      body: SafeArea(child: currentContent!),
       bottomNavigationBar: Container(
         decoration: const BoxDecoration(
           borderRadius: BorderRadius.only(

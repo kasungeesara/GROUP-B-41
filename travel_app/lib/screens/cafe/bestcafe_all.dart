@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/Data/bestCafes.dart';
+import 'package:travel_app/Models/cafe.dart';
 import 'package:travel_app/screens/cafe/cafe_details.dart';
-import 'package:travel_app/widgets/cafe_carousal.dart';
 
 class CafeAll extends StatefulWidget {
   const CafeAll({super.key});

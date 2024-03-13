@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/Models/youmight.dart';
 
- class YouMightDetails extends StatelessWidget {
-  final YouMight youMight;
-
+class YouMightDetails extends StatelessWidget {
   YouMightDetails({
     Key? key,
     required this.youMight,
   }) : super(key: key);
-
+  final YouMight youMight;
 
   @override
   Widget build(BuildContext context) {
@@ -100,7 +98,6 @@ import 'package:travel_app/Models/youmight.dart';
                             color: Colors.white70,
                           ),
                           const SizedBox(width: 5.0),
-                          
                         ],
                       ),
                     ),
@@ -134,4 +131,3 @@ import 'package:travel_app/Models/youmight.dart';
     );
   }
 }
-

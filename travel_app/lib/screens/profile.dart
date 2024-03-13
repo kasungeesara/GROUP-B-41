@@ -13,32 +13,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-        
-      //   centerTitle: true,
-      //   title: const Text(
-      //     "Profile",
-      //     style: TextStyle(
-      //       letterSpacing: 1.2,
-      //       fontSize: 23,
-      //       fontWeight: FontWeight.bold,
-      //       fontFamily: "Outfit-Regular",
-      //       color: Colors.black87,
-      //     ),
-      //   ),
-      //   backgroundColor: Colors.white,
-      //   elevation: 0,
-      // ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const SizedBox(height: 50,),
+            const SizedBox(
+              height: 50,
+            ),
             Stack(
               children: [
                 const CircleAvatar(
-                  radius: 90,
+                  radius: 120,
                   backgroundImage: AssetImage("assets/lewis.jpg"),
                 ),
                 Positioned(
