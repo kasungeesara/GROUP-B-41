@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/Data/city_based_dinedraft.dart';
-import 'package:travel_app/Data/dine_draft.dart';
 import 'package:travel_app/Models/city_dinedraft.dart';
 import 'package:travel_app/Models/dine_draft.dart';
 
