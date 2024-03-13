@@ -30,18 +30,18 @@ class _DineDraftAllState extends State<DineDraftAll> {
           Expanded(
             child: ListView.builder(
               padding: const EdgeInsets.only(top: 10.0, bottom: 15.0),
-              itemCount: fineDines.length,
+              itemCount: dinedraft.length,
               itemBuilder: (BuildContext context, int index) {
-                   DineDraft dinedrafteatall = dinedraft[index];
+                DineDraft dinedrafteatall = dinedraft[index];
                 return GestureDetector(
-                 /// onTap: () => Navigator.push(
+                  /// onTap: () => Navigator.push(
                   // context,
                   // MaterialPageRoute(
-                    //builder: (_) => DineDraftDetails(
-                    // city: citydinedrafts,
-                   // ),
-                   // ),
-                 // ),
+                  //builder: (_) => DineDraftDetails(
+                  // city: citydinedrafts,
+                  // ),
+                  // ),
+                  // ),
                   child: Stack(
                     children: [
                       Container(
@@ -80,7 +80,6 @@ class _DineDraftAllState extends State<DineDraftAll> {
                                         fontFamily: "Outfit-Regular",
                                         color: Colors.black,
                                       ),
-                                      
                                     ),
                                   ),
                                 ],
@@ -121,27 +120,20 @@ class _DineDraftAllState extends State<DineDraftAll> {
                                   ],
                                 ),
                               ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                
+                              Column(
                                 children: [
-                                  Column(
-                                    children: [
-                                      const SizedBox(
-                                        height: 10,
-                                      ),
-                                      Text(
-                                        dinedrafteatall.description,
-                                        style: const TextStyle(
-                                          fontSize: 14,
-                                          fontFamily: "Outfit-Regular",
-                                          color: Colors.grey,
-                                          
-                                        ),
-                                      overflow: TextOverflow.ellipsis,
-                                      maxLines: 5,
-                                      ),
-                                    ],
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text(
+                                    dinedrafteatall.description,
+                                    style: const TextStyle(
+                                      fontSize: 14,
+                                      fontFamily: "Outfit-Regular",
+                                      color: Colors.grey,
+                                    ),
+                                    overflow: TextOverflow.ellipsis,
+                                    maxLines: 5,
                                   ),
                                 ],
                               ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/widgets/cafe_carousal.dart';
+import 'package:travel_app/Models/cafe.dart';
 
 class CafeDetails extends StatefulWidget {
   // ignore: use_super_parameters

@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/Data/city_hotel.dart';
-import 'package:travel_app/Models/hotel_city.dart';
-import 'package:travel_app/screens/city_hotel/city_hotel_all.dart';
-import 'package:travel_app/screens/hotel_place_list.dart';
-import 'package:travel_app/widgets/innerWidgets/hotelsAndWidgetsCarousalCard.dart';
+import 'package:travel_app/Data/fine_dines.dart';
+import 'package:travel_app/Models/fine_dine.dart';
+import 'package:travel_app/screens/fine_dine/fine_dine_all.dart';
+import 'package:travel_app/screens/fine_dine/fine_dine_details.dart';
+import 'package:travel_app/widgets/innerWidgets/carousalCardReuseable1.dart';
 
-class HotelCityCarousel extends StatelessWidget {
-  const HotelCityCarousel({super.key});
-  
+class RestaurantCarousal extends StatelessWidget {
+  const RestaurantCarousal({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +18,7 @@ class HotelCityCarousel extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               const Text(
-                "Hotels and Places to \nstay",
+                "Restaurants",
                 style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
@@ -31,7 +30,7 @@ class HotelCityCarousel extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (ctx) => const CityHotelAllScreen(),
+                      builder: (ctx) => const FineDineAll(),
                     ),
                   );
                 },
@@ -55,19 +54,22 @@ class HotelCityCarousel extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemCount: 5,
             itemBuilder: (BuildContext context, int index) {
-              CityHotel cityhotel = cityhotels[index];
-
+              FineDine fineDineItem = fineDines[index];
               return GestureDetector(
-                 onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (ctx) =>
-                            HotelPlaceListScreen(hotel: cityhotel),
+                  onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => FineDineDetails(
+                            name: fineDines[index],
+                          ),
+                        ),
                       ),
-                    );
-                  },
-                child: HotelsAndPlacesCarousalCard(cityhotel: cityhotel)
-              );
+                  child: CarousalCardReuseable1(
+                    price: fineDineItem.price,
+                    imagePath: fineDineItem.imagePath,
+                    city: fineDineItem.city,
+                    name: fineDineItem.name,
+                  ));
             },
           ),
         ),

@@ -386,8 +386,7 @@ class _PubDetailsState extends State<PubDetails> {
       _buildFacilityButton(Icons.smoking_rooms, "Smoking Area"),
       _buildFacilityButton(Icons.wifi, "Free WiFi"),
       _buildFacilityButton(Icons.local_parking, "Parking"),
-       _buildFacilityButton(Icons.wc, "Restrooms"),
-      
+      _buildFacilityButton(Icons.wc, "Restrooms"),
     ];
   }
 
