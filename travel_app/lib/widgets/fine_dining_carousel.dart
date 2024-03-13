@@ -59,7 +59,7 @@ class FineDineCarousel extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (_) => FineDineDetails(
-                      fineDine: fineDines[index],
+                      name: fineDines[index],
                     ),
                   ),
                 ),
@@ -92,22 +92,22 @@ class FineDineCarousel extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Text(
-                                  fineDineItem.range,
-                                  style: const TextStyle(
-                                    fontFamily: "Outfit-Regular",
-                                    fontWeight: FontWeight.bold,
-                                    letterSpacing: 1.2,
-                                    fontSize: 20,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                                Text(
                                   fineDineItem.price,
                                   softWrap: true,
                                   overflow: TextOverflow.ellipsis,
-                                  style: const TextStyle(
+                                  style:  const TextStyle(
+                                    fontFamily: "Outfit-Regular",
+                                    fontWeight: FontWeight.bold,
                                     letterSpacing: 1.2,
-                                    fontSize: 12,
+                                    fontSize: 18,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                                const Text(
+                                  "(Price Range)",
+                                  style:  TextStyle(
+                                    letterSpacing: 1.2,
+                                    fontSize: 15,
                                     fontWeight: FontWeight.bold,
                                     fontFamily: "Outfit-Regular",
                                     color: Color.fromARGB(255, 145, 145, 145),

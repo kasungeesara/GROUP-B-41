@@ -128,13 +128,13 @@ class _CafeAllState extends State<CafeAll> {
                                       const SizedBox(
                                         height: 30,
                                       ),
-                                      Text(
-                                        bestCafe.range,
-                                        style: const TextStyle(
+                                      const Text(
+                                        "Price Range",
+                                        style:  TextStyle(
                                           fontSize: 16,
                                           fontWeight: FontWeight.bold,
                                           fontFamily: "Outfit-Regular",
-                                          color: Colors.black,
+                                           color: Colors.grey,
                                         ),
                                       ),
                                       Text(
@@ -142,7 +142,8 @@ class _CafeAllState extends State<CafeAll> {
                                         style: const TextStyle(
                                           fontSize: 16,
                                           fontFamily: "Outfit-Regular",
-                                          color: Colors.grey,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.black,
                                         ),
                                       ),
                                     ],

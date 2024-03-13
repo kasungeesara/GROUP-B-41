@@ -10,6 +10,6 @@ class DiscoverKandy extends StatefulWidget {
 class _DiscoverKandyState extends State<DiscoverKandy> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold();
   }
 }

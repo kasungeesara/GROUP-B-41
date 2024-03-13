@@ -148,11 +148,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     const Positioned(
                       top: 60,
-                      left: 90,
+                      left: 73,
                       child: Text(
-                        "Discover more in \n          Kandy",
+                        "Discover Heritage Sites\n          in Sri Lanka",
                         style: TextStyle(
-                          fontSize: 25,
+                          fontSize: 23,
                           fontWeight: FontWeight.bold,
                           fontFamily: "Outfit-Regular",
                           color: Color.fromARGB(255, 249, 249, 249),

@@ -6,6 +6,7 @@ class Hotel {
   final String type;
   final String tel;
   final String about;
+  final String directions;
 
   Hotel({
     required this.name,
@@ -15,6 +16,6 @@ class Hotel {
     required this.type,
     required this.tel,
     required this.about,
-
+    required this.directions,
   });
 }

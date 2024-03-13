@@ -38,7 +38,7 @@ class _FineDineAllState extends State<FineDineAll> {
                     context,
                     MaterialPageRoute(
                       builder: (_) => FineDineDetails(
-                        fineDine: fineDine,
+                        name: fineDine,
                       ),
                     ),
                   ),
@@ -130,13 +130,13 @@ class _FineDineAllState extends State<FineDineAll> {
                                       const SizedBox(
                                         height: 27,
                                       ),
-                                      Text(
-                                        fineDine.range,
-                                        style: const TextStyle(
+                                     const Text(
+                                        "Price Range",
+                                        style:  TextStyle(
                                           fontSize: 16,
                                           fontWeight: FontWeight.bold,
                                           fontFamily: "Outfit-Regular",
-                                          color: Colors.black,
+                                          color: Colors.grey,
                                         ),
                                       ),
                                       Text(
@@ -144,7 +144,8 @@ class _FineDineAllState extends State<FineDineAll> {
                                         style: const TextStyle(
                                           fontSize: 16,
                                           fontFamily: "Outfit-Regular",
-                                          color: Colors.grey,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.black,
                                         ),
                                       ),
                                     ],
