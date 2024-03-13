@@ -94,22 +94,22 @@ class CoffeeCarousel extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Text(
-                                  topCoffee.range,
-                                  style: const TextStyle(
+                                 topCoffee.price,
+                                  softWrap: true,
+                                  overflow: TextOverflow.ellipsis,
+                                  style:  const TextStyle(
                                     fontFamily: "Outfit-Regular",
                                     fontWeight: FontWeight.bold,
                                     letterSpacing: 1.2,
-                                    fontSize: 20,
+                                    fontSize: 18,
                                     color: Colors.black,
                                   ),
                                 ),
-                                Text(
-                                  topCoffee.price,
-                                  softWrap: true,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: const TextStyle(
+                                const Text(
+                                  "(Price Range)",
+                                  style:  TextStyle(
                                     letterSpacing: 1.2,
-                                    fontSize: 12,
+                                    fontSize: 15,
                                     fontWeight: FontWeight.bold,
                                     fontFamily: "Outfit-Regular",
                                     color: Color.fromARGB(255, 145, 145, 145),

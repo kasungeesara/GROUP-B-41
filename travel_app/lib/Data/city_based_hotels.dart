@@ -13,6 +13,7 @@ final List<CityBasedHotel> citybasedhotels = [
     description:
         "Welcome to Cinnamon Citadel Kandy, a haven set against the backdrop of the Knuckles Mountain Range and the Mahaweli River.Enveloped by lush foliage and vibrant blooms, the resort's vantage point affords guests panoramic vistas that showcase the raw beauty of nature. From yoga and hikes to boat rides and adventurous water-based activities, the mountain and the river nearby offer nature enthusiasts a variety of unique excursions. Moreover, the main star of the location is the revered Temple of the Tooth which draws visitors interested in the rich local history.With an immersive cultural experience around you, our resort is a gateway to Sri Lanka's vibrant traditions and arts.  ",
   ),
+  
   CityBasedHotel(
     baseCity: "Galle",
     name: 'Radisson Blu Resort',

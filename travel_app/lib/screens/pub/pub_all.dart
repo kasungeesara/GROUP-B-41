@@ -133,13 +133,13 @@ class _PubAllState extends State<PubAll> {
                                       const SizedBox(
                                         height: 10,
                                       ),
-                                      Text(
-                                        pub.range,
-                                        style: const TextStyle(
+                                      const Text(
+                                        "Price Range",
+                                        style:  TextStyle(
                                           fontSize: 16,
                                           fontWeight: FontWeight.bold,
                                           fontFamily: "Outfit-Regular",
-                                          color: Colors.black,
+                                          color: Colors.grey,
                                         ),
                                       ),
                                       Text(
@@ -147,7 +147,8 @@ class _PubAllState extends State<PubAll> {
                                         style: const TextStyle(
                                           fontSize: 16,
                                           fontFamily: "Outfit-Regular",
-                                          color: Colors.grey,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.black,
                                         ),
                                       ),
                                     ],

@@ -5,6 +5,9 @@ class FineDine {
   final String city;
   final String imagePath;
   final String price;
+  final String tel;
+  final List<String> startTimes;
+  final String address;
 
   FineDine({
     required this.name,
@@ -13,5 +16,8 @@ class FineDine {
     required this.city,
     required this.imagePath,
     required this.price,
+    required this.tel,
+    required this.startTimes,
+    required this.address,
   });
 }

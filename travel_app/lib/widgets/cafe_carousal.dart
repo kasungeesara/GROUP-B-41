@@ -9,6 +9,9 @@ class BestCafe {
   final String city;
   final String imagePath;
   final String price;
+  final String address;
+  final String tel;
+  final List<String> startTimes;
 
   BestCafe({
     required this.name,
@@ -17,6 +20,9 @@ class BestCafe {
     required this.city,
     required this.imagePath,
     required this.price,
+     required this.tel,
+    required this.startTimes,
+    required this.address,
   });
 }
 
@@ -24,42 +30,57 @@ final List<BestCafe> bestCafes = [
   BestCafe(
     name: 'Cafe Kumbuk',
     city: 'Colombo',
-    range: "Price Range",
-    description: 'Cafe, Healthy',
+    range: "4.8",
+    description: "Day-dreaming by a shady grove of Kumbuk trees in our magical island home of Sri Lanka, Café Kumbuk was a dream inspired by many years of living away from our motherland.Roaming the bustling streets of East London, soaking up culture, meeting wonderful people and tantalizing the taste buds with world food, it was these experiences that spurred us to create our very own downtown café-space.",
     imagePath: "assets/cafe11.png",
-    price: "\$2-\$3",
+    price: "\$2-\$10",
+    tel: "0112 685 310",
+    address: "No.3/1 Thambiah Avenue,Independence Ave.",
+    startTimes: ['09 AM', '06 PM'],
   ),
   BestCafe(
     name: "The t-Lounge",
     city: 'Colombo',
-    range: "Price Range",
-    description: 'Cafe, Sri Lankan',
+    range: "4.7",
+    description: "The t-Lounge is an upscale, elegant place designed around the enjoyment and appreciation of fine tea; complemented by light snacks and tea inspired food and beverages. The t-Lounge by Dilmah is unique in that our emphasis on tea is founded on our passionate commitment to tea as tea growers and a family business; established and headed by the world’s most experienced tea maker; the first tea grower to offer his tea direct to tea drinkers around the world.",
     imagePath: "assets/cafe2.jpg",
-    price: "\$2-\$3",
+    price: "\$2-\$10",
+    tel: "0112 447 168",
+    address: "No.62/2,Chatham Street,Colombo",
+    startTimes: ['09 AM', '07 PM'],
   ),
   BestCafe(
     name: 'Seed Cafe',
     city: 'Colombo',
-    range: "Price Range",
-    description: 'Cafe',
+    range: "4.5",
+    description: "Colombo doesn't necessarily have many vegan-friendly restaurants, at least, not ones where you can go to without feeling your wallet dip considerably. This is where Seed Cafe comes into view. Done as the love child between the likes of The Grind and Ceylon Superfoods Company, Seed Cafe joined the cafe scene in Colombo not too long ago in the same place Cafe Kumbuk used to be. ",
     imagePath: "assets/cafe3.jpg",
-    price: "\$2-\$3",
+    price: "\$2-\$10",
+    tel: "0117 773 470",
+    address: "Horton Place, Colombo 07 US Embassy, Colombo ",
+    startTimes: ['08 AM', '06 PM'],
   ),
   BestCafe(
     name: 'Secret Alley',
     city: 'Kandy',
-    range: "Price Range",
-    description: 'Cafe',
+    range: "4.6",
+    description: "Cafe Secret Alley is a perfect place to taste vegetarian friendly foods, vegan foods and gluten free foods.They Offer All day Breakfast | Pancakes | Lunch | Brunch |Coffee | Detox | Smoothie Bowls | Fresh JuicesIts a calm and friendly place with some good vibes and tunes to get relaxed.",
     imagePath: "assets/cafe4.jpg",
-    price: "\$2-\$3",
+    price: "\$2-\$10",
+    tel: "077 303 2933",
+    address: "No.10/1/1/1,E L Senanayake Veediya,Kandy",
+    startTimes: ['10 AM', '05 PM'],
   ),
   BestCafe(
     name: 'Cafe Nuwara',
     city: 'Kandy',
-    range: "Price Range",
-    description: 'Cafe',
+    range: "4.5",
+    description: "Nestled in the heart of Kandy, Sri Lanka, Café Nuwara invites you to embark on a culinary journey that marries tradition with innovation. Steeped in the enchanting allure of colonial charm, our café offers a unique experience where history and flavor intertwine.tep into Café Nuwara and be transported to an era of elegance and refinement. Our colonial-inspired ambiance pays homage to Kandy's regal legacy, while our modern approach to cuisine sets the stage for a gastronomic adventure.",
     imagePath: "assets/cafe5.jpg",
-    price: "\$2-\$3",
+    price: "\$2-\$10",
+    tel: "076 022 1222",
+    address: "No.146 DS Senanayake Veediya,Kandy",
+    startTimes: ['10 AM', '10 PM'],
   ),
 ];
 
@@ -112,7 +133,7 @@ class BestCafeCarousel extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemCount: bestCafes.length,
             itemBuilder: (BuildContext context, int index) {
-              BestCafe bestcafe = bestCafes[index];
+              BestCafe bestcafes = bestCafes[index];
               return GestureDetector(
                 onTap: () => Navigator.push(
                   context,
@@ -151,20 +172,20 @@ class BestCafeCarousel extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Text(
-                                  bestcafe.range,
-                                  style: const TextStyle(
+                                  bestcafes.price,
+                                  softWrap: true,
+                                  overflow: TextOverflow.ellipsis,
+                                  style:  const TextStyle(
                                     fontFamily: "Outfit-Regular",
                                     fontWeight: FontWeight.bold,
                                     letterSpacing: 1.2,
-                                    fontSize: 17,
+                                    fontSize: 18,
                                     color: Colors.black,
                                   ),
                                 ),
-                                Text(
-                                  bestcafe.price,
-                                  softWrap: true,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: const TextStyle(
+                                const Text(
+                                  "(Price Range)",
+                                  style:  TextStyle(
                                     letterSpacing: 1.2,
                                     fontSize: 15,
                                     fontWeight: FontWeight.bold,
@@ -192,13 +213,13 @@ class BestCafeCarousel extends StatelessWidget {
                         child: Stack(
                           children: <Widget>[
                             Hero(
-                              tag: bestcafe.imagePath,
+                              tag: bestcafes.imagePath,
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(20.0),
                                 child: Image(
                                   height: 180.0,
                                   width: 180.0,
-                                  image: AssetImage(bestcafe.imagePath),
+                                  image: AssetImage(bestcafes.imagePath),
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -212,7 +233,7 @@ class BestCafeCarousel extends StatelessWidget {
                                   Padding(
                                     padding: const EdgeInsets.all(1.0),
                                     child: Text(
-                                      bestcafe.name,
+                                      bestcafes.name,
                                       style: const TextStyle(
                                         letterSpacing: 1.2,
                                         fontSize: 22,
@@ -235,7 +256,7 @@ class BestCafeCarousel extends StatelessWidget {
                                         ),
                                         const SizedBox(width: 5.0),
                                         Text(
-                                          bestcafe.city,
+                                          bestcafes.city,
                                           style: const TextStyle(
                                             fontSize: 16,
                                             fontFamily: "Outfit-Regular",
