@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:travel_app/screens/heritage_screen.dart';
 
 class HomeBanner1 extends StatelessWidget {
   const HomeBanner1({super.key});
@@ -27,7 +28,13 @@ class HomeBanner1 extends StatelessWidget {
               right: 90,
               left: 90,
               child: ElevatedButton(
-                onPressed: () {},
+                 onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (ctx) => const HeritageScreen(),
+                    ),
+                  );
+                },
                 child: const Text(
                   "Keep exploring",
                   style: TextStyle(

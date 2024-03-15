@@ -88,16 +88,16 @@ class YouMightDetails extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(1.0),
+                    const Padding(
+                      padding:  EdgeInsets.all(1.0),
                       child: Row(
                         children: <Widget>[
-                          const Icon(
+                          Icon(
                             Icons.star,
                             size: 20.0,
                             color: Colors.white70,
                           ),
-                          const SizedBox(width: 5.0),
+                           SizedBox(width: 5.0),
                         ],
                       ),
                     ),
