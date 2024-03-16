@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/Data/coffee_cuisine.dart';
-import 'package:travel_app/Data/fine_dines.dart';
 import 'package:travel_app/Models/coffee_cuisine.dart';
 
 class CoffeeCuisineAll extends StatefulWidget {
@@ -30,7 +29,7 @@ class _CoffeeCuisineAllState extends State<CoffeeCuisineAll> {
           Expanded(
             child: ListView.builder(
               padding: const EdgeInsets.only(top: 10.0, bottom: 15.0),
-              itemCount: fineDines.length,
+              itemCount: coffeecuisine.length,
               itemBuilder: (BuildContext context, int index) {
                 CoffeeCuisine coffeecuisineall = coffeecuisine[index];
                 return GestureDetector(
@@ -120,25 +119,20 @@ class _CoffeeCuisineAllState extends State<CoffeeCuisineAll> {
                                   ],
                                 ),
                               ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
+                              Column(
                                 children: [
-                                  Column(
-                                    children: [
-                                      const SizedBox(
-                                        height: 10,
-                                      ),
-                                      Text(
-                                        coffeecuisineall.description,
-                                        style: const TextStyle(
-                                          fontSize: 14,
-                                          fontFamily: "Outfit-Regular",
-                                          color: Colors.grey,
-                                        ),
-                                        overflow: TextOverflow.ellipsis,
-                                        maxLines: 5,
-                                      ),
-                                    ],
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text(
+                                    coffeecuisineall.description,
+                                    style: const TextStyle(
+                                      fontSize: 14,
+                                      fontFamily: "Outfit-Regular",
+                                      color: Colors.grey,
+                                    ),
+                                    overflow: TextOverflow.ellipsis,
+                                    maxLines: 5,
                                   ),
                                 ],
                               ),

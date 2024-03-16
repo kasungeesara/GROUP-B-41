@@ -4,12 +4,12 @@ import 'package:travel_app/Models/city_dinedraft.dart';
 import 'package:travel_app/Models/dine_draft.dart';
 
 class DineDraftList extends StatefulWidget {
-  final DineDraft city;
-
   const DineDraftList({
     super.key,
-    required this.city,
+    required this.dines,
   });
+
+  final DineDraft dines;
 
   @override
   // ignore: library_private_types_in_public_api
@@ -33,6 +33,9 @@ class _DineDraftListState extends State<DineDraftList> {
         .where((act) => act.baseCity.contains(widget.city.city))
         .toList();
 
+    final filteredActivities =
+        citydinedrafts.where((act) => act.baseCity.contains(widget.dines.city)).toList();
+
     return Scaffold(
       body: Column(
         children: <Widget>[
@@ -51,11 +54,11 @@ class _DineDraftListState extends State<DineDraftList> {
                   ],
                 ),
                 child: Hero(
-                  tag: widget.city.imagePath,
+                  tag: widget.dines.imagePath,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(20),
                     child: Image(
-                      image: AssetImage(widget.city.imagePath),
+                      image: AssetImage(widget.dines.imagePath),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -101,7 +104,7 @@ class _DineDraftListState extends State<DineDraftList> {
                     Padding(
                       padding: const EdgeInsets.all(1.0),
                       child: Text(
-                        widget.city.city,
+                        widget.dines.city,
                         style: const TextStyle(
                           letterSpacing: 1.2,
                           fontSize: 40,
@@ -122,7 +125,7 @@ class _DineDraftListState extends State<DineDraftList> {
                           ),
                           const SizedBox(width: 5.0),
                           Text(
-                            widget.city.province,
+                            widget.dines.province,
                             style: const TextStyle(
                               fontSize: 20,
                               fontFamily: "Outfit-Regular",
@@ -154,14 +157,14 @@ class _DineDraftListState extends State<DineDraftList> {
                 CityDineDraft dinedrafteat = filteredActivities[index];
 
                 return GestureDetector(
-                 // onTap: () => Navigator.push(
-                    //context,
-                    //MaterialPageRoute(
-                      //builder: (_) => (
-                       // : ,
-                     // ),
-                   // ),
-                //  ),
+                  // onTap: () => Navigator.push(
+                  //context,
+                  //MaterialPageRoute(
+                  //builder: (_) => (
+                  // : ,
+                  // ),
+                  // ),
+                  //  ),
                   child: Stack(
                     children: [
                       Container(
@@ -273,7 +276,7 @@ class _DineDraftListState extends State<DineDraftList> {
                                       ),
                                       alignment: Alignment.center,
                                       child: Text(
-                                       dinedrafteat.startTimes[1],
+                                        dinedrafteat.startTimes[1],
                                         style: const TextStyle(
                                           fontSize: 15,
                                           fontFamily: "Outfit-Regular",

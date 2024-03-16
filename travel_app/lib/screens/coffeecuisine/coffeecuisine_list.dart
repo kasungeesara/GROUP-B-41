@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/Data/city_based_coffeecuisine.dart';
+import 'package:travel_app/Data/coffee_cuisine.dart';
 import 'package:travel_app/Models/city_coffeecuisine.dart';
 import 'package:travel_app/Models/coffee_cuisine.dart';
 
@@ -27,10 +28,18 @@ class _CoffeeCuisinetListState extends State<CoffeeCuisinetList> {
   }
 
 
+
   @override
   Widget build(BuildContext context) {
     final filteredActivities = citycoffeecuisines
         .where((act) => act.baseCity.contains(widget.city.city))
+  List<CoffeeCuisine> availableActivities = [];
+
+  @override
+  Widget build(BuildContext context) {
+    final filteredActivities = coffeecuisine
+        .where((act) => act.city.contains(widget.city.city))
+
         .toList();
 
     return Scaffold(
@@ -311,4 +320,5 @@ class _CoffeeCuisinetListState extends State<CoffeeCuisinetList> {
       ),
     );
   }
+}
 }
