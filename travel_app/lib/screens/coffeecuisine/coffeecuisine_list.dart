@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/Data/city_based_coffeecuisine.dart';
-import 'package:travel_app/Data/coffee_cuisine.dart';
 import 'package:travel_app/Models/city_coffeecuisine.dart';
 import 'package:travel_app/Models/coffee_cuisine.dart';
 
@@ -201,7 +200,7 @@ class _CoffeeCuisinetListState extends State<CoffeeCuisinetList> {
                                   Column(
                                     children: [
                                       Text(
-                                        '\$${coffeecafe.price}',
+                                        coffeecafe.price,
                                         style: const TextStyle(
                                           fontSize: 15,
                                           fontWeight: FontWeight.bold,

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:travel_app/Data/city_based_dinedraft.dart';
 import 'package:travel_app/Models/city_dinedraft.dart';
 import 'package:travel_app/Models/dine_draft.dart';
-import 'package:travel_app/screens/dinedraft/dinedraft_details.dart';
 
 class DineDraftList extends StatefulWidget {
   const DineDraftList({
@@ -201,7 +200,7 @@ class _DineDraftListState extends State<DineDraftList> {
                                   Column(
                                     children: [
                                       Text(
-                                        '\$${dinedrafteat.price}',
+                                        dinedrafteat.price,
                                         style: const TextStyle(
                                           fontSize: 15,
                                           fontWeight: FontWeight.bold,

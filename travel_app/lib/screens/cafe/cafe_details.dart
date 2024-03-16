@@ -349,26 +349,29 @@ class _CafeDetailsState extends State<CafeDetails> {
               ),
             ),
             const Padding(
-              padding: EdgeInsets.only(left: 8, top: 10),
+              padding:  EdgeInsets.only(left: 8, top: 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-                  Icon(
+                   Icon(
                     Icons.search,
                     size: 20.0,
                     color: Color.fromARGB(255, 78, 71, 216),
                   ),
-                  SizedBox(width: 5.0),
-                  Text(
-                    "Visit Page",
-                    style: TextStyle(
-                      fontSize: 15,
-                      fontFamily: "Outfit-Regular",
-                      color: Color.fromARGB(255, 78, 71, 216),
-                      fontWeight: FontWeight.w600,
+                   SizedBox(width: 5.0),
+                   Positioned(
+                      child:  Text(
+                        "Visit Page",
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontFamily: "Outfit-Regular",
+                          color: Color.fromARGB(255, 78, 71, 216),
+                          fontWeight: FontWeight.w600,
+                        ),
+                        textAlign: TextAlign.justify,
+                      ),
                     ),
-                    textAlign: TextAlign.justify,
-                  ),
+                  
                 ],
               ),
             ),
@@ -386,8 +389,7 @@ class _CafeDetailsState extends State<CafeDetails> {
       _buildFacilityButton(Icons.nature_people, "Outdoor Seating Area"),
       _buildFacilityButton(Icons.wifi, "Free WiFi"),
       _buildFacilityButton(Icons.power, "Power Outlets"),
-       _buildFacilityButton(Icons.wc, "Restrooms"),
-      
+      _buildFacilityButton(Icons.wc, "Restrooms"),
     ];
   }
 

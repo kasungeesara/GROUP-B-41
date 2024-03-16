@@ -8,6 +8,7 @@ class BestCafe {
   final String address;
   final String tel;
   final List<String> startTimes;
+  
 
   BestCafe({
     required this.name,
