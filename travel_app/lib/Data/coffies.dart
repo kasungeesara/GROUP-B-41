@@ -1,6 +1,28 @@
 import 'package:travel_app/Models/coffe.dart';
 
 final List<Coffee> coffeetea = [
+   Coffee(
+    name: 'Dept.of Coffee',
+    city: 'Colombo',
+    range: "4.8",
+    description: "At Department of Coffee, we pride ourselves on our ability to bring you a novel experience each time you stop by. Using ethically sourced beans from local farmers and international roasters, our brewing methods are constantly evolving, leaving us in search of a new way to appease your appetite every single day. Coffee is a journey, and we welcome you to join us for the ride.",
+    imagePath: "assets/coff5.jpg",
+    price: "\$2-\$15",
+     tel: "0113 430 808",
+    address: "No.10A Philip Gunawardena Mawatha,Colombo",
+    startTimes: ['07 AM', '11 PM'],
+  ),
+  Coffee(
+    name: 'Cafe 1959',
+    city: 'Colombo',
+    range: "4.6",
+    description: "Colombo streets are gushed with coffee houses, but we hardly come across one that does good coffee. Often we find these incredibly beautiful, picturesque cafes and often they let us down with not-so-great coffee. Which is why we’re super excited to unveil this newly opened nook; Café 1959.Not only they do some incredible coffee, but they also serve an array of some interesting desserts by Fig & Owl.",
+    imagePath: "assets/coff3.jpg",
+    price: "\$2-\$10",
+     tel: "0112 590 520",
+    address: "No.746 Galle Rd,Colombo.",
+    startTimes: ['09 AM', '09 PM'],
+  ),
   Coffee(
     name: 'Peppermint Cafe',
     city: 'Colombo',
@@ -23,17 +45,7 @@ final List<Coffee> coffeetea = [
     address: "No.104 Anagarika DharmapalaMawatha,Colombo",
     startTimes: ['10 AM', '09 PM'],
   ),
-  Coffee(
-    name: 'Cafe 1959',
-    city: 'Colombo',
-    range: "4.6",
-    description: "Colombo streets are gushed with coffee houses, but we hardly come across one that does good coffee. Often we find these incredibly beautiful, picturesque cafes and often they let us down with not-so-great coffee. Which is why we’re super excited to unveil this newly opened nook; Café 1959.Not only they do some incredible coffee, but they also serve an array of some interesting desserts by Fig & Owl.",
-    imagePath: "assets/coff3.jpg",
-    price: "\$2-\$10",
-     tel: "0112 590 520",
-    address: "No.746 Galle Rd,Colombo.",
-    startTimes: ['09 AM', '09 PM'],
-  ),
+  
   Coffee(
     name: 'Dark Roast Cafe',
     city: 'Colombo',
@@ -45,15 +57,5 @@ final List<Coffee> coffeetea = [
     address: "No.20A Laurie's Place,R.A.DeMelMawatha,Colombo",
     startTimes: ['08 AM', '07 PM'],
   ),
-  Coffee(
-    name: 'Dept.of Coffee',
-    city: 'Colombo',
-    range: "4.8",
-    description: "At Department of Coffee, we pride ourselves on our ability to bring you a novel experience each time you stop by. Using ethically sourced beans from local farmers and international roasters, our brewing methods are constantly evolving, leaving us in search of a new way to appease your appetite every single day. Coffee is a journey, and we welcome you to join us for the ride.",
-    imagePath: "assets/coff5.jpg",
-    price: "\$2-\$15",
-     tel: "0113 430 808",
-    address: "No.10A Philip Gunawardena Mawatha,Colombo",
-    startTimes: ['07 AM', '11 PM'],
-  ),
+ 
 ];

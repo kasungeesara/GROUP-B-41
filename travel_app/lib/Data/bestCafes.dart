@@ -1,17 +1,7 @@
 import 'package:travel_app/Models/cafe.dart';
 
 final List<BestCafe> bestCafes = [
-  BestCafe(
-    name: 'Cafe Kumbuk',
-    city: 'Colombo',
-    range: "4.8",
-    description: "Day-dreaming by a shady grove of Kumbuk trees in our magical island home of Sri Lanka, Café Kumbuk was a dream inspired by many years of living away from our motherland.Roaming the bustling streets of East London, soaking up culture, meeting wonderful people and tantalizing the taste buds with world food, it was these experiences that spurred us to create our very own downtown café-space.",
-    imagePath: "assets/cafe11.png",
-    price: "\$2-\$10",
-    tel: "0112 685 310",
-    address: "No.3/1 Thambiah Avenue,Independence Ave.",
-    startTimes: ['09 AM', '06 PM'],
-  ),
+ 
   BestCafe(
     name: "The t-Lounge",
     city: 'Colombo',
@@ -22,6 +12,17 @@ final List<BestCafe> bestCafes = [
     tel: "0112 447 168",
     address: "No.62/2,Chatham Street,Colombo",
     startTimes: ['09 AM', '07 PM'],
+  ),
+   BestCafe(
+    name: 'Cafe Kumbuk',
+    city: 'Colombo',
+    range: "4.8",
+    description: "Day-dreaming by a shady grove of Kumbuk trees in our magical island home of Sri Lanka, Café Kumbuk was a dream inspired by many years of living away from our motherland.Roaming the bustling streets of East London, soaking up culture, meeting wonderful people and tantalizing the taste buds with world food, it was these experiences that spurred us to create our very own downtown café-space.",
+    imagePath: "assets/cafe11.png",
+    price: "\$2-\$10",
+    tel: "0112 685 310",
+    address: "No.3/1 Thambiah Avenue,Independence Ave.",
+    startTimes: ['09 AM', '06 PM'],
   ),
   BestCafe(
     name: 'Seed Cafe',
