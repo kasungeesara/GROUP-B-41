@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:travel_app/Data/city_based_dinedraft.dart';
 import 'package:travel_app/Models/city_dinedraft.dart';
 import 'package:travel_app/Models/dine_draft.dart';
+import 'package:travel_app/screens/dinedraft/dinedraft_details.dart';
 
 class DineDraftList extends StatefulWidget {
   const DineDraftList({
@@ -26,15 +27,11 @@ class _DineDraftListState extends State<DineDraftList> {
     return Text(stars);
   }
 
-
   @override
   Widget build(BuildContext context) {
     final filteredActivities = citydinedrafts
-        .where((act) => act.baseCity.contains(widget.city.city))
+        .where((act) => act.baseCity.contains(widget.dines.city))
         .toList();
-
-    final filteredActivities =
-        citydinedrafts.where((act) => act.baseCity.contains(widget.dines.city)).toList();
 
     return Scaffold(
       body: Column(
@@ -157,14 +154,7 @@ class _DineDraftListState extends State<DineDraftList> {
                 CityDineDraft dinedrafteat = filteredActivities[index];
 
                 return GestureDetector(
-                  // onTap: () => Navigator.push(
-                  //context,
-                  //MaterialPageRoute(
-                  //builder: (_) => (
-                  // : ,
-                  // ),
-                  // ),
-                  //  ),
+                  onTap: () {},
                   child: Stack(
                     children: [
                       Container(
