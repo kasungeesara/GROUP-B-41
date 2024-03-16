@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/screens/eco_friendly_hotels.dart';
 
 class HomeBanner3 extends StatelessWidget {
   const HomeBanner3({super.key});
@@ -25,7 +26,13 @@ class HomeBanner3 extends StatelessWidget {
               bottom: 10,
               left: 12,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (ctx) => const EcoFriendlyScreen(),
+                    ),
+                  );
+                },
                 child: const Text(
                   "Read more",
                   style: TextStyle(

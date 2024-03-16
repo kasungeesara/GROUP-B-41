@@ -60,11 +60,16 @@ class EatCityCarousel extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (ctx) => DineDraftList(city: dinedrafts),
+                      builder: (ctx) => DineDraftList(dines: dinedrafts),
                     ),
                   );
                 },
-                child: CarousalCardReuseable2(placesCount: dinedrafts.places, description: dinedrafts.description, city: dinedrafts.city, imagePath: dinedrafts.imagePath, province: dinedrafts.province),
+                child: CarousalCardReuseable2(
+                    placesCount: dinedrafts.places,
+                    description: dinedrafts.description,
+                    city: dinedrafts.city,
+                    imagePath: dinedrafts.imagePath,
+                    province: dinedrafts.province),
               );
             },
           ),

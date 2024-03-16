@@ -278,7 +278,7 @@ final List<Activity> activities = [
   ),
   Activity(
     baseCity: "Colombo",
-    name: "St. Anthony's Shrine, Kochchikade",
+    name: "St. Anthony's Shrine,Church",
     type: 'Catholic church in Colombo',
     price: 0.0,
     rating: 4,

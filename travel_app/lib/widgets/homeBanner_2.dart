@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/screens/surf_screen.dart';
 
 class HomeBanner2 extends StatelessWidget {
   const HomeBanner2({super.key});
@@ -25,7 +26,13 @@ class HomeBanner2 extends StatelessWidget {
               bottom: 10,
               left: 12,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (ctx) => const SurfScreen(),
+                    ),
+                  );
+                },
                 child: const Text(
                   "Read more",
                   style: TextStyle(

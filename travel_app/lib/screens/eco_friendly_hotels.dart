@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/Data/surf_places.dart';
-import 'package:travel_app/Models/surf_places.dart';
+import 'package:travel_app/Data/eco_friendly.dart';
+import 'package:travel_app/Models/eco_friendly.dart';
 
-class SurfScreen extends StatefulWidget {
-  const SurfScreen({super.key});
+class EcoFriendlyScreen extends StatefulWidget {
+  const EcoFriendlyScreen({super.key});
 
   @override
-  State<SurfScreen> createState() => _SurfScreenState();
+  State<EcoFriendlyScreen> createState() => _EcoFriendlyScreenState();
 }
 
-class _SurfScreenState extends State<SurfScreen> {
+class _EcoFriendlyScreenState extends State<EcoFriendlyScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +17,7 @@ class _SurfScreenState extends State<SurfScreen> {
         title: const Padding(
           padding: EdgeInsets.only(top: 15),
           child: Text(
-            "Top 10 Places to surf in\nSri Lanka",
+            "Eco-Friendly Hotels in\nSri Lanka",
             style: TextStyle(
               fontSize: 19,
               fontWeight: FontWeight.bold,
@@ -32,9 +32,9 @@ class _SurfScreenState extends State<SurfScreen> {
           Expanded(
             child: ListView.builder(
               padding: const EdgeInsets.only(top: 10.0, bottom: 15.0),
-              itemCount: surf.length,
+              itemCount: ecoFriendly.length,
               itemBuilder: (BuildContext context, int index) {
-                Surf surfplaces = surf[index];
+                EcoFriendly ecofriend = ecoFriendly[index];
                 return GestureDetector(
                   child: Stack(
                     children: [
@@ -68,7 +68,7 @@ class _SurfScreenState extends State<SurfScreen> {
                                     child: SizedBox(
                                       width: 190,
                                       child: Text(
-                                        surfplaces.place,
+                                        ecofriend.place,
                                         style: const TextStyle(
                                           fontSize: 20,
                                           fontWeight: FontWeight.bold,
@@ -87,7 +87,7 @@ class _SurfScreenState extends State<SurfScreen> {
                                     const EdgeInsets.only(top: 8, left: 40),
                                 child: Container(
                                   padding: const EdgeInsets.all(1.0),
-                                  width: 150,
+                                  width: 180,
                                   decoration: BoxDecoration(
                                     color:
                                         const Color.fromARGB(195, 14, 192, 106),
@@ -109,7 +109,7 @@ class _SurfScreenState extends State<SurfScreen> {
                                         width: 5,
                                       ),
                                       Text(
-                                        surfplaces.province,
+                                        ecofriend.province,
                                         style: const TextStyle(
                                           fontSize: 12.4,
                                           fontFamily: "Outfit-Regular",
@@ -126,7 +126,7 @@ class _SurfScreenState extends State<SurfScreen> {
                                   left: 40,
                                 ),
                                 child: Text(
-                                  surfplaces.about,
+                                  ecofriend.about,
                                   style: const TextStyle(
                                     fontSize: 13,
                                     fontFamily: "Outfit-Regular",
@@ -148,7 +148,7 @@ class _SurfScreenState extends State<SurfScreen> {
                           child: Image(
                             width: 150,
                             height: 170,
-                            image: AssetImage(surfplaces.imagePath),
+                            image: AssetImage(ecofriend.imagePath),
                             fit: BoxFit.cover,
                           ),
                         ),

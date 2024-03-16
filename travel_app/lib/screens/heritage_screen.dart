@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/Data/surf_places.dart';
-import 'package:travel_app/Models/surf_places.dart';
+import 'package:travel_app/Data/heritage_places.dart';
+import 'package:travel_app/Models/heritage_places.dart';
 
-class SurfScreen extends StatefulWidget {
-  const SurfScreen({super.key});
+class HeritageScreen extends StatefulWidget {
+  const HeritageScreen({super.key});
 
   @override
-  State<SurfScreen> createState() => _SurfScreenState();
+  State<HeritageScreen> createState() => _HeritageScreenState();
 }
 
-class _SurfScreenState extends State<SurfScreen> {
+class _HeritageScreenState extends State<HeritageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Padding(
-          padding: EdgeInsets.only(top: 15),
-          child: Text(
-            "Top 10 Places to surf in\nSri Lanka",
+          padding:  EdgeInsets.only(top: 15),
+          child:  Text(
+            "Discover Heritage Sites in\nSri Lanka",
             style: TextStyle(
               fontSize: 19,
               fontWeight: FontWeight.bold,
@@ -32,9 +32,9 @@ class _SurfScreenState extends State<SurfScreen> {
           Expanded(
             child: ListView.builder(
               padding: const EdgeInsets.only(top: 10.0, bottom: 15.0),
-              itemCount: surf.length,
+              itemCount: heritage.length,
               itemBuilder: (BuildContext context, int index) {
-                Surf surfplaces = surf[index];
+                Heritage heritageplace = heritage[index];
                 return GestureDetector(
                   child: Stack(
                     children: [
@@ -60,17 +60,19 @@ class _SurfScreenState extends State<SurfScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsets.only(left: 40),
+                                    padding: const EdgeInsets.only(
+                                        top: 8, left: 40),
                                     child: SizedBox(
                                       width: 190,
                                       child: Text(
-                                        surfplaces.place,
+                                        heritageplace.place,
                                         style: const TextStyle(
-                                          fontSize: 20,
+                                          fontSize: 19,
                                           fontWeight: FontWeight.bold,
                                           fontFamily: "Outfit-Regular",
                                           color: Colors.black,
@@ -87,10 +89,10 @@ class _SurfScreenState extends State<SurfScreen> {
                                     const EdgeInsets.only(top: 8, left: 40),
                                 child: Container(
                                   padding: const EdgeInsets.all(1.0),
-                                  width: 150,
+                                  width: 180,
                                   decoration: BoxDecoration(
-                                    color:
-                                        const Color.fromARGB(195, 14, 192, 106),
+                                    color: const Color.fromARGB(
+                                        195, 14, 192, 106),
                                     borderRadius: BorderRadius.circular(10.0),
                                   ),
                                   alignment: Alignment.center,
@@ -102,14 +104,14 @@ class _SurfScreenState extends State<SurfScreen> {
                                       const Icon(
                                         Icons.compass_calibration_rounded,
                                         size: 8.0,
-                                        color:
-                                            Color.fromARGB(255, 255, 255, 255),
+                                        color: Color.fromARGB(
+                                            255, 255, 255, 255),
                                       ),
                                       const SizedBox(
                                         width: 5,
                                       ),
                                       Text(
-                                        surfplaces.province,
+                                        heritageplace.province,
                                         style: const TextStyle(
                                           fontSize: 12.4,
                                           fontFamily: "Outfit-Regular",
@@ -125,9 +127,8 @@ class _SurfScreenState extends State<SurfScreen> {
                                   top: 8,
                                   left: 40,
                                 ),
-                                child: Text(
-                                  surfplaces.about,
-                                  style: const TextStyle(
+                                child: Text(heritageplace.about,
+                                style: const TextStyle(
                                     fontSize: 13,
                                     fontFamily: "Outfit-Regular",
                                     color: Color.fromARGB(255, 69, 69, 69),
@@ -148,7 +149,7 @@ class _SurfScreenState extends State<SurfScreen> {
                           child: Image(
                             width: 150,
                             height: 170,
-                            image: AssetImage(surfplaces.imagePath),
+                            image: AssetImage(heritageplace.imagePath),
                             fit: BoxFit.cover,
                           ),
                         ),

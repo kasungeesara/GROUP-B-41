@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/Data/city_based_coffeecuisine.dart';
+import 'package:travel_app/Data/coffee_cuisine.dart';
 import 'package:travel_app/Models/city_coffeecuisine.dart';
 import 'package:travel_app/Models/coffee_cuisine.dart';
 
@@ -25,7 +26,6 @@ class _CoffeeCuisinetListState extends State<CoffeeCuisinetList> {
     stars.trim();
     return Text(stars);
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -154,14 +154,7 @@ class _CoffeeCuisinetListState extends State<CoffeeCuisinetList> {
                 CityCoffeeCuisine coffeecafe = filteredActivities[index];
 
                 return GestureDetector(
-                 // onTap: () => Navigator.push(
-                    //context,
-                    //MaterialPageRoute(
-                      //builder: (_) => (
-                       // : ,
-                     // ),
-                   // ),
-                //  ),
+                  onTap: () {},
                   child: Stack(
                     children: [
                       Container(
@@ -251,7 +244,7 @@ class _CoffeeCuisinetListState extends State<CoffeeCuisinetList> {
                                       ),
                                       alignment: Alignment.center,
                                       child: Text(
-                                       coffeecafe.startTimes[0],
+                                        coffeecafe.startTimes[0],
                                         style: const TextStyle(
                                           fontSize: 15,
                                           fontFamily: "Outfit-Regular",
@@ -273,7 +266,7 @@ class _CoffeeCuisinetListState extends State<CoffeeCuisinetList> {
                                       ),
                                       alignment: Alignment.center,
                                       child: Text(
-                                       coffeecafe.startTimes[1],
+                                        coffeecafe.startTimes[1],
                                         style: const TextStyle(
                                           fontSize: 15,
                                           fontFamily: "Outfit-Regular",

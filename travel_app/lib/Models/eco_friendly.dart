@@ -1,13 +1,11 @@
-class YouMight {
-  final String name;
-  final String description;
+class EcoFriendly {
+  final String place;
   final String province;
   final String imagePath;
   final String about;
 
-  YouMight({
-    required this.name,
-    this.description = '',
+  EcoFriendly({
+    required this.place,
     required this.province,
     required this.imagePath,
     required this.about,
