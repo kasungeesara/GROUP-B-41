@@ -8,6 +8,7 @@ class BestCafe {
   final String address;
   final String tel;
   final List<String> startTimes;
+  final String url;
 
   BestCafe({
     required this.name,
@@ -16,8 +17,9 @@ class BestCafe {
     required this.city,
     required this.imagePath,
     required this.price,
-     required this.tel,
+    required this.tel,
     required this.startTimes,
     required this.address,
+    required this.url,
   });
 }

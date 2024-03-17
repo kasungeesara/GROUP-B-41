@@ -8,6 +8,7 @@ class FineDine {
   final String tel;
   final List<String> startTimes;
   final String address;
+  final String url;
 
   FineDine({
     required this.name,
@@ -19,5 +20,6 @@ class FineDine {
     required this.tel,
     required this.startTimes,
     required this.address,
+    required this.url,
   });
 }

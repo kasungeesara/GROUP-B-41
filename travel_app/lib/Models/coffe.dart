@@ -8,6 +8,7 @@ class Coffee {
   final String tel;
   final List<String> startTimes;
   final String address;
+   final String url;
 
   Coffee({
     required this.name,
@@ -19,5 +20,6 @@ class Coffee {
     required this.tel,
     required this.startTimes,
     required this.address,
+    required this.url,
   });
 }
