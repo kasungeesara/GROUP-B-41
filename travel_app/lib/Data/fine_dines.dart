@@ -12,6 +12,7 @@ final List<FineDine> fineDines = [
     tel: "0112 555 066",
     startTimes: ['12 PM', '11 PM'],
     address: "No.24,Alfred House Avenue, Colombo.",
+    url: "https://theavenue.lk/",
   ),
   FineDine(
     name: 'Rare at Residence',
@@ -24,6 +25,7 @@ final List<FineDine> fineDines = [
     tel: "0112 448 438",
     startTimes: ['12 PM', '11 PM'],
     address: "No.20 , Park Street. Colombo 2.",
+    url: "https://www.rareatresidence.com/",
   ),
   FineDine(
     name: 'Shang Palace',
@@ -36,6 +38,7 @@ final List<FineDine> fineDines = [
     tel: "011 788 8288",
     startTimes: ['12 PM', '11 PM'],
     address: "Level 3, 1 Galle Face, Colombo 2.",
+    url: "https://www.shangri-la.com/colombo/shangrila/dining/restaurants/shang-palace/",
   ),
   FineDine(
     name: 'WorldSpice',
@@ -48,6 +51,7 @@ final List<FineDine> fineDines = [
     tel: "077 342 4088",
     startTimes: ['10 AM', '10 PM'],
     address: "No.5, Sri Dalada Veediya, Kandy.",
+    url: "https://dining.kandycitycentre.lk/shop/",
   ),
   FineDine(
     name: 'Senani by Oak Ray',
@@ -60,6 +64,7 @@ final List<FineDine> fineDines = [
     tel: "(+94) 81 222 4833",
     startTimes: ['11 AM', '11 PM'],
     address: "No.30,Rajapihilla Mawatha,Kandy.",
+    url: "https://www.oakrayhotels.com/senani-restaurant/",
   ),
   FineDine(
     name: 'Graze Kitchen',
@@ -72,6 +77,7 @@ final List<FineDine> fineDines = [
     tel: "+9411 249 2492",
     startTimes: ['7 AM', '11 PM'],
     address: "No.2,SirChittampalam,GardinerMawatha,Colombo",
+    url: "https://hiltoncolombo1.com/restaurant/graze-kitchen",
   ),
   FineDine(
     name: 'The Lagoon.',
@@ -84,6 +90,7 @@ final List<FineDine> fineDines = [
     tel: "+94 11 249 1999 ",
     startTimes: ['12 PM', '12 AM'],
     address: " Cinnamon Grand Hotel,77 Galle Rd,Colombo.",
+    url: "https://www.cinnamonhotels.com/cinnamongrandcolombo/experiences/lagoon",
   ),
   FineDine(
     name: 'Flavoured',
@@ -96,6 +103,7 @@ final List<FineDine> fineDines = [
     tel: "0112 145 176",
     startTimes: ['7 AM', '10 PM'],
     address: "No.59 AnandaCoomaraswamy Mawatha,Colombo",
+    url: "https://www.cinnamonhotels.com/cinnamonredcolombo/experiences/flavoured",
   ),
   FineDine(
     name: 'Theva Cuisine',
@@ -108,6 +116,7 @@ final List<FineDine> fineDines = [
     tel: "0817 388 299",
     startTimes: ['8 AM', '10 PM'],
     address: "No.71/B1, 2nd lane, Hantana Rd,Kandy.",
+    url: "https://www.theva.lk/dining/",
   ),
   FineDine(
     name: 'Hangout Late night',
@@ -120,5 +129,6 @@ final List<FineDine> fineDines = [
     tel: "0812 233 454",
     startTimes: ['11 AM', '11 PM'],
     address: "No.32D, George E De Silva Mawatha,Kandy",
+    url: "https://www.instagram.com/hangout.latenight/",
   ),
 ];

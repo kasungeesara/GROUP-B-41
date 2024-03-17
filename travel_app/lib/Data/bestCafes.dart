@@ -12,6 +12,7 @@ final List<BestCafe> bestCafes = [
     tel: "0112 447 168",
     address: "No.62/2,Chatham Street,Colombo",
     startTimes: ['09 AM', '07 PM'],
+    url: "https://www.dilmaht-lounge.com/",
   ),
    BestCafe(
     name: 'Cafe Kumbuk',
@@ -23,6 +24,7 @@ final List<BestCafe> bestCafes = [
     tel: "0112 685 310",
     address: "No.3/1 Thambiah Avenue,Independence Ave.",
     startTimes: ['09 AM', '06 PM'],
+    url: "https://www.cafekumbuk.com/",
   ),
   BestCafe(
     name: 'Seed Cafe',
@@ -34,6 +36,7 @@ final List<BestCafe> bestCafes = [
     tel: "0117 773 470",
     address: "Horton Place, Colombo 07 US Embassy, Colombo ",
     startTimes: ['08 AM', '06 PM'],
+    url: "https://www.yamu.lk/kamu/seed-cafe/",
   ),
   BestCafe(
     name: 'Secret Alley',
@@ -45,6 +48,7 @@ final List<BestCafe> bestCafes = [
     tel: "077 303 2933",
     address: "No.10/1/1/1,E L Senanayake Veediya,Kandy",
     startTimes: ['10 AM', '05 PM'],
+    url: "https://www.yamu.lk/kamu/cafe-secret-alley/",
   ),
   BestCafe(
     name: 'Cafe Nuwara',
@@ -56,5 +60,6 @@ final List<BestCafe> bestCafes = [
     tel: "076 022 1222",
     address: "No.146 DS Senanayake Veediya,Kandy",
     startTimes: ['10 AM', '10 PM'],
+    url: "https://nuwara.cafe/",
   ),
 ];

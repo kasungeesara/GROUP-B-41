@@ -11,6 +11,7 @@ final List<Coffee> coffeetea = [
      tel: "0113 430 808",
     address: "No.10A Philip Gunawardena Mawatha,Colombo",
     startTimes: ['07 AM', '11 PM'],
+    url: "https://deptofcoffee.lk/",
   ),
   Coffee(
     name: 'Cafe 1959',
@@ -22,6 +23,7 @@ final List<Coffee> coffeetea = [
      tel: "0112 590 520",
     address: "No.746 Galle Rd,Colombo.",
     startTimes: ['09 AM', '09 PM'],
+    url: "https://www.yamu.lk/kamu/cafe-1959/",
   ),
   Coffee(
     name: 'Peppermint Cafe',
@@ -33,6 +35,7 @@ final List<Coffee> coffeetea = [
      tel: "075 632 0420",
     address: "No.76 Wijerama Mawatha,Colombo",
     startTimes: ['11 AM', '11 PM'],
+    url: "https://peppermintcafe.lk/",
   ),
   Coffee(
     name: 'Brown Bean Coffee',
@@ -44,6 +47,7 @@ final List<Coffee> coffeetea = [
      tel: "071 622 1626",
     address: "No.104 Anagarika DharmapalaMawatha,Colombo",
     startTimes: ['10 AM', '09 PM'],
+    url: "https://www.yamu.lk/kamu/the-brown-bean-coffee-dharmapala-mw/",
   ),
   
   Coffee(
@@ -56,6 +60,7 @@ final List<Coffee> coffeetea = [
      tel: "077 666 7567",
     address: "No.20A Laurie's Place,R.A.DeMelMawatha,Colombo",
     startTimes: ['08 AM', '07 PM'],
+    url: "https://www.top-rated.online/cities/Colombo/place/p/10194097/Dark+Roast+Cafe",
   ),
  
 ];

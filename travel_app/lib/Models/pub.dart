@@ -8,6 +8,7 @@ class Pubs {
   final String tel;
   final List<String> startTimes;
   final String address;
+   final String url;
 
   Pubs({
     required this.name,
@@ -19,5 +20,6 @@ class Pubs {
     required this.tel,
     required this.startTimes,
     required this.address,
+    required this.url,
   });
 }
