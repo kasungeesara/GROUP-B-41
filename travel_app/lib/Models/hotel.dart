@@ -7,6 +7,7 @@ class Hotel {
   final String tel;
   final String about;
   final String directions;
+  final String url;
 
   Hotel({
     required this.name,
@@ -17,5 +18,6 @@ class Hotel {
     required this.tel,
     required this.about,
     required this.directions,
+    required this.url,
   });
 }

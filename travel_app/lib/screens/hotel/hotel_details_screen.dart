@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:travel_app/Models/hotel.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HotelDetails extends StatefulWidget {
   // ignore: use_super_parameters
@@ -219,8 +221,8 @@ class _HotelDetailsState extends State<HotelDetails> {
               ),
             ),
             const Padding(
-              padding:  EdgeInsets.only(left: 320),
-              child:  Row(
+              padding: EdgeInsets.only(left: 320),
+              child: Row(
                 children: [
                   Text(
                     '(per night)',
@@ -306,34 +308,49 @@ class _HotelDetailsState extends State<HotelDetails> {
                 textAlign: TextAlign.justify,
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(left: 8, top: 10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                  Icon(
-                    Icons.search,
-                    size: 20.0,
-                    color: Color.fromARGB(255, 78, 71, 216),
-                  ),
-                  SizedBox(width: 5.0),
-                  Text(
-                    "Visit Page",
-                    style: TextStyle(
-                      fontSize: 15,
-                      fontFamily: "Outfit-Regular",
-                      color: Color.fromARGB(255, 78, 71, 216),
-                      fontWeight: FontWeight.w600,
+            GestureDetector(
+              child: Padding(
+                padding: const EdgeInsets.only(left: 8, top: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    IconButton(
+                      onPressed: () {
+                        _launchURL(widget.hotel.url);
+                      },
+                      icon: const Icon(Icons.search_rounded),
+                      iconSize: 20,
+                      color: const Color.fromARGB(255, 78, 71, 216),
                     ),
-                    textAlign: TextAlign.justify,
-                  ),
-                ],
+                    const SizedBox(width: 5.0),
+                    const Text(
+                      "Visit Page",
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontFamily: "Outfit-Regular",
+                        color: Color.fromARGB(255, 78, 71, 216),
+                        fontWeight: FontWeight.w600,
+                      ),
+                      textAlign: TextAlign.justify,
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
         ),
       ),
     );
+  }
+
+  Future<void> _launchURL(String url) async {
+    // ignore: deprecated_member_use
+    if (await canLaunch(url)) {
+      // ignore: deprecated_member_use
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 
   List<Widget> _buildFacilityButtons() {
