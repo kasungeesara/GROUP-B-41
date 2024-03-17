@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:travel_app/Data/city_based_coffeecuisine.dart';
 import 'package:travel_app/Models/city_coffeecuisine.dart';
 import 'package:travel_app/Models/coffee_cuisine.dart';
+import 'package:travel_app/screens/coffeecuisine/coffeecuisine_details.dart';
 
 class CoffeeCuisinetList extends StatefulWidget {
   final CoffeeCuisine city;
@@ -17,14 +18,6 @@ class CoffeeCuisinetList extends StatefulWidget {
 }
 
 class _CoffeeCuisinetListState extends State<CoffeeCuisinetList> {
-  Text _buildRatingStars(int rating) {
-    String stars = '';
-    for (int i = 0; i < rating; i++) {
-      stars += '★ ';
-    }
-    stars.trim();
-    return Text(stars);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -153,7 +146,14 @@ class _CoffeeCuisinetListState extends State<CoffeeCuisinetList> {
                 CityCoffeeCuisine coffeecafe = filteredActivities[index];
 
                 return GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                         Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (ctx) =>
+                            CoffeeCuisineDetails(name: coffeecafe),
+                      ),
+                    );
+                  },
                   child: Stack(
                     children: [
                       Container(
@@ -227,8 +227,8 @@ class _CoffeeCuisinetListState extends State<CoffeeCuisinetList> {
                                   color: Colors.black,
                                 ),
                               ),
-                              _buildRatingStars(coffeecafe.rating),
-                              const SizedBox(height: 5),
+                          
+                              const SizedBox(height: 30),
                               Row(
                                 children: [
                                   if (coffeecafe.startTimes.isNotEmpty) ...[

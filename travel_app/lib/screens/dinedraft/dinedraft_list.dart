@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:travel_app/Data/city_based_dinedraft.dart';
 import 'package:travel_app/Models/city_dinedraft.dart';
 import 'package:travel_app/Models/dine_draft.dart';
+import 'package:travel_app/screens/dinedraft/dinedraft_details.dart';
 
 class DineDraftList extends StatefulWidget {
   const DineDraftList({
@@ -17,14 +18,6 @@ class DineDraftList extends StatefulWidget {
 }
 
 class _DineDraftListState extends State<DineDraftList> {
-  Text _buildRatingStars(int rating) {
-    String stars = '';
-    for (int i = 0; i < rating; i++) {
-      stars += '★ ';
-    }
-    stars.trim();
-    return Text(stars);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -153,7 +146,14 @@ class _DineDraftListState extends State<DineDraftList> {
                 CityDineDraft dinedrafteat = filteredActivities[index];
 
                 return GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                     Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (ctx) =>
+                           DineDraftDetails(name: dinedrafteat),
+                      ),
+                    );
+                  },
                   child: Stack(
                     children: [
                       Container(
@@ -227,8 +227,8 @@ class _DineDraftListState extends State<DineDraftList> {
                                   color: Colors.black,
                                 ),
                               ),
-                              _buildRatingStars(dinedrafteat.rating),
-                              const SizedBox(height: 5),
+                             
+                              const SizedBox(height: 30),
                               Row(
                                 children: [
                                   if (dinedrafteat.startTimes.isNotEmpty) ...[
