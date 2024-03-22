@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/Models/city_based_hotels.dart';
 
-
-
 class CityHotelDetails extends StatefulWidget {
   // ignore: use_super_parameters
   const CityHotelDetails({
@@ -281,19 +279,6 @@ class _CityHotelDetailsState extends State<CityHotelDetails> {
                 textAlign: TextAlign.justify,
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(left: 10, top: 20),
-              child: Text(
-                "Location",
-                style: TextStyle(
-                  letterSpacing: 1.2,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: "Outfit-Regular",
-                  color: Colors.black,
-                ),
-              ),
-            ),
             Padding(
               padding: const EdgeInsets.only(left: 10, top: 2),
               child: Text(
@@ -315,9 +300,7 @@ class _CityHotelDetailsState extends State<CityHotelDetails> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
                     IconButton(
-                      onPressed: () {
-                        
-                      },
+                      onPressed: () {},
                       icon: const Icon(Icons.search_rounded),
                       iconSize: 20,
                       color: const Color.fromARGB(255, 78, 71, 216),
@@ -342,8 +325,6 @@ class _CityHotelDetailsState extends State<CityHotelDetails> {
       ),
     );
   }
-
- 
 
   List<Widget> _buildFacilityButtons() {
     return [

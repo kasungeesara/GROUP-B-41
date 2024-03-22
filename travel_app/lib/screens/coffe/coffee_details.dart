@@ -349,6 +349,7 @@ class _CoffeeDetailsState extends State<CoffeeDetails> {
                 ),
               ),
             ),
+            Container(),
              GestureDetector(
               child: Padding(
                 padding: const EdgeInsets.only(left: 8, top: 10),

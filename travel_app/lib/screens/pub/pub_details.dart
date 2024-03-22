@@ -336,6 +336,20 @@ class _PubDetailsState extends State<PubDetails> {
                 textAlign: TextAlign.justify,
               ),
             ),
+            const Padding(
+              padding: EdgeInsets.only(left: 10, top: 20),
+              child: Text(
+                "Location",
+                style: TextStyle(
+                  letterSpacing: 1.2,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "Outfit-Regular",
+                  color: Colors.black,
+                ),
+              ),
+            ),
+            Container(),
             GestureDetector(
               child: Padding(
                 padding: const EdgeInsets.only(left: 8, top: 10),
