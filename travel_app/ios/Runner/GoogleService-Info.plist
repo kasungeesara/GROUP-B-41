@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyBj6dr2a0Uyu92CSfHuRgpIL3uoT-BGPpM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>27240299035</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.travelApp</string>
+	<key>PROJECT_ID</key>
+	<string>yan-auth</string>
+	<key>STORAGE_BUCKET</key>
+	<string>yan-auth.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:27240299035:ios:0f334b828ed41c698056be</string>
+	<key>DATABASE_URL</key>
+	<string>https://yan-auth-default-rtdb.asia-southeast1.firebasedatabase.app</string>
+</dict>
+</plist>

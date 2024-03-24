@@ -558,7 +558,8 @@ final List<Activity> activities = [
       rating: 4,
       startTimes: ['6 AM', '8 PM'],
       imagePath: "assets/po7.jpg",
-      description: "While Siva Devale No. 2 was built in the Chola style in the name of the queen of King Rajaraja I, the original name or the builder of Siva Devale No. 1 is not known. However, the architecture of the temple indicates that it may have been built during the 13th century A.D. Therefore, the temple is believed to be a product of the Pandya style built after the occupation of Polonnaruwa by Magha of Kalinga."),
+      description:
+          "While Siva Devale No. 2 was built in the Chola style in the name of the queen of King Rajaraja I, the original name or the builder of Siva Devale No. 1 is not known. However, the architecture of the temple indicates that it may have been built during the 13th century A.D. Therefore, the temple is believed to be a product of the Pandya style built after the occupation of Polonnaruwa by Magha of Kalinga."),
   Activity(
       baseCity: "Polonnaruwa",
       name: "Polonnaruwa Siva Devale No.2",
@@ -569,7 +570,6 @@ final List<Activity> activities = [
       imagePath: "assets/po8.jpg",
       description:
           "This Siva Kovil (devalaya) is considered to be one of the oldest buildings of the Polonnaruwa Kingdom to survive the ravages of time.  This Siva kovil is believed to have been built by Cola invaders (10th century) who initially established their capital in Polonnaruwa."),
-  
   Activity(
       baseCity: "Matara ",
       name: "The Shrine of Our Lady of Matara",
