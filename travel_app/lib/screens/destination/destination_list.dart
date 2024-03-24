@@ -1,8 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:travel_app/Models/destination.dart';
 import 'package:travel_app/screens/destination/destination_activity.dart';
-import 'package:travel_app/Data/activities.dart';
-import 'package:travel_app/Models/activity.dart';
 
 class DestinationScreen extends StatefulWidget {
   const DestinationScreen({
@@ -16,6 +15,7 @@ class DestinationScreen extends StatefulWidget {
 }
 
 class _DestinationScreenState extends State<DestinationScreen> {
+  String docName = "kandy";
   Text _buildRatingStars(int rating) {
     String stars = '';
     for (int i = 0; i < rating; i++) {
@@ -29,9 +29,23 @@ class _DestinationScreenState extends State<DestinationScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final filteredActivities = activities
-        .where((act) => act.baseCity.contains(widget.destination.city))
-        .toList();
+    if (widget.destination.city == "Kandy") {
+      docName = "activityKandy";
+    } else if(widget.destination.city == "Galle"){
+      docName = "activityGalle";
+
+    } else if(widget.destination.city == "Colombo"){
+      docName = "activityColombo";
+
+    } else if(widget.destination.city == "Sigiriya"){
+      docName = "activitySigiriya";
+
+    } else if(widget.destination.city == "Nuwara Eliya"){
+      docName = "activityNuwaraEliya";
+
+    }else {
+      docName = "activity";
+    }
 
     return Scaffold(
       body: Column(
@@ -146,166 +160,204 @@ class _DestinationScreenState extends State<DestinationScreen> {
               ),
             ],
           ),
-          Expanded(
-            child: ListView.builder(
-              padding: const EdgeInsets.only(top: 10.0, bottom: 15.0),
-              itemCount: filteredActivities.length,
-              itemBuilder: (BuildContext context, int index) {
-                Activity activity = filteredActivities[index];
+          StreamBuilder(
+            stream: FirebaseFirestore.instance
+                .collection(docName)
+                .snapshots(),
+            builder: (cxt, chatSnapshot) {
+              if (chatSnapshot.connectionState == ConnectionState.waiting) {
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              }
 
-                return GestureDetector(
-                  onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => ActivityScreen(
-                        activity: activity,
-                      ),
-                    ),
-                  ),
-                  child: Stack(
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.fromLTRB(40, 5, 20, 5),
-                        height: 170,
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(20),
-                          boxShadow: const [
-                            BoxShadow(
-                              color: Colors.black26,
-                              offset: Offset(0.0, 1.0),
-                              blurRadius: 6.0,
+              if (!chatSnapshot.hasData || chatSnapshot.data!.docs.isEmpty) {
+                return const Center(
+                  child: Text("No places added"),
+                );
+              }
+
+              if (chatSnapshot.hasError) {
+                return const Center(
+                  child: Text("Somthing went wrong"),
+                );
+              }
+
+              final loadedData = chatSnapshot.data!.docs;
+
+              return Expanded(
+                child: ListView.builder(
+                  reverse: false,
+                  itemCount: loadedData.length,
+                  padding: const EdgeInsets.only(top: 10.0, bottom: 15.0),
+                  itemBuilder: (context, index) {
+                    final currentData = loadedData[index].data();
+
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (ctx) => ActivityScreen(
+                              imageUrl: currentData["imagePath"],
+                              name: currentData["name"],
+                              type: currentData["type"],
+                              price: currentData["price"],
+                              startTime: currentData["startTimes"][0],
+                              endTime: currentData["startTimes"][1],
+                              rating: currentData["rating"],
+                              description: currentData["description"],
                             ),
-                          ],
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.fromLTRB(
-                              100.0, 20.0, 20.0, 20.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                          ),
+                        );
+                      },
+                      child: Stack(
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.fromLTRB(40, 5, 20, 5),
+                            height: 170,
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20),
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: Colors.black26,
+                                  offset: Offset(0.0, 1.0),
+                                  blurRadius: 6.0,
+                                ),
+                              ],
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.fromLTRB(
+                                  100.0, 20.0, 20.0, 20.0),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  SizedBox(
-                                    width: 120.0,
-                                    child: Text(
-                                      activity.name,
-                                      style: const TextStyle(
-                                        fontSize: 17,
-                                        fontWeight: FontWeight.bold,
-                                        fontFamily: "Outfit-Regular",
-                                        color: Colors.black,
-                                      ),
-                                      overflow: TextOverflow.ellipsis,
-                                      maxLines: 2,
-                                    ),
-                                  ),
-                                  Column(
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
-                                      Text(
-                                        '\$${activity.price}',
-                                        style: const TextStyle(
-                                          fontSize: 22,
-                                          fontWeight: FontWeight.bold,
-                                          fontFamily: "Outfit-Regular",
-                                          color: Colors.black,
+                                      SizedBox(
+                                        width: 120.0,
+                                        child: Text(
+                                          currentData["name"],
+                                          style: const TextStyle(
+                                            fontSize: 17,
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: "Outfit-Regular",
+                                            color: Colors.black,
+                                          ),
+                                          overflow: TextOverflow.ellipsis,
+                                          maxLines: 2,
                                         ),
                                       ),
-                                      const Text(
-                                        'per adult',
-                                        style: TextStyle(
-                                          fontFamily: "Outfit-Regular",
-                                          color: Colors.grey,
-                                        ),
+                                      Column(
+                                        children: [
+                                          Text(
+                                            '\$${currentData["price"]}',
+                                            style: const TextStyle(
+                                              fontSize: 22,
+                                              fontWeight: FontWeight.bold,
+                                              fontFamily: "Outfit-Regular",
+                                              color: Colors.black,
+                                            ),
+                                          ),
+                                          const Text(
+                                            'per adult',
+                                            style: TextStyle(
+                                              fontFamily: "Outfit-Regular",
+                                              color: Colors.grey,
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ],
                                   ),
+                                  Text(
+                                    currentData["type"],
+                                    style: const TextStyle(
+                                      fontSize: 15,
+                                      fontFamily: "Outfit-Regular",
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                  _buildRatingStars(currentData["rating"]),
+                                  const SizedBox(height: 5),
+                                  Row(
+                                    children: [
+                                      if (currentData.isNotEmpty) ...[
+                                        Container(
+                                          padding: const EdgeInsets.all(1.0),
+                                          width: 60,
+                                          decoration: BoxDecoration(
+                                            color: const Color.fromARGB(
+                                                195, 14, 192, 106),
+                                            borderRadius:
+                                                BorderRadius.circular(10.0),
+                                          ),
+                                          alignment: Alignment.center,
+                                          child: Text(
+                                            currentData["startTimes"][0],
+                                            style: const TextStyle(
+                                              fontSize: 15,
+                                              fontFamily: "Outfit-Regular",
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ),
+                                        const SizedBox(width: 5.0),
+                                      ],
+                                      if (currentData["startTimes"].length >
+                                          1) ...[
+                                        Container(
+                                          padding: const EdgeInsets.all(1.0),
+                                          width: 60,
+                                          decoration: BoxDecoration(
+                                            color: const Color.fromARGB(
+                                                195, 14, 192, 106),
+                                            borderRadius:
+                                                BorderRadius.circular(10.0),
+                                          ),
+                                          alignment: Alignment.center,
+                                          child: Text(
+                                            currentData["startTimes"][1],
+                                            style: const TextStyle(
+                                              fontSize: 15,
+                                              fontFamily: "Outfit-Regular",
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ],
+                                  )
                                 ],
                               ),
-                              Text(
-                                activity.type,
-                                style: const TextStyle(
-                                  fontSize: 15,
-                                  fontFamily: "Outfit-Regular",
-                                  color: Colors.black,
-                                ),
+                            ),
+                          ),
+                          Positioned(
+                            left: 20,
+                            top: 15,
+                            bottom: 15,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20.0),
+                              child: Image(
+                                width: 110.0,
+                                image: NetworkImage(currentData["imagePath"]),
+                                fit: BoxFit.cover,
                               ),
-                              _buildRatingStars(activity.rating),
-                              const SizedBox(height: 5),
-                              Row(
-                                children: [
-                                  if (activity.startTimes.isNotEmpty) ...[
-                                    Container(
-                                      padding: const EdgeInsets.all(1.0),
-                                      width: 60,
-                                      decoration: BoxDecoration(
-                                        color: const Color.fromARGB(
-                                            195, 14, 192, 106),
-                                        borderRadius:
-                                            BorderRadius.circular(10.0),
-                                      ),
-                                      alignment: Alignment.center,
-                                      child: Text(
-                                        activity.startTimes[0],
-                                        style: const TextStyle(
-                                          fontSize: 15,
-                                          fontFamily: "Outfit-Regular",
-                                          color: Colors.white,
-                                        ),
-                                      ),
-                                    ),
-                                    const SizedBox(width: 5.0),
-                                  ],
-                                  if (activity.startTimes.length > 1) ...[
-                                    Container(
-                                      padding: const EdgeInsets.all(1.0),
-                                      width: 60,
-                                      decoration: BoxDecoration(
-                                        color: const Color.fromARGB(
-                                            195, 14, 192, 106),
-                                        borderRadius:
-                                            BorderRadius.circular(10.0),
-                                      ),
-                                      alignment: Alignment.center,
-                                      child: Text(
-                                        activity.startTimes[1],
-                                        style: const TextStyle(
-                                          fontSize: 15,
-                                          fontFamily: "Outfit-Regular",
-                                          color: Colors.white,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ],
-                              )
-                            ],
+                            ),
                           ),
-                        ),
+                        ],
                       ),
-                      Positioned(
-                        left: 20,
-                        top: 15,
-                        bottom: 15,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(20.0),
-                          child: Image(
-                            width: 110.0,
-                            image: AssetImage(activity.imagePath),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                );
-              },
-            ),
+                    );
+                  },
+                ),
+              );
+            },
           ),
         ],
       ),
