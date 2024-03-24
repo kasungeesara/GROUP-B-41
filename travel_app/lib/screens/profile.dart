@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -66,7 +67,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 _showChangeNameDialog(context);
               },
               child: const Text(
-                'Change Name',
+                'Edit Profile',
                 style: TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.bold,
@@ -83,7 +84,28 @@ class _ProfileScreenState extends State<ProfileScreen> {
             _buildProfileInfo(title: 'Email', value: 'Roscoe<3@gmail.com'),
             const SizedBox(height: 15),
             _buildProfileInfo(title: 'Phone', value: '0774444408'),
-
+            const SizedBox(
+              height: 50,
+            ),
+            ElevatedButton(
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(
+                  const Color.fromARGB(195, 218, 37, 37),
+                ),
+              ),
+              onPressed: () {
+                FirebaseAuth.instance.signOut();
+              },
+              child: const Text(
+                'Logout',
+                style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "Outfit-Regular",
+                  color: Color.fromARGB(255, 255, 255, 255),
+                ),
+              ),
+            ),
           ],
         ),
       ),
