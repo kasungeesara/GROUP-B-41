@@ -1,13 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/Models/activity.dart';
 
 class ActivityScreen extends StatefulWidget {
   const ActivityScreen({
     super.key,
-    required this.activity,
+    required this.imageUrl,
+    required this.name,
+    required this.type,
+    required this.price,
+    required this.startTime,
+    required this.endTime,
+    required this.rating,
+    required this.description
   });
 
-  final Activity activity;
+  final String imageUrl;
+  final String name;
+  final String type;
+  final int rating;
+  final int price;
+  final String startTime;
+  final String endTime;
+  final String description;
+
   @override
   // ignore: library_private_types_in_public_api
   _ActivityScreenState createState() => _ActivityScreenState();
@@ -51,11 +65,11 @@ class _ActivityScreenState extends State<ActivityScreen> {
                     ],
                   ),
                   child: Hero(
-                    tag: widget.activity.imagePath,
+                    tag: widget.imageUrl,
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(20),
                       child: Image(
-                        image: AssetImage(widget.activity.imagePath),
+                        image: NetworkImage(widget.imageUrl),
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -101,7 +115,7 @@ class _ActivityScreenState extends State<ActivityScreen> {
                       Padding(
                         padding: const EdgeInsets.all(1.0),
                         child: Text(
-                          widget.activity.name,
+                          widget.name,
                           style: const TextStyle(
                             letterSpacing: 1.2,
                             fontSize: 25,
@@ -122,7 +136,7 @@ class _ActivityScreenState extends State<ActivityScreen> {
                             ),
                             const SizedBox(width: 5.0),
                             Text(
-                              widget.activity.type,
+                              widget.type,
                               style: const TextStyle(
                                 fontSize: 20,
                                 fontFamily: "Outfit-Regular",
@@ -151,7 +165,7 @@ class _ActivityScreenState extends State<ActivityScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  buildRatingStars(widget.activity.rating),
+                  buildRatingStars(widget.rating),
                   const Padding(
                     padding: EdgeInsets.only(left: 5),
                     child: Row(
@@ -167,9 +181,11 @@ class _ActivityScreenState extends State<ActivityScreen> {
                       ],
                     ),
                   ),
-                  const SizedBox(width: 110,),
+                  const SizedBox(
+                    width: 110,
+                  ),
                   Text(
-                    '\$${widget.activity.price}',
+                    '\$${widget.price}',
                     style: const TextStyle(
                       fontSize: 20,
                       fontFamily: "Outfit-Regular",
@@ -209,7 +225,7 @@ class _ActivityScreenState extends State<ActivityScreen> {
                     color: Colors.black,
                   ),
                 ),
-                if (widget.activity.startTimes.isNotEmpty) ...[
+                if (widget.startTime.isNotEmpty) ...[
                   Container(
                     padding: const EdgeInsets.all(1.0),
                     width: 60,
@@ -219,7 +235,7 @@ class _ActivityScreenState extends State<ActivityScreen> {
                     ),
                     alignment: Alignment.center,
                     child: Text(
-                      widget.activity.startTimes[0],
+                      widget.startTime,
                       style: const TextStyle(
                         fontSize: 15,
                         fontFamily: "Outfit-Regular",
@@ -229,7 +245,7 @@ class _ActivityScreenState extends State<ActivityScreen> {
                   ),
                   const SizedBox(width: 5.0),
                 ],
-                if (widget.activity.startTimes.length > 1) ...[
+                if (widget.endTime.length > 1) ...[
                   Container(
                     padding: const EdgeInsets.all(1.0),
                     width: 60,
@@ -239,7 +255,7 @@ class _ActivityScreenState extends State<ActivityScreen> {
                     ),
                     alignment: Alignment.center,
                     child: Text(
-                      widget.activity.startTimes[1],
+                      widget.endTime,
                       style: const TextStyle(
                         fontSize: 15,
                         fontFamily: "Outfit-Regular",
@@ -276,7 +292,7 @@ class _ActivityScreenState extends State<ActivityScreen> {
             Padding(
               padding: const EdgeInsets.only(left: 10, top: 2),
               child: Text(
-                widget.activity.description,
+                widget.description,
                 style: const TextStyle(
                   letterSpacing: 1.2,
                   fontSize: 15.5,
