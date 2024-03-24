@@ -294,6 +294,7 @@ class _HotelDetailsState extends State<HotelDetails> {
                 ),
               ),
             ),
+            Container(),
             Padding(
               padding: const EdgeInsets.only(left: 10, top: 2),
               child: Text(

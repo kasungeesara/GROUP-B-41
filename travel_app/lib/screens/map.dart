@@ -10,7 +10,8 @@ class MapScreen extends StatefulWidget {
 
 class _MapScreenState extends State<MapScreen> {
   static const LatLng _pKandy = LatLng(7.2931208, 80.6350358);
-  static const LatLng _pColombo = LatLng(6.9388614, 79.8542005);
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -18,9 +19,9 @@ class _MapScreenState extends State<MapScreen> {
       body: GoogleMap(
         initialCameraPosition: CameraPosition(
           target: _pKandy,
-          zoom: 13,
+          zoom: 10,
         ),
-        
+
       ),
     );
   }
