@@ -4,10 +4,10 @@ class CityCoffeeCuisine {
   final String city;
   final String price;
   final String imagePath;
-  final int rating;
+  final String rating;
   final String description;
   final String address;
-  final double tel;
+  final String tel;
    final List<String> startTimes;
 
   CityCoffeeCuisine({

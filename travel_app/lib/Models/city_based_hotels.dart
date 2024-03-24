@@ -4,10 +4,10 @@ class CityBasedHotel {
   final String city;
   final double price;
   final String imagePath;
-  final int rating;
+  final String rating;
   final String description;
   final String address;
-  final double tel;
+  final String tel;
 
   CityBasedHotel({
     required this.baseCity,

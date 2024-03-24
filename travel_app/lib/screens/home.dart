@@ -24,6 +24,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  
   int _selectedIndex = 0;
   int _currentTab = 0;
   Widget? currentContent;
@@ -61,7 +62,6 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
-
   @override
   Widget build(BuildContext context) {
     if (_currentTab == 0) {
@@ -140,6 +140,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
       body: SafeArea(child: currentContent!),
+      
       bottomNavigationBar: Container(
         decoration: const BoxDecoration(
           borderRadius: BorderRadius.only(
@@ -168,21 +169,21 @@ class _HomeScreenState extends State<HomeScreen> {
                 Icons.search,
                 size: 30,
               ),
-              label: '',
+              label: 'Search',
             ),
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.map_outlined,
                 size: 30,
               ),
-              label: '',
+              label: 'Map',
             ),
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.person,
                 size: 30,
               ),
-              label: '',
+              label: 'Profile',
             ),
           ],
         ),

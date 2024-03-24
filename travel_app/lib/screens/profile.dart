@@ -24,7 +24,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             Stack(
               children: [
                 const CircleAvatar(
-                  radius: 120,
+                  radius: 100,
                   backgroundImage: AssetImage("assets/lewis.jpg"),
                 ),
                 Positioned(
@@ -75,14 +75,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 15),
             _buildProfileInfo(title: 'First Name', value: 'Lewis'),
-            const SizedBox(height: 20),
+            const SizedBox(height: 15),
             _buildProfileInfo(title: 'Last Name', value: 'Hamilton'),
-            const SizedBox(height: 20),
+            const SizedBox(height: 15),
             _buildProfileInfo(title: 'Email', value: 'Roscoe<3@gmail.com'),
-            const SizedBox(height: 10),
+            const SizedBox(height: 15),
             _buildProfileInfo(title: 'Phone', value: '0774444408'),
+
           ],
         ),
       ),

@@ -349,6 +349,7 @@ class _FineDineDetailsState extends State<FineDineDetails> {
                 ),
               ),
             ),
+            Container(),
             GestureDetector(
               child: Padding(
                 padding: const EdgeInsets.only(left: 8, top: 10),
