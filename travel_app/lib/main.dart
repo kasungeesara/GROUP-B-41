@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:travel_app/screens/home.dart';
+import 'package:travel_app/screens/login.dart';
 import 'package:travel_app/screens/onbording.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
           if (snapshot.hasData) {
             return const HomeScreen();
           }
-          return const Onbording();
+          return LoginPage();
         },
       ),
     );

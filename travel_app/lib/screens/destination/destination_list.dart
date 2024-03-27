@@ -31,19 +31,15 @@ class _DestinationScreenState extends State<DestinationScreen> {
   Widget build(BuildContext context) {
     if (widget.destination.city == "Kandy") {
       docName = "activityKandy";
-    } else if(widget.destination.city == "Galle"){
+    } else if (widget.destination.city == "Galle") {
       docName = "activityGalle";
-
-    } else if(widget.destination.city == "Colombo"){
+    } else if (widget.destination.city == "Colombo") {
       docName = "activityColombo";
-
-    } else if(widget.destination.city == "Sigiriya"){
+    } else if (widget.destination.city == "Sigiriya") {
       docName = "activitySigiriya";
-
-    } else if(widget.destination.city == "Nuwara Eliya"){
+    } else if (widget.destination.city == "Nuwara Eliya") {
       docName = "activityNuwaraEliya";
-
-    }else {
+    } else {
       docName = "activity";
     }
 
@@ -161,9 +157,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
             ],
           ),
           StreamBuilder(
-            stream: FirebaseFirestore.instance
-                .collection(docName)
-                .snapshots(),
+            stream: FirebaseFirestore.instance.collection(docName).snapshots(),
             builder: (cxt, chatSnapshot) {
               if (chatSnapshot.connectionState == ConnectionState.waiting) {
                 return const Center(
@@ -184,6 +178,8 @@ class _DestinationScreenState extends State<DestinationScreen> {
               }
 
               final loadedData = chatSnapshot.data!.docs;
+              print(
+                  "...................................................................................${loadedData.length}");
 
               return Expanded(
                 child: ListView.builder(
