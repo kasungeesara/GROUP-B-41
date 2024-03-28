@@ -15,7 +15,7 @@ class DestinationScreen extends StatefulWidget {
 }
 
 class _DestinationScreenState extends State<DestinationScreen> {
-  String docName = "kandy";
+  String docName = "";
   Text _buildRatingStars(int rating) {
     String stars = '';
     for (int i = 0; i < rating; i++) {
@@ -29,19 +29,21 @@ class _DestinationScreenState extends State<DestinationScreen> {
 
   @override
   Widget build(BuildContext context) {
-    if (widget.destination.city == "Kandy") {
-      docName = "activityKandy";
-    } else if (widget.destination.city == "Galle") {
-      docName = "activityGalle";
-    } else if (widget.destination.city == "Colombo") {
-      docName = "activityColombo";
-    } else if (widget.destination.city == "Sigiriya") {
-      docName = "activitySigiriya";
-    } else if (widget.destination.city == "Nuwara Eliya") {
-      docName = "activityNuwaraEliya";
-    } else {
-      docName = "activity";
-    }
+    // if (widget.destination.city == "Kandy") {
+    //   docName = "activityKandy";
+    // } else if (widget.destination.city == "Galle") {
+    //   docName = "activityGalle";
+    // } else if (widget.destination.city == "Colombo") {
+    //   docName = "activityColombo";
+    // } else if (widget.destination.city == "Sigiriya") {
+    //   docName = "activitySigiriya";
+    // } else if (widget.destination.city == "Nuwara Eliya") {
+    //   docName = "activityNuwaraEliya";
+    // } else {
+    //   docName = "activity";
+    // }
+
+    docName = "activityKandy";
 
     return Scaffold(
       body: Column(
