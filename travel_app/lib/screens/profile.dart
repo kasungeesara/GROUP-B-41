@@ -1,4 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -9,10 +11,35 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  String _userName = 'Lewis 44';
+  var firstName = "Loding...";
+  var userEmail = "Loding...";
+  var lastName = "Loding...";
+  var userName = "Loding...";
+  var contactNumber = "Loding...";
+  var _isGetUserData = false;
+
+  void getuserData() async {
+    final user = FirebaseAuth.instance.currentUser!;
+    final userData = await FirebaseFirestore.instance
+        .collection("users")
+        .doc(user.uid)
+        .get();
+
+    if (!_isGetUserData) {
+      setState(() {
+        firstName = userData.data()!["first-name"];
+        lastName = userData.data()!["last-name"];
+        userEmail = userData.data()!["email"];
+        userName = userData.data()!["user-name"];
+        contactNumber = userData.data()!["contact-number"];
+      });
+      _isGetUserData = true;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
+    getuserData();
     return Scaffold(
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
@@ -26,7 +53,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               children: [
                 const CircleAvatar(
                   radius: 100,
-                  backgroundImage: AssetImage("assets/lewis.jpg"),
+                  backgroundImage: AssetImage("assets/profile.jpg"),
                 ),
                 Positioned(
                   bottom: 0,
@@ -47,7 +74,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
             const SizedBox(height: 20),
             Text(
-              _userName,
+              userName,
               style: const TextStyle(
                 letterSpacing: 1.2,
                 fontSize: 24,
@@ -77,13 +104,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
             ),
             const SizedBox(height: 15),
-            _buildProfileInfo(title: 'First Name', value: 'Lewis'),
+            _buildProfileInfo(title: 'First Name', value: firstName),
             const SizedBox(height: 15),
-            _buildProfileInfo(title: 'Last Name', value: 'Hamilton'),
+            _buildProfileInfo(title: 'Last Name', value: lastName),
             const SizedBox(height: 15),
-            _buildProfileInfo(title: 'Email', value: 'Roscoe<3@gmail.com'),
+            _buildProfileInfo(title: 'Email', value: userEmail),
             const SizedBox(height: 15),
-            _buildProfileInfo(title: 'Phone', value: '0774444408'),
+            _buildProfileInfo(title: 'Phone', value: contactNumber),
             const SizedBox(
               height: 50,
             ),
@@ -145,7 +172,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
   void _showChangeNameDialog(BuildContext context) {
-    String newName = _userName;
+    String newName = userName;
 
     showDialog(
       context: context,
@@ -176,7 +203,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             TextButton(
               onPressed: () {
                 setState(() {
-                  _userName = newName;
+                  
                 });
                 Navigator.pop(context);
               },

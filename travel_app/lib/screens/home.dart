@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:travel_app/screens/map.dart';
 import 'package:travel_app/screens/profile.dart';
@@ -24,10 +26,27 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  
   int _selectedIndex = 0;
   int _currentTab = 0;
   Widget? currentContent;
+  var firstName = "";
+
+  var _isGetUserData = false;
+
+  void getuserData() async {
+    final user = FirebaseAuth.instance.currentUser!;
+    final userData = await FirebaseFirestore.instance
+        .collection("users")
+        .doc(user.uid)
+        .get();
+
+    if (!_isGetUserData) {
+      setState(() {
+        firstName = userData.data()!["first-name"];
+      });
+      _isGetUserData = true;
+    }
+  }
 
   final List<IconData> _icons = [
     Icons.directions_car,
@@ -62,25 +81,28 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
+
   @override
   Widget build(BuildContext context) {
+    getuserData();
     if (_currentTab == 0) {
       currentContent = ListView(
         padding: const EdgeInsets.symmetric(vertical: 30.0),
         children: <Widget>[
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(left: 20.0, right: 120.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Text(
-                //   "Hello Tharusha!",
-                //   style: TextStyle(
-                //     fontSize: 30,
-                //     fontWeight: FontWeight.bold,
-                //     fontFamily: "Outfit-Regular",
-                //   ),
-                // ),
+                Text(
+                  "Hello ${firstName}!",
+                  style: TextStyle(
+                    color: const Color.fromARGB(195, 14, 192, 106),
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: "Outfit-Regular",
+                  ),
+                ),
                 Text(
                   "What would you like to find?",
                   style: TextStyle(
@@ -140,7 +162,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
       body: SafeArea(child: currentContent!),
-      
       bottomNavigationBar: Container(
         decoration: const BoxDecoration(
           borderRadius: BorderRadius.only(
