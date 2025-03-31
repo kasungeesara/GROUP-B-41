@@ -14,17 +14,6 @@ final List<Activity> activities = [
   ),
   Activity(
     baseCity: "Kandy",
-    name: 'Kandy View Point',
-    type: 'Sightseeing',
-    price: 0.0,
-    rating: 5,
-    startTimes: ['06 AM', '10 PM'],
-    imagePath: "assets/k4.jpg",
-    description:
-        "Kandy City View Point is a place to capture the picturesque view of the Kandy city. It stands overlooking the Kandy Lake with the Temple of the Tooth Relic in the background. It is a good place to visit during sunrise or sunset for an amazing panoramic view of this city surrounded by mountains. It is a popular place to take photographs. This view point is situated in Rajapihilla Mawatha. It is also called Arthur’s Seat and is supposedly the highest point in Kandy standing 550 meters above sea level.",
-  ),
-  Activity(
-    baseCity: "Kandy",
     name: 'Kandy City Center',
     type: 'Shopping Mall',
     price: 0.0,
