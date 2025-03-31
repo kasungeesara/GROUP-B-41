@@ -12,17 +12,7 @@ final List<Activity> activities = [
     description:
         "The Temple of the Sacred Tooth Relic, or Sri Dalada Maligawa,[a] (Sinhala: ශ්‍රී දළදා මාළිගාව) is a Buddhist temple in Kandy, Sri Lanka. It is located in the royal palace complex of the former Kingdom of Kandy, which houses the relic of the tooth of the Buddha. Since ancient times, the relic has played an important role in local politics because it is believed that whoever holds the relic holds the governance of the country. The relic was historically held by Sinhalese kings. The temple of the tooth is a World Heritage Site mainly due to the temple and the relic. ",
   ),
-  Activity(
-    baseCity: "Kandy",
-    name: 'International Buddhist Museum',
-    type: 'History Museum',
-    price: 5.0,
-    rating: 4,
-    startTimes: ['10 AM', '05 PM'],
-    imagePath: "assets/k6.png",
-    description:
-        "Sri Dalada Maligawa kandy has established the International Buddhist Museum (IBM) to showcase the expand of the Buddhism throughout the Asia and rest of the world.This is the only museum which demonstrates the expanding of Buddhism all around the world by the 2600th year of the sambuddatva jayanthi,the Buddha dhamma has developed its status from the simple philosophy of the lifestyle of mankind enunciated in early Buddhist thought to highly developed ritualistic religious system. From its birth place, India, Buddhism as a religion, has spread to different parts of Asia, South – East and far East. While the message of the Buddha is currently being perused in the wide context in the modern world. It is interesting to note the different systems followed in the practice of Buddhism, both Theravada and Mahayana, by the respective countries. ",
-  ),
+
   Activity(
     baseCity: "Kandy",
     name: 'Royal Botanic Gardens',
