@@ -14,17 +14,6 @@ final List<Activity> activities = [
   ),
   Activity(
     baseCity: "Kandy",
-    name: 'Kandy City Center',
-    type: 'Shopping Mall',
-    price: 0.0,
-    rating: 5,
-    startTimes: ['09 AM', '09 PM'],
-    imagePath: "assets/k5.jpg",
-    description:
-        "Kandy City Centre is a ten-storey commercial and retail complex which is located in Kandy, Sri Lanka near the Temple of Tooth Relic. Construction of the centre was started in 1993 and opened in 2008. ",
-  ),
-  Activity(
-    baseCity: "Kandy",
     name: 'International Buddhist Museum',
     type: 'History Museum',
     price: 5.0,
